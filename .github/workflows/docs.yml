@@ -5,6 +5,7 @@ on:
       - '*.*.*'
     branches:
       - main
+  workflow_dispatch:
 env:
   nim-version: 'stable'
   module-name: 'libevent'
