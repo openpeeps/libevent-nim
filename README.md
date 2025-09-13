@@ -1,29 +1,28 @@
+<p align="center">👑 Nim Bindings for LibEvent</p>
 <p align="center">
-  <img src="https://github.com/openpeeps/PKG/blob/main/.github/logo.png" width="90px"><br>
-  OpenPeeps repository template for developing libraries,<br>projects and other cool things. 👑 Written in Nim language
+  <code>nimble install libevent</code>
 </p>
 
 <p align="center">
-  <code>nimble install {PKG}</code>
+  <a href="https://openpeeps.github.io/libevent/">API reference</a><br>
+  <img src="https://github.com/openpeeps/libevent/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/libevent/workflows/docs/badge.svg" alt="Github Actions">
 </p>
 
-<p align="center">
-  <a href="https://github.com/">API reference</a><br>
-  <img src="https://github.com/openpeeps/pistachio/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/pistachio/workflows/docs/badge.svg" alt="Github Actions">
-</p>
+## About
+Libevent is an event notification library with a focus on asynchronous IO. It provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. It also supports callbacks due to signals or regular timeouts.
 
-## 😍 Key Features
-- [x] Open Source | `MIT` License
-- [x] Written in Nim language
+Libevent additionally provides a sophisticated framework for buffered network IO, with support for sockets, filters, rate-limiting, SSL, zero-copy file transmission, and IOCP. Libevent includes support for several useful protocols, including DNS, HTTP, and a minimal RPC framework.
 
-## Examples
-...
+### Requirements
+- [Libevent](https://libevent.org/) 2.1.12 or later
+- Nim 2.0 or later
+
 
 ### ❤ Contributions & Support
-- 🐛 Found a bug? [Create a new Issue](/issues)
-- 👋 Wanna help? [Fork it!](/fork)
+- 🐛 Found a bug? [Create a new Issue](https://github.com/openpeeps/libevent-nim/issues)
+- 👋 Wanna help? [Fork it!](https://github.com/openpeeps/libevent-nim/fork)
 - 😎 [Get €20 in cloud credits from Hetzner](https://hetzner.cloud/?ref=Hm0mYGM9NxZ4)
 
 ### 🎩 License
-{PKG} | MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
+MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
 Copyright OpenPeeps & Contributors &mdash; All rights reserved.
