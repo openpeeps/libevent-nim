@@ -1,0 +1,74 @@
+nimTitle	buffer	libevent/bindings/buffer.html	module libevent/bindings/buffer		0
+nim	Evbuffer	libevent/bindings/buffer.html#Evbuffer	object Evbuffer		14
+nim	EvbufferPtr	libevent/bindings/buffer.html#EvbufferPtr	object EvbufferPtr		15
+nim	EvbufferIovec	libevent/bindings/buffer.html#EvbufferIovec	object EvbufferIovec		19
+nim	EvbufferCbInfo	libevent/bindings/buffer.html#EvbufferCbInfo	object EvbufferCbInfo		23
+nim	EvbufferCbEntry	libevent/bindings/buffer.html#EvbufferCbEntry	object EvbufferCbEntry		28
+nim	EvbufferCbFunc	libevent/bindings/buffer.html#EvbufferCbFunc	type EvbufferCbFunc		30
+nim	EvbufferRefCleanupCb	libevent/bindings/buffer.html#EvbufferRefCleanupCb	type EvbufferRefCleanupCb		31
+nim	EvbufferFileSegment	libevent/bindings/buffer.html#EvbufferFileSegment	object EvbufferFileSegment		32
+nim	EvbufferFileSegmentCleanupCb	libevent/bindings/buffer.html#EvbufferFileSegmentCleanupCb	type EvbufferFileSegmentCleanupCb		33
+nim	EVBUFFER_FLAG_DRAINS_TO_FD	libevent/bindings/buffer.html#EVBUFFER_FLAG_DRAINS_TO_FD	const EVBUFFER_FLAG_DRAINS_TO_FD		36
+nim	EVBUF_FS_CLOSE_ON_FREE	libevent/bindings/buffer.html#EVBUF_FS_CLOSE_ON_FREE	const EVBUF_FS_CLOSE_ON_FREE		37
+nim	EVBUF_FS_DISABLE_MMAP	libevent/bindings/buffer.html#EVBUF_FS_DISABLE_MMAP	const EVBUF_FS_DISABLE_MMAP		38
+nim	EVBUF_FS_DISABLE_SENDFILE	libevent/bindings/buffer.html#EVBUF_FS_DISABLE_SENDFILE	const EVBUF_FS_DISABLE_SENDFILE		39
+nim	EVBUF_FS_DISABLE_LOCKING	libevent/bindings/buffer.html#EVBUF_FS_DISABLE_LOCKING	const EVBUF_FS_DISABLE_LOCKING		40
+nim	EVBUFFER_CB_ENABLED	libevent/bindings/buffer.html#EVBUFFER_CB_ENABLED	const EVBUFFER_CB_ENABLED		41
+nim	EVBUFFER_EOL_ANY	libevent/bindings/buffer.html#EVBUFFER_EOL_ANY	EvbufferEolStyle.EVBUFFER_EOL_ANY		44
+nim	EVBUFFER_EOL_CRLF	libevent/bindings/buffer.html#EVBUFFER_EOL_CRLF	EvbufferEolStyle.EVBUFFER_EOL_CRLF		44
+nim	EVBUFFER_EOL_CRLF_STRICT	libevent/bindings/buffer.html#EVBUFFER_EOL_CRLF_STRICT	EvbufferEolStyle.EVBUFFER_EOL_CRLF_STRICT		44
+nim	EVBUFFER_EOL_LF	libevent/bindings/buffer.html#EVBUFFER_EOL_LF	EvbufferEolStyle.EVBUFFER_EOL_LF		44
+nim	EVBUFFER_EOL_NUL	libevent/bindings/buffer.html#EVBUFFER_EOL_NUL	EvbufferEolStyle.EVBUFFER_EOL_NUL		44
+nim	EvbufferEolStyle	libevent/bindings/buffer.html#EvbufferEolStyle	enum EvbufferEolStyle		44
+nim	EVBUFFER_PTR_SET	libevent/bindings/buffer.html#EVBUFFER_PTR_SET	EvbufferPtrHow.EVBUFFER_PTR_SET		51
+nim	EVBUFFER_PTR_ADD	libevent/bindings/buffer.html#EVBUFFER_PTR_ADD	EvbufferPtrHow.EVBUFFER_PTR_ADD		51
+nim	EvbufferPtrHow	libevent/bindings/buffer.html#EvbufferPtrHow	enum EvbufferPtrHow		51
+nim	evbuffer_new	libevent/bindings/buffer.html#evbuffer_new	proc evbuffer_new(): ptr Evbuffer		57
+nim	evbuffer_free	libevent/bindings/buffer.html#evbuffer_free,ptr.Evbuffer	proc evbuffer_free(buf: ptr Evbuffer)		58
+nim	evbuffer_enable_locking	libevent/bindings/buffer.html#evbuffer_enable_locking,ptr.Evbuffer,pointer	proc evbuffer_enable_locking(buf: ptr Evbuffer; lock: pointer): cint		59
+nim	evbuffer_lock	libevent/bindings/buffer.html#evbuffer_lock,ptr.Evbuffer	proc evbuffer_lock(buf: ptr Evbuffer)		60
+nim	evbuffer_unlock	libevent/bindings/buffer.html#evbuffer_unlock,ptr.Evbuffer	proc evbuffer_unlock(buf: ptr Evbuffer)		61
+nim	evbuffer_set_flags	libevent/bindings/buffer.html#evbuffer_set_flags,ptr.Evbuffer,uint64	proc evbuffer_set_flags(buf: ptr Evbuffer; flags: uint64): cint		62
+nim	evbuffer_clear_flags	libevent/bindings/buffer.html#evbuffer_clear_flags,ptr.Evbuffer,uint64	proc evbuffer_clear_flags(buf: ptr Evbuffer; flags: uint64): cint		63
+nim	evbuffer_get_length	libevent/bindings/buffer.html#evbuffer_get_length,ptr.Evbuffer	proc evbuffer_get_length(buf: ptr Evbuffer): csize_t		64
+nim	evbuffer_get_contiguous_space	libevent/bindings/buffer.html#evbuffer_get_contiguous_space,ptr.Evbuffer	proc evbuffer_get_contiguous_space(buf: ptr Evbuffer): csize_t		65
+nim	evbuffer_expand	libevent/bindings/buffer.html#evbuffer_expand,ptr.Evbuffer,csize_t	proc evbuffer_expand(buf: ptr Evbuffer; datlen: csize_t): cint		66
+nim	evbuffer_reserve_space	libevent/bindings/buffer.html#evbuffer_reserve_space,ptr.Evbuffer,int64,ptr.EvbufferIovec,cint	proc evbuffer_reserve_space(buf: ptr Evbuffer; size: int64; vec: ptr EvbufferIovec;\n                       n_vec: cint): cint		67
+nim	evbuffer_commit_space	libevent/bindings/buffer.html#evbuffer_commit_space,ptr.Evbuffer,ptr.EvbufferIovec,cint	proc evbuffer_commit_space(buf: ptr Evbuffer; vec: ptr EvbufferIovec; n_vecs: cint): cint		68
+nim	evbuffer_add	libevent/bindings/buffer.html#evbuffer_add,ptr.Evbuffer,pointer,csize_t	proc evbuffer_add(buf: ptr Evbuffer; data: pointer; datlen: csize_t): cint		69
+nim	evbuffer_remove	libevent/bindings/buffer.html#evbuffer_remove,ptr.Evbuffer,pointer,csize_t	proc evbuffer_remove(buf: ptr Evbuffer; data: pointer; datlen: csize_t): cint		70
+nim	evbuffer_copyout	libevent/bindings/buffer.html#evbuffer_copyout,ptr.Evbuffer,pointer,csize_t	proc evbuffer_copyout(buf: ptr Evbuffer; data_out: pointer; datlen: csize_t): int64		71
+nim	evbuffer_copyout_from	libevent/bindings/buffer.html#evbuffer_copyout_from,ptr.Evbuffer,ptr.EvbufferPtr,pointer,csize_t	proc evbuffer_copyout_from(buf: ptr Evbuffer; pos: ptr EvbufferPtr;\n                      data_out: pointer; datlen: csize_t): int64		72
+nim	evbuffer_remove_buffer	libevent/bindings/buffer.html#evbuffer_remove_buffer,ptr.Evbuffer,ptr.Evbuffer,csize_t	proc evbuffer_remove_buffer(src: ptr Evbuffer; dst: ptr Evbuffer; datlen: csize_t): cint		73
+nim	evbuffer_readln	libevent/bindings/buffer.html#evbuffer_readln,ptr.Evbuffer,ptr.csize_t,EvbufferEolStyle	proc evbuffer_readln(buffer: ptr Evbuffer; n_read_out: ptr csize_t;\n                eol_style: EvbufferEolStyle): cstring		74
+nim	evbuffer_add_buffer	libevent/bindings/buffer.html#evbuffer_add_buffer,ptr.Evbuffer,ptr.Evbuffer	proc evbuffer_add_buffer(outbuf: ptr Evbuffer; inbuf: ptr Evbuffer): cint		75
+nim	evbuffer_add_buffer_reference	libevent/bindings/buffer.html#evbuffer_add_buffer_reference,ptr.Evbuffer,ptr.Evbuffer	proc evbuffer_add_buffer_reference(outbuf: ptr Evbuffer; inbuf: ptr Evbuffer): cint		76
+nim	evbuffer_add_reference	libevent/bindings/buffer.html#evbuffer_add_reference,ptr.Evbuffer,pointer,csize_t,EvbufferRefCleanupCb,pointer	proc evbuffer_add_reference(outbuf: ptr Evbuffer; data: pointer; datlen: csize_t;\n                       cleanupfn: EvbufferRefCleanupCb; cleanupfn_arg: pointer): cint		77
+nim	evbuffer_add_file	libevent/bindings/buffer.html#evbuffer_add_file,ptr.Evbuffer,cint,int64,int64	proc evbuffer_add_file(outbuf: ptr Evbuffer; fd: cint; offset: int64; length: int64): cint		78
+nim	evbuffer_file_segment_new	libevent/bindings/buffer.html#evbuffer_file_segment_new,cint,int64,int64,cuint	proc evbuffer_file_segment_new(fd: cint; offset: int64; length: int64; flags: cuint): ptr EvbufferFileSegment		79
+nim	evbuffer_file_segment_free	libevent/bindings/buffer.html#evbuffer_file_segment_free,ptr.EvbufferFileSegment	proc evbuffer_file_segment_free(seg: ptr EvbufferFileSegment)		80
+nim	evbuffer_file_segment_add_cleanup_cb	libevent/bindings/buffer.html#evbuffer_file_segment_add_cleanup_cb,ptr.EvbufferFileSegment,EvbufferFileSegmentCleanupCb,pointer	proc evbuffer_file_segment_add_cleanup_cb(seg: ptr EvbufferFileSegment;\n                                     cb: EvbufferFileSegmentCleanupCb;\n                                     arg: pointer)		81
+nim	evbuffer_add_file_segment	libevent/bindings/buffer.html#evbuffer_add_file_segment,ptr.Evbuffer,ptr.EvbufferFileSegment,int64,int64	proc evbuffer_add_file_segment(buf: ptr Evbuffer; seg: ptr EvbufferFileSegment;\n                          offset: int64; length: int64): cint		82
+nim	evbuffer_add_printf	libevent/bindings/buffer.html#evbuffer_add_printf,ptr.Evbuffer,cstring	proc evbuffer_add_printf(buf: ptr Evbuffer; fmt: cstring): cint		83
+nim	evbuffer_add_vprintf	libevent/bindings/buffer.html#evbuffer_add_vprintf,ptr.Evbuffer,cstring,pointer	proc evbuffer_add_vprintf(buf: ptr Evbuffer; fmt: cstring; ap: pointer): cint		84
+nim	evbuffer_drain	libevent/bindings/buffer.html#evbuffer_drain,ptr.Evbuffer,csize_t	proc evbuffer_drain(buf: ptr Evbuffer; len: csize_t): cint		85
+nim	evbuffer_write	libevent/bindings/buffer.html#evbuffer_write,ptr.Evbuffer,cint	proc evbuffer_write(buffer: ptr Evbuffer; fd: cint): cint		86
+nim	evbuffer_write_atmost	libevent/bindings/buffer.html#evbuffer_write_atmost,ptr.Evbuffer,cint,int64	proc evbuffer_write_atmost(buffer: ptr Evbuffer; fd: cint; howmuch: int64): cint		87
+nim	evbuffer_read	libevent/bindings/buffer.html#evbuffer_read,ptr.Evbuffer,cint,cint	proc evbuffer_read(buffer: ptr Evbuffer; fd: cint; howmuch: cint): cint		88
+nim	evbuffer_search	libevent/bindings/buffer.html#evbuffer_search,ptr.Evbuffer,cstring,csize_t,ptr.EvbufferPtr	proc evbuffer_search(buffer: ptr Evbuffer; what: cstring; len: csize_t;\n                start: ptr EvbufferPtr): EvbufferPtr		89
+nim	evbuffer_search_range	libevent/bindings/buffer.html#evbuffer_search_range,ptr.Evbuffer,cstring,csize_t,ptr.EvbufferPtr,ptr.EvbufferPtr	proc evbuffer_search_range(buffer: ptr Evbuffer; what: cstring; len: csize_t;\n                      start: ptr EvbufferPtr; end: ptr EvbufferPtr): EvbufferPtr		90
+nim	evbuffer_ptr_set	libevent/bindings/buffer.html#evbuffer_ptr_set,ptr.Evbuffer,ptr.EvbufferPtr,csize_t,EvbufferPtrHow	proc evbuffer_ptr_set(buffer: ptr Evbuffer; ptr: ptr EvbufferPtr; position: csize_t;\n                 how: EvbufferPtrHow): cint		91
+nim	evbuffer_search_eol	libevent/bindings/buffer.html#evbuffer_search_eol,ptr.Evbuffer,ptr.EvbufferPtr,ptr.csize_t,EvbufferEolStyle	proc evbuffer_search_eol(buffer: ptr Evbuffer; start: ptr EvbufferPtr;\n                    eol_len_out: ptr csize_t; eol_style: EvbufferEolStyle): EvbufferPtr		92
+nim	evbuffer_peek	libevent/bindings/buffer.html#evbuffer_peek,ptr.Evbuffer,int64,ptr.EvbufferPtr,ptr.EvbufferIovec,cint	proc evbuffer_peek(buffer: ptr Evbuffer; len: int64; start_at: ptr EvbufferPtr;\n              vec_out: ptr EvbufferIovec; n_vec: cint): cint		93
+nim	evbuffer_add_cb	libevent/bindings/buffer.html#evbuffer_add_cb,ptr.Evbuffer,EvbufferCbFunc,pointer	proc evbuffer_add_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): ptr EvbufferCbEntry		94
+nim	evbuffer_remove_cb_entry	libevent/bindings/buffer.html#evbuffer_remove_cb_entry,ptr.Evbuffer,ptr.EvbufferCbEntry	proc evbuffer_remove_cb_entry(buffer: ptr Evbuffer; ent: ptr EvbufferCbEntry): cint		95
+nim	evbuffer_remove_cb	libevent/bindings/buffer.html#evbuffer_remove_cb,ptr.Evbuffer,EvbufferCbFunc,pointer	proc evbuffer_remove_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): cint		96
+nim	evbuffer_cb_set_flags	libevent/bindings/buffer.html#evbuffer_cb_set_flags,ptr.Evbuffer,ptr.EvbufferCbEntry,uint32	proc evbuffer_cb_set_flags(buffer: ptr Evbuffer; cb: ptr EvbufferCbEntry;\n                      flags: uint32): cint		97
+nim	evbuffer_cb_clear_flags	libevent/bindings/buffer.html#evbuffer_cb_clear_flags,ptr.Evbuffer,ptr.EvbufferCbEntry,uint32	proc evbuffer_cb_clear_flags(buffer: ptr Evbuffer; cb: ptr EvbufferCbEntry;\n                        flags: uint32): cint		98
+nim	evbuffer_pullup	libevent/bindings/buffer.html#evbuffer_pullup,ptr.Evbuffer,int64	proc evbuffer_pullup(buf: ptr Evbuffer; size: int64): ptr uint8		99
+nim	evbuffer_prepend	libevent/bindings/buffer.html#evbuffer_prepend,ptr.Evbuffer,pointer,csize_t	proc evbuffer_prepend(buf: ptr Evbuffer; data: pointer; size: csize_t): cint		100
+nim	evbuffer_prepend_buffer	libevent/bindings/buffer.html#evbuffer_prepend_buffer,ptr.Evbuffer,ptr.Evbuffer	proc evbuffer_prepend_buffer(dst: ptr Evbuffer; src: ptr Evbuffer): cint		101
+nim	evbuffer_freeze	libevent/bindings/buffer.html#evbuffer_freeze,ptr.Evbuffer,cint	proc evbuffer_freeze(buf: ptr Evbuffer; at_front: cint): cint		102
+nim	evbuffer_unfreeze	libevent/bindings/buffer.html#evbuffer_unfreeze,ptr.Evbuffer,cint	proc evbuffer_unfreeze(buf: ptr Evbuffer; at_front: cint): cint		103
+nim	evbuffer_defer_callbacks	libevent/bindings/buffer.html#evbuffer_defer_callbacks,ptr.Evbuffer,ptr.event_base	proc evbuffer_defer_callbacks(buffer: ptr Evbuffer; base: ptr event_base): cint		104
+nim	evbuffer_add_iovec	libevent/bindings/buffer.html#evbuffer_add_iovec,ptr.Evbuffer,ptr.EvbufferIovec,cint	proc evbuffer_add_iovec(buffer: ptr Evbuffer; vec: ptr EvbufferIovec; n_vec: cint): csize_t		105

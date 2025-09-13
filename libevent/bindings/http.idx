@@ -1,0 +1,159 @@
+nimTitle	http	libevent/bindings/http.html	module libevent/bindings/http		0
+nim	HTTP_OK	libevent/bindings/http.html#HTTP_OK	const HTTP_OK		13
+nim	HTTP_NOCONTENT	libevent/bindings/http.html#HTTP_NOCONTENT	const HTTP_NOCONTENT		14
+nim	HTTP_MOVEPERM	libevent/bindings/http.html#HTTP_MOVEPERM	const HTTP_MOVEPERM		15
+nim	HTTP_MOVETEMP	libevent/bindings/http.html#HTTP_MOVETEMP	const HTTP_MOVETEMP		16
+nim	HTTP_NOTMODIFIED	libevent/bindings/http.html#HTTP_NOTMODIFIED	const HTTP_NOTMODIFIED		17
+nim	HTTP_BADREQUEST	libevent/bindings/http.html#HTTP_BADREQUEST	const HTTP_BADREQUEST		18
+nim	HTTP_NOTFOUND	libevent/bindings/http.html#HTTP_NOTFOUND	const HTTP_NOTFOUND		19
+nim	HTTP_BADMETHOD	libevent/bindings/http.html#HTTP_BADMETHOD	const HTTP_BADMETHOD		20
+nim	HTTP_ENTITYTOOLARGE	libevent/bindings/http.html#HTTP_ENTITYTOOLARGE	const HTTP_ENTITYTOOLARGE		21
+nim	HTTP_EXPECTATIONFAILED	libevent/bindings/http.html#HTTP_EXPECTATIONFAILED	const HTTP_EXPECTATIONFAILED		22
+nim	HTTP_INTERNAL	libevent/bindings/http.html#HTTP_INTERNAL	const HTTP_INTERNAL		23
+nim	HTTP_NOTIMPLEMENTED	libevent/bindings/http.html#HTTP_NOTIMPLEMENTED	const HTTP_NOTIMPLEMENTED		24
+nim	HTTP_SERVUNAVAIL	libevent/bindings/http.html#HTTP_SERVUNAVAIL	const HTTP_SERVUNAVAIL		25
+nim	EVHTTP_SERVER_LINGERING_CLOSE	libevent/bindings/http.html#EVHTTP_SERVER_LINGERING_CLOSE	const EVHTTP_SERVER_LINGERING_CLOSE		28
+nim	EVHTTP_CON_REUSE_CONNECTED_ADDR	libevent/bindings/http.html#EVHTTP_CON_REUSE_CONNECTED_ADDR	const EVHTTP_CON_REUSE_CONNECTED_ADDR		29
+nim	EVHTTP_CON_READ_ON_WRITE_ERROR	libevent/bindings/http.html#EVHTTP_CON_READ_ON_WRITE_ERROR	const EVHTTP_CON_READ_ON_WRITE_ERROR		30
+nim	EVHTTP_CON_LINGERING_CLOSE	libevent/bindings/http.html#EVHTTP_CON_LINGERING_CLOSE	const EVHTTP_CON_LINGERING_CLOSE		31
+nim	EVHTTP_CON_PUBLIC_FLAGS_END	libevent/bindings/http.html#EVHTTP_CON_PUBLIC_FLAGS_END	const EVHTTP_CON_PUBLIC_FLAGS_END		32
+nim	EVHTTP_REQ_GET	libevent/bindings/http.html#EVHTTP_REQ_GET	EvhttpCmdType.EVHTTP_REQ_GET		36
+nim	EVHTTP_REQ_POST	libevent/bindings/http.html#EVHTTP_REQ_POST	EvhttpCmdType.EVHTTP_REQ_POST		36
+nim	EVHTTP_REQ_HEAD	libevent/bindings/http.html#EVHTTP_REQ_HEAD	EvhttpCmdType.EVHTTP_REQ_HEAD		36
+nim	EVHTTP_REQ_PUT	libevent/bindings/http.html#EVHTTP_REQ_PUT	EvhttpCmdType.EVHTTP_REQ_PUT		36
+nim	EVHTTP_REQ_DELETE	libevent/bindings/http.html#EVHTTP_REQ_DELETE	EvhttpCmdType.EVHTTP_REQ_DELETE		36
+nim	EVHTTP_REQ_OPTIONS	libevent/bindings/http.html#EVHTTP_REQ_OPTIONS	EvhttpCmdType.EVHTTP_REQ_OPTIONS		36
+nim	EVHTTP_REQ_TRACE	libevent/bindings/http.html#EVHTTP_REQ_TRACE	EvhttpCmdType.EVHTTP_REQ_TRACE		36
+nim	EVHTTP_REQ_CONNECT	libevent/bindings/http.html#EVHTTP_REQ_CONNECT	EvhttpCmdType.EVHTTP_REQ_CONNECT		36
+nim	EVHTTP_REQ_PATCH	libevent/bindings/http.html#EVHTTP_REQ_PATCH	EvhttpCmdType.EVHTTP_REQ_PATCH		36
+nim	EvhttpCmdType	libevent/bindings/http.html#EvhttpCmdType	enum EvhttpCmdType		36
+nim	Evhttp_request	libevent/bindings/http.html#Evhttp_request	evhttp_request_kind.Evhttp_request		47
+nim	Evhttp_response	libevent/bindings/http.html#Evhttp_response	evhttp_request_kind.Evhttp_response		47
+nim	evhttp_request_kind	libevent/bindings/http.html#evhttp_request_kind	enum evhttp_request_kind		47
+nim	EVREQ_HTTP_TIMEOUT	libevent/bindings/http.html#EVREQ_HTTP_TIMEOUT	EvhttpRequestError.EVREQ_HTTP_TIMEOUT		51
+nim	EVREQ_HTTP_EOF	libevent/bindings/http.html#EVREQ_HTTP_EOF	EvhttpRequestError.EVREQ_HTTP_EOF		51
+nim	EVREQ_HTTP_INVALID_HEADER	libevent/bindings/http.html#EVREQ_HTTP_INVALID_HEADER	EvhttpRequestError.EVREQ_HTTP_INVALID_HEADER		51
+nim	EVREQ_HTTP_BUFFER_ERROR	libevent/bindings/http.html#EVREQ_HTTP_BUFFER_ERROR	EvhttpRequestError.EVREQ_HTTP_BUFFER_ERROR		51
+nim	EVREQ_HTTP_REQUEST_CANCEL	libevent/bindings/http.html#EVREQ_HTTP_REQUEST_CANCEL	EvhttpRequestError.EVREQ_HTTP_REQUEST_CANCEL		51
+nim	EVREQ_HTTP_DATA_TOO_LONG	libevent/bindings/http.html#EVREQ_HTTP_DATA_TOO_LONG	EvhttpRequestError.EVREQ_HTTP_DATA_TOO_LONG		51
+nim	EvhttpRequestError	libevent/bindings/http.html#EvhttpRequestError	enum EvhttpRequestError		51
+nim	evhttp	libevent/bindings/http.html#evhttp	object evhttp		61
+nim	evhttp_request	libevent/bindings/http.html#evhttp_request_2	object evhttp_request		62
+nim	evkeyvalq	libevent/bindings/http.html#evkeyvalq	object evkeyvalq		63
+nim	evhttp_bound_socket	libevent/bindings/http.html#evhttp_bound_socket	object evhttp_bound_socket		64
+nim	evconnlistener	libevent/bindings/http.html#evconnlistener	object evconnlistener		65
+nim	evdns_base	libevent/bindings/http.html#evdns_base	object evdns_base		66
+nim	evhttp_connection	libevent/bindings/http.html#evhttp_connection	object evhttp_connection		67
+nim	evhttp_uri	libevent/bindings/http.html#evhttp_uri	object evhttp_uri		68
+nim	nim_evkeyvalq_iterate	libevent/bindings/http.html#nim_evkeyvalq_iterate,pointer,proc(cstring,cstring,pointer),pointer	proc nim_evkeyvalq_iterate(headers: pointer;\n                      cb: proc (key, value: cstring; arg: pointer) {.cdecl.};\n                      arg: pointer)		71
+nim	EvhttpRequestCb	libevent/bindings/http.html#EvhttpRequestCb	type EvhttpRequestCb		76
+nim	EvhttpBoundSocketForeachFn	libevent/bindings/http.html#EvhttpBoundSocketForeachFn	type EvhttpBoundSocketForeachFn		77
+nim	EvhttpRequestHeaderCb	libevent/bindings/http.html#EvhttpRequestHeaderCb	type EvhttpRequestHeaderCb		78
+nim	EvhttpRequestErrorCb	libevent/bindings/http.html#EvhttpRequestErrorCb	type EvhttpRequestErrorCb		79
+nim	EvhttpRequestOnCompleteCb	libevent/bindings/http.html#EvhttpRequestOnCompleteCb	type EvhttpRequestOnCompleteCb		80
+nim	EvhttpConnectionCloseCb	libevent/bindings/http.html#EvhttpConnectionCloseCb	type EvhttpConnectionCloseCb		81
+nim	EvhttpBevcb	libevent/bindings/http.html#EvhttpBevcb	type EvhttpBevcb		82
+nim	evhttp_new	libevent/bindings/http.html#evhttp_new,ptr.event_base	proc evhttp_new(base: ptr event_base): ptr evhttp		85
+nim	evhttp_free	libevent/bindings/http.html#evhttp_free,ptr.evhttp	proc evhttp_free(http: ptr evhttp)		86
+nim	evhttp_bind_socket	libevent/bindings/http.html#evhttp_bind_socket,ptr.evhttp,cstring,uint16	proc evhttp_bind_socket(http: ptr evhttp; address: cstring; port: uint16): cint		87
+nim	evhttp_bind_socket_with_handle	libevent/bindings/http.html#evhttp_bind_socket_with_handle,ptr.evhttp,cstring,uint16	proc evhttp_bind_socket_with_handle(http: ptr evhttp; address: cstring; port: uint16): ptr evhttp_bound_socket		88
+nim	evhttp_accept_socket	libevent/bindings/http.html#evhttp_accept_socket,ptr.evhttp,cint	proc evhttp_accept_socket(http: ptr evhttp; fd: cint): cint		89
+nim	evhttp_accept_socket_with_handle	libevent/bindings/http.html#evhttp_accept_socket_with_handle,ptr.evhttp,cint	proc evhttp_accept_socket_with_handle(http: ptr evhttp; fd: cint): ptr evhttp_bound_socket		90
+nim	evhttp_bind_listener	libevent/bindings/http.html#evhttp_bind_listener,ptr.evhttp,ptr.evconnlistener	proc evhttp_bind_listener(http: ptr evhttp; listener: ptr evconnlistener): ptr evhttp_bound_socket		91
+nim	evhttp_bound_socket_get_listener	libevent/bindings/http.html#evhttp_bound_socket_get_listener,ptr.evhttp_bound_socket	proc evhttp_bound_socket_get_listener(bound: ptr evhttp_bound_socket): ptr evconnlistener		92
+nim	evhttp_foreach_bound_socket	libevent/bindings/http.html#evhttp_foreach_bound_socket,ptr.evhttp,EvhttpBoundSocketForeachFn,pointer	proc evhttp_foreach_bound_socket(http: ptr evhttp; fn: EvhttpBoundSocketForeachFn;\n                            arg: pointer)		93
+nim	evhttp_del_accept_socket	libevent/bindings/http.html#evhttp_del_accept_socket,ptr.evhttp,ptr.evhttp_bound_socket	proc evhttp_del_accept_socket(http: ptr evhttp; bound: ptr evhttp_bound_socket)		94
+nim	evhttp_bound_socket_get_fd	libevent/bindings/http.html#evhttp_bound_socket_get_fd,ptr.evhttp_bound_socket	proc evhttp_bound_socket_get_fd(bound: ptr evhttp_bound_socket): cint		95
+nim	evhttp_set_max_headers_size	libevent/bindings/http.html#evhttp_set_max_headers_size,ptr.evhttp,int64	proc evhttp_set_max_headers_size(http: ptr evhttp; max_headers_size: int64)		96
+nim	evhttp_set_max_body_size	libevent/bindings/http.html#evhttp_set_max_body_size,ptr.evhttp,int64	proc evhttp_set_max_body_size(http: ptr evhttp; max_body_size: int64)		97
+nim	evhttp_set_default_content_type	libevent/bindings/http.html#evhttp_set_default_content_type,ptr.evhttp,cstring	proc evhttp_set_default_content_type(http: ptr evhttp; content_type: cstring)		98
+nim	evhttp_set_allowed_methods	libevent/bindings/http.html#evhttp_set_allowed_methods,ptr.evhttp,uint16	proc evhttp_set_allowed_methods(http: ptr evhttp; methods: uint16)		99
+nim	evhttp_set_cb	libevent/bindings/http.html#evhttp_set_cb,ptr.evhttp,cstring,EvhttpRequestCb,pointer	proc evhttp_set_cb(http: ptr evhttp; path: cstring; cb: EvhttpRequestCb;\n              cb_arg: pointer): cint		100
+nim	evhttp_del_cb	libevent/bindings/http.html#evhttp_del_cb,ptr.evhttp,cstring	proc evhttp_del_cb(http: ptr evhttp; path: cstring): cint		101
+nim	evhttp_set_gencb	libevent/bindings/http.html#evhttp_set_gencb,ptr.evhttp,EvhttpRequestCb,pointer	proc evhttp_set_gencb(http: ptr evhttp; cb: EvhttpRequestCb; arg: pointer)		102
+nim	evhttp_set_bevcb	libevent/bindings/http.html#evhttp_set_bevcb,ptr.evhttp,EvhttpBevcb,pointer	proc evhttp_set_bevcb(http: ptr evhttp; cb: EvhttpBevcb; arg: pointer)		103
+nim	evhttp_add_virtual_host	libevent/bindings/http.html#evhttp_add_virtual_host,ptr.evhttp,cstring,ptr.evhttp	proc evhttp_add_virtual_host(http: ptr evhttp; pattern: cstring; vhost: ptr evhttp): cint		104
+nim	evhttp_remove_virtual_host	libevent/bindings/http.html#evhttp_remove_virtual_host,ptr.evhttp,ptr.evhttp	proc evhttp_remove_virtual_host(http: ptr evhttp; vhost: ptr evhttp): cint		105
+nim	evhttp_add_server_alias	libevent/bindings/http.html#evhttp_add_server_alias,ptr.evhttp,cstring	proc evhttp_add_server_alias(http: ptr evhttp; alias: cstring): cint		106
+nim	evhttp_remove_server_alias	libevent/bindings/http.html#evhttp_remove_server_alias,ptr.evhttp,cstring	proc evhttp_remove_server_alias(http: ptr evhttp; alias: cstring): cint		107
+nim	evhttp_set_timeout	libevent/bindings/http.html#evhttp_set_timeout,ptr.evhttp,cint	proc evhttp_set_timeout(http: ptr evhttp; timeout_in_secs: cint)		108
+nim	evhttp_set_timeout_tv	libevent/bindings/http.html#evhttp_set_timeout_tv,ptr.evhttp,pointer	proc evhttp_set_timeout_tv(http: ptr evhttp; tv: pointer)		109
+nim	evhttp_set_flags	libevent/bindings/http.html#evhttp_set_flags,ptr.evhttp,cint	proc evhttp_set_flags(http: ptr evhttp; flags: cint): cint		110
+nim	evhttp_send_error	libevent/bindings/http.html#evhttp_send_error,ptr.evhttp_request,cint,cstring	proc evhttp_send_error(req: ptr evhttp_request; error: cint; reason: cstring)		113
+nim	evhttp_send_reply	libevent/bindings/http.html#evhttp_send_reply,ptr.evhttp_request,cint,cstring,ptr.Evbuffer	proc evhttp_send_reply(req: ptr evhttp_request; code: cint; reason: cstring;\n                  databuf: ptr Evbuffer)		114
+nim	evhttp_send_reply_start	libevent/bindings/http.html#evhttp_send_reply_start,ptr.evhttp_request,cint,cstring	proc evhttp_send_reply_start(req: ptr evhttp_request; code: cint; reason: cstring)		115
+nim	evhttp_send_reply_chunk	libevent/bindings/http.html#evhttp_send_reply_chunk,ptr.evhttp_request,ptr.Evbuffer	proc evhttp_send_reply_chunk(req: ptr evhttp_request; databuf: ptr Evbuffer)		116
+nim	evhttp_send_reply_chunk_with_cb	libevent/bindings/http.html#evhttp_send_reply_chunk_with_cb,ptr.evhttp_request,ptr.Evbuffer,EvhttpConnectionCloseCb,pointer	proc evhttp_send_reply_chunk_with_cb(req: ptr evhttp_request; databuf: ptr Evbuffer;\n                                cb: EvhttpConnectionCloseCb; arg: pointer)		117
+nim	evhttp_send_reply_end	libevent/bindings/http.html#evhttp_send_reply_end,ptr.evhttp_request	proc evhttp_send_reply_end(req: ptr evhttp_request)		118
+nim	evhttp_connection_base_bufferevent_new	libevent/bindings/http.html#evhttp_connection_base_bufferevent_new,ptr.event_base,ptr.evdns_base,pointer,cstring,uint16	proc evhttp_connection_base_bufferevent_new(base: ptr event_base;\n                                       dnsbase: ptr evdns_base; bev: pointer;\n                                       address: cstring; port: uint16): ptr evhttp_connection		121
+nim	evhttp_connection_get_bufferevent	libevent/bindings/http.html#evhttp_connection_get_bufferevent,ptr.evhttp_connection	proc evhttp_connection_get_bufferevent(evcon: ptr evhttp_connection): pointer		129
+nim	evhttp_connection_get_server	libevent/bindings/http.html#evhttp_connection_get_server,ptr.evhttp_connection	proc evhttp_connection_get_server(evcon: ptr evhttp_connection): ptr evhttp		130
+nim	evhttp_request_new	libevent/bindings/http.html#evhttp_request_new,EvhttpRequestCb,pointer	proc evhttp_request_new(cb: EvhttpRequestCb; arg: pointer): ptr evhttp_request		131
+nim	evhttp_request_set_chunked_cb	libevent/bindings/http.html#evhttp_request_set_chunked_cb,ptr.evhttp_request,EvhttpRequestCb	proc evhttp_request_set_chunked_cb(req: ptr evhttp_request; cb: EvhttpRequestCb)		132
+nim	evhttp_request_set_header_cb	libevent/bindings/http.html#evhttp_request_set_header_cb,ptr.evhttp_request,EvhttpRequestHeaderCb	proc evhttp_request_set_header_cb(req: ptr evhttp_request; cb: EvhttpRequestHeaderCb)		133
+nim	evhttp_request_set_error_cb	libevent/bindings/http.html#evhttp_request_set_error_cb,ptr.evhttp_request,EvhttpRequestErrorCb	proc evhttp_request_set_error_cb(req: ptr evhttp_request; cb: EvhttpRequestErrorCb)		134
+nim	evhttp_request_set_on_complete_cb	libevent/bindings/http.html#evhttp_request_set_on_complete_cb,ptr.evhttp_request,EvhttpRequestOnCompleteCb,pointer	proc evhttp_request_set_on_complete_cb(req: ptr evhttp_request;\n                                  cb: EvhttpRequestOnCompleteCb; cb_arg: pointer)		135
+nim	evhttp_request_free	libevent/bindings/http.html#evhttp_request_free,ptr.evhttp_request	proc evhttp_request_free(req: ptr evhttp_request)		136
+nim	evhttp_connection_base_new	libevent/bindings/http.html#evhttp_connection_base_new,ptr.event_base,ptr.evdns_base,cstring,uint16	proc evhttp_connection_base_new(base: ptr event_base; dnsbase: ptr evdns_base;\n                           address: cstring; port: uint16): ptr evhttp_connection		137
+nim	evhttp_connection_set_family	libevent/bindings/http.html#evhttp_connection_set_family,ptr.evhttp_connection,cint	proc evhttp_connection_set_family(evcon: ptr evhttp_connection; family: cint)		143
+nim	evhttp_connection_set_flags	libevent/bindings/http.html#evhttp_connection_set_flags,ptr.evhttp_connection,cint	proc evhttp_connection_set_flags(evcon: ptr evhttp_connection; flags: cint): cint		144
+nim	evhttp_request_own	libevent/bindings/http.html#evhttp_request_own,ptr.evhttp_request	proc evhttp_request_own(req: ptr evhttp_request)		145
+nim	evhttp_request_is_owned	libevent/bindings/http.html#evhttp_request_is_owned,ptr.evhttp_request	proc evhttp_request_is_owned(req: ptr evhttp_request): cint		146
+nim	evhttp_request_get_connection	libevent/bindings/http.html#evhttp_request_get_connection,ptr.evhttp_request	proc evhttp_request_get_connection(req: ptr evhttp_request): ptr evhttp_connection		147
+nim	evhttp_connection_get_base	libevent/bindings/http.html#evhttp_connection_get_base,ptr.evhttp_connection	proc evhttp_connection_get_base(evcon: ptr evhttp_connection): ptr event_base		148
+nim	evhttp_connection_set_max_headers_size	libevent/bindings/http.html#evhttp_connection_set_max_headers_size,ptr.evhttp_connection,int64	proc evhttp_connection_set_max_headers_size(evcon: ptr evhttp_connection;\n                                       new_max_headers_size: int64)		149
+nim	evhttp_connection_set_max_body_size	libevent/bindings/http.html#evhttp_connection_set_max_body_size,ptr.evhttp_connection,int64	proc evhttp_connection_set_max_body_size(evcon: ptr evhttp_connection;\n                                    new_max_body_size: int64)		150
+nim	evhttp_connection_free	libevent/bindings/http.html#evhttp_connection_free,ptr.evhttp_connection	proc evhttp_connection_free(evcon: ptr evhttp_connection)		151
+nim	evhttp_connection_free_on_completion	libevent/bindings/http.html#evhttp_connection_free_on_completion,ptr.evhttp_connection	proc evhttp_connection_free_on_completion(evcon: ptr evhttp_connection)		152
+nim	evhttp_connection_set_local_address	libevent/bindings/http.html#evhttp_connection_set_local_address,ptr.evhttp_connection,cstring	proc evhttp_connection_set_local_address(evcon: ptr evhttp_connection;\n                                    address: cstring)		153
+nim	evhttp_connection_set_local_port	libevent/bindings/http.html#evhttp_connection_set_local_port,ptr.evhttp_connection,uint16	proc evhttp_connection_set_local_port(evcon: ptr evhttp_connection; port: uint16)		154
+nim	evhttp_connection_set_timeout	libevent/bindings/http.html#evhttp_connection_set_timeout,ptr.evhttp_connection,cint	proc evhttp_connection_set_timeout(evcon: ptr evhttp_connection;\n                              timeout_in_secs: cint)		155
+nim	evhttp_connection_set_timeout_tv	libevent/bindings/http.html#evhttp_connection_set_timeout_tv,ptr.evhttp_connection,pointer	proc evhttp_connection_set_timeout_tv(evcon: ptr evhttp_connection; tv: pointer)		156
+nim	evhttp_connection_set_initial_retry_tv	libevent/bindings/http.html#evhttp_connection_set_initial_retry_tv,ptr.evhttp_connection,pointer	proc evhttp_connection_set_initial_retry_tv(evcon: ptr evhttp_connection; tv: pointer)		157
+nim	evhttp_connection_set_retries	libevent/bindings/http.html#evhttp_connection_set_retries,ptr.evhttp_connection,cint	proc evhttp_connection_set_retries(evcon: ptr evhttp_connection; retry_max: cint)		158
+nim	evhttp_connection_set_closecb	libevent/bindings/http.html#evhttp_connection_set_closecb,ptr.evhttp_connection,EvhttpConnectionCloseCb,pointer	proc evhttp_connection_set_closecb(evcon: ptr evhttp_connection;\n                              cb: EvhttpConnectionCloseCb; arg: pointer)		159
+nim	evhttp_connection_get_peer	libevent/bindings/http.html#evhttp_connection_get_peer,ptr.evhttp_connection,ptr.cstring,ptr.uint16	proc evhttp_connection_get_peer(evcon: ptr evhttp_connection; address: ptr cstring;\n                           port: ptr uint16)		160
+nim	evhttp_connection_get_addr	libevent/bindings/http.html#evhttp_connection_get_addr,ptr.evhttp_connection	proc evhttp_connection_get_addr(evcon: ptr evhttp_connection): pointer		161
+nim	evhttp_make_request	libevent/bindings/http.html#evhttp_make_request,ptr.evhttp_connection,ptr.evhttp_request,EvhttpCmdType,cstring	proc evhttp_make_request(evcon: ptr evhttp_connection; req: ptr evhttp_request;\n                    typ: EvhttpCmdType; uri: cstring): cint		162
+nim	evhttp_cancel_request	libevent/bindings/http.html#evhttp_cancel_request,ptr.evhttp_request	proc evhttp_cancel_request(req: ptr evhttp_request)		163
+nim	evhttp_request_get_uri	libevent/bindings/http.html#evhttp_request_get_uri,ptr.evhttp_request	proc evhttp_request_get_uri(req: ptr evhttp_request): cstring		166
+nim	evhttp_request_get_evhttp_uri	libevent/bindings/http.html#evhttp_request_get_evhttp_uri,ptr.evhttp_request	proc evhttp_request_get_evhttp_uri(req: ptr evhttp_request): ptr evhttp_uri		167
+nim	evhttp_request_get_command	libevent/bindings/http.html#evhttp_request_get_command,ptr.evhttp_request	proc evhttp_request_get_command(req: ptr evhttp_request): EvhttpCmdType		168
+nim	evhttp_request_get_response_code	libevent/bindings/http.html#evhttp_request_get_response_code,ptr.evhttp_request	proc evhttp_request_get_response_code(req: ptr evhttp_request): cint		169
+nim	evhttp_request_get_response_code_line	libevent/bindings/http.html#evhttp_request_get_response_code_line,ptr.evhttp_request	proc evhttp_request_get_response_code_line(req: ptr evhttp_request): cstring		170
+nim	evhttp_request_get_input_headers	libevent/bindings/http.html#evhttp_request_get_input_headers,ptr.evhttp_request	proc evhttp_request_get_input_headers(req: ptr evhttp_request): ptr evkeyvalq		171
+nim	evhttp_request_get_output_headers	libevent/bindings/http.html#evhttp_request_get_output_headers,ptr.evhttp_request	proc evhttp_request_get_output_headers(req: ptr evhttp_request): ptr evkeyvalq		172
+nim	evhttp_request_get_input_buffer	libevent/bindings/http.html#evhttp_request_get_input_buffer,ptr.evhttp_request	proc evhttp_request_get_input_buffer(req: ptr evhttp_request): ptr Evbuffer		173
+nim	evhttp_request_get_output_buffer	libevent/bindings/http.html#evhttp_request_get_output_buffer,ptr.evhttp_request	proc evhttp_request_get_output_buffer(req: ptr evhttp_request): ptr Evbuffer		174
+nim	evhttp_request_get_host	libevent/bindings/http.html#evhttp_request_get_host,ptr.evhttp_request	proc evhttp_request_get_host(req: ptr evhttp_request): cstring		175
+nim	evhttp_find_header	libevent/bindings/http.html#evhttp_find_header,ptr.evkeyvalq,cstring	proc evhttp_find_header(headers: ptr evkeyvalq; key: cstring): cstring		178
+nim	evhttp_remove_header	libevent/bindings/http.html#evhttp_remove_header,ptr.evkeyvalq,cstring	proc evhttp_remove_header(headers: ptr evkeyvalq; key: cstring): cint		179
+nim	evhttp_add_header	libevent/bindings/http.html#evhttp_add_header,ptr.evkeyvalq,cstring,cstring	proc evhttp_add_header(headers: ptr evkeyvalq; key: cstring; value: cstring): cint		180
+nim	evhttp_clear_headers	libevent/bindings/http.html#evhttp_clear_headers,ptr.evkeyvalq	proc evhttp_clear_headers(headers: ptr evkeyvalq)		181
+nim	evhttp_encode_uri	libevent/bindings/http.html#evhttp_encode_uri,cstring	proc evhttp_encode_uri(str: cstring): cstring		184
+nim	evhttp_uriencode	libevent/bindings/http.html#evhttp_uriencode,cstring,int64,cint	proc evhttp_uriencode(str: cstring; size: int64; space_to_plus: cint): cstring		185
+nim	evhttp_decode_uri	libevent/bindings/http.html#evhttp_decode_uri,cstring	proc evhttp_decode_uri(uri: cstring): cstring		186
+nim	evhttp_uridecode	libevent/bindings/http.html#evhttp_uridecode,cstring,cint,ptr.csize_t	proc evhttp_uridecode(uri: cstring; decode_plus: cint; size_out: ptr csize_t): cstring		187
+nim	evhttp_parse_query	libevent/bindings/http.html#evhttp_parse_query,cstring,ptr.evkeyvalq	proc evhttp_parse_query(uri: cstring; headers: ptr evkeyvalq): cint		188
+nim	evhttp_parse_query_str	libevent/bindings/http.html#evhttp_parse_query_str,cstring,ptr.evkeyvalq	proc evhttp_parse_query_str(query: cstring; headers: ptr evkeyvalq): cint		189
+nim	evhttp_htmlescape	libevent/bindings/http.html#evhttp_htmlescape,cstring	proc evhttp_htmlescape(html: cstring): cstring		190
+nim	evhttp_uri_new	libevent/bindings/http.html#evhttp_uri_new	proc evhttp_uri_new(): ptr evhttp_uri		193
+nim	evhttp_uri_set_flags	libevent/bindings/http.html#evhttp_uri_set_flags,ptr.evhttp_uri,cuint	proc evhttp_uri_set_flags(uri: ptr evhttp_uri; flags: cuint)		194
+nim	evhttp_uri_get_scheme	libevent/bindings/http.html#evhttp_uri_get_scheme,ptr.evhttp_uri	proc evhttp_uri_get_scheme(uri: ptr evhttp_uri): cstring		195
+nim	evhttp_uri_get_userinfo	libevent/bindings/http.html#evhttp_uri_get_userinfo,ptr.evhttp_uri	proc evhttp_uri_get_userinfo(uri: ptr evhttp_uri): cstring		196
+nim	evhttp_uri_get_host	libevent/bindings/http.html#evhttp_uri_get_host,ptr.evhttp_uri	proc evhttp_uri_get_host(uri: ptr evhttp_uri): cstring		197
+nim	evhttp_uri_get_port	libevent/bindings/http.html#evhttp_uri_get_port,ptr.evhttp_uri	proc evhttp_uri_get_port(uri: ptr evhttp_uri): cint		198
+nim	evhttp_uri_get_path	libevent/bindings/http.html#evhttp_uri_get_path,ptr.evhttp_uri	proc evhttp_uri_get_path(uri: ptr evhttp_uri): cstring		199
+nim	evhttp_uri_get_query	libevent/bindings/http.html#evhttp_uri_get_query,ptr.evhttp_uri	proc evhttp_uri_get_query(uri: ptr evhttp_uri): cstring		200
+nim	evhttp_uri_get_fragment	libevent/bindings/http.html#evhttp_uri_get_fragment,ptr.evhttp_uri	proc evhttp_uri_get_fragment(uri: ptr evhttp_uri): cstring		201
+nim	evhttp_uri_set_scheme	libevent/bindings/http.html#evhttp_uri_set_scheme,ptr.evhttp_uri,cstring	proc evhttp_uri_set_scheme(uri: ptr evhttp_uri; scheme: cstring): cint		202
+nim	evhttp_uri_set_userinfo	libevent/bindings/http.html#evhttp_uri_set_userinfo,ptr.evhttp_uri,cstring	proc evhttp_uri_set_userinfo(uri: ptr evhttp_uri; userinfo: cstring): cint		203
+nim	evhttp_uri_set_host	libevent/bindings/http.html#evhttp_uri_set_host,ptr.evhttp_uri,cstring	proc evhttp_uri_set_host(uri: ptr evhttp_uri; host: cstring): cint		204
+nim	evhttp_uri_set_port	libevent/bindings/http.html#evhttp_uri_set_port,ptr.evhttp_uri,cint	proc evhttp_uri_set_port(uri: ptr evhttp_uri; port: cint): cint		205
+nim	evhttp_uri_set_path	libevent/bindings/http.html#evhttp_uri_set_path,ptr.evhttp_uri,cstring	proc evhttp_uri_set_path(uri: ptr evhttp_uri; path: cstring): cint		206
+nim	evhttp_uri_set_query	libevent/bindings/http.html#evhttp_uri_set_query,ptr.evhttp_uri,cstring	proc evhttp_uri_set_query(uri: ptr evhttp_uri; query: cstring): cint		207
+nim	evhttp_uri_set_fragment	libevent/bindings/http.html#evhttp_uri_set_fragment,ptr.evhttp_uri,cstring	proc evhttp_uri_set_fragment(uri: ptr evhttp_uri; fragment: cstring): cint		208
+nim	evhttp_uri_parse_with_flags	libevent/bindings/http.html#evhttp_uri_parse_with_flags,cstring,cuint	proc evhttp_uri_parse_with_flags(source_uri: cstring; flags: cuint): ptr evhttp_uri		209
+nim	evhttp_uri_parse	libevent/bindings/http.html#evhttp_uri_parse,cstring	proc evhttp_uri_parse(source_uri: cstring): ptr evhttp_uri		210
+nim	evhttp_uri_free	libevent/bindings/http.html#evhttp_uri_free,ptr.evhttp_uri	proc evhttp_uri_free(uri: ptr evhttp_uri)		211
+nim	evhttp_uri_join	libevent/bindings/http.html#evhttp_uri_join,ptr.evhttp_uri,cstring,csize_t	proc evhttp_uri_join(uri: ptr evhttp_uri; buf: cstring; limit: csize_t): cstring		212
