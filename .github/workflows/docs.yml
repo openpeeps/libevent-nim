@@ -9,7 +9,7 @@ on:
 env:
   nim-version: 'stable'
   module-name: 'libevent'
-  nim-src: src/${{ env.module-name }}.nim
+  nim-src: src/libevent.nim
   deploy-dir: .gh-pages
 jobs:
   docs:
