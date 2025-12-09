@@ -4,110 +4,114 @@ nim	event	libevent/bindings/event.html#event	object event		22
 nim	event_config	libevent/bindings/event.html#event_config	object event_config		23
 nim	evutil_socket_t	libevent/bindings/event.html#evutil_socket_t	type evutil_socket_t		24
 nim	ev_uint64_t	libevent/bindings/event.html#ev_uint64_t	type ev_uint64_t		25
-nim	EventBase	libevent/bindings/event.html#EventBase	object EventBase		27
-nim	Event	libevent/bindings/event.html#Event_2	object Event		28
-nim	EventConfig	libevent/bindings/event.html#EventConfig	object EventConfig		29
-nim	PEventBase	libevent/bindings/event.html#PEventBase	type PEventBase		31
-nim	PEvent	libevent/bindings/event.html#PEvent	type PEvent		32
-nim	PEventConfig	libevent/bindings/event.html#PEventConfig	type PEventConfig		33
-nim	EventCallbackFn	libevent/bindings/event.html#EventCallbackFn	type EventCallbackFn		35
-nim	EventLogCb	libevent/bindings/event.html#EventLogCb	type EventLogCb		36
-nim	EventFatalCb	libevent/bindings/event.html#EventFatalCb	type EventFatalCb		37
-nim	EventFinalizeCallbackFn	libevent/bindings/event.html#EventFinalizeCallbackFn	type EventFinalizeCallbackFn		38
-nim	EventBaseForeachEventCb	libevent/bindings/event.html#EventBaseForeachEventCb	type EventBaseForeachEventCb		39
-nim	EV_TIMEOUT	libevent/bindings/event.html#EV_TIMEOUT	const EV_TIMEOUT		44
-nim	EV_READ	libevent/bindings/event.html#EV_READ	const EV_READ		45
-nim	EV_WRITE	libevent/bindings/event.html#EV_WRITE	const EV_WRITE		46
-nim	EV_SIGNAL	libevent/bindings/event.html#EV_SIGNAL	const EV_SIGNAL		47
-nim	EV_PERSIST	libevent/bindings/event.html#EV_PERSIST	const EV_PERSIST		48
-nim	EV_ET	libevent/bindings/event.html#EV_ET	const EV_ET		49
-nim	EV_FINALIZE	libevent/bindings/event.html#EV_FINALIZE	const EV_FINALIZE		50
-nim	EV_CLOSED	libevent/bindings/event.html#EV_CLOSED	const EV_CLOSED		51
-nim	EVENT_LOG_DEBUG	libevent/bindings/event.html#EVENT_LOG_DEBUG	const EVENT_LOG_DEBUG		54
-nim	EVENT_LOG_MSG	libevent/bindings/event.html#EVENT_LOG_MSG	const EVENT_LOG_MSG		55
-nim	EVENT_LOG_WARN	libevent/bindings/event.html#EVENT_LOG_WARN	const EVENT_LOG_WARN		56
-nim	EVENT_LOG_ERR	libevent/bindings/event.html#EVENT_LOG_ERR	const EVENT_LOG_ERR		57
-nim	EVENT_BASE_COUNT_ACTIVE	libevent/bindings/event.html#EVENT_BASE_COUNT_ACTIVE	const EVENT_BASE_COUNT_ACTIVE		60
-nim	EVENT_BASE_COUNT_VIRTUAL	libevent/bindings/event.html#EVENT_BASE_COUNT_VIRTUAL	const EVENT_BASE_COUNT_VIRTUAL		61
-nim	EVENT_BASE_COUNT_ADDED	libevent/bindings/event.html#EVENT_BASE_COUNT_ADDED	const EVENT_BASE_COUNT_ADDED		62
-nim	EV_FEATURE_ET	libevent/bindings/event.html#EV_FEATURE_ET	const EV_FEATURE_ET		65
-nim	EV_FEATURE_O1	libevent/bindings/event.html#EV_FEATURE_O1	const EV_FEATURE_O1		66
-nim	EV_FEATURE_FDS	libevent/bindings/event.html#EV_FEATURE_FDS	const EV_FEATURE_FDS		67
-nim	EV_FEATURE_EARLY_CLOSE	libevent/bindings/event.html#EV_FEATURE_EARLY_CLOSE	const EV_FEATURE_EARLY_CLOSE		68
-nim	EVENT_BASE_FLAG_NOLOCK	libevent/bindings/event.html#EVENT_BASE_FLAG_NOLOCK	const EVENT_BASE_FLAG_NOLOCK		71
-nim	EVENT_BASE_FLAG_IGNORE_ENV	libevent/bindings/event.html#EVENT_BASE_FLAG_IGNORE_ENV	const EVENT_BASE_FLAG_IGNORE_ENV		72
-nim	EVENT_BASE_FLAG_STARTUP_IOCP	libevent/bindings/event.html#EVENT_BASE_FLAG_STARTUP_IOCP	const EVENT_BASE_FLAG_STARTUP_IOCP		73
-nim	EVENT_BASE_FLAG_NO_CACHE_TIME	libevent/bindings/event.html#EVENT_BASE_FLAG_NO_CACHE_TIME	const EVENT_BASE_FLAG_NO_CACHE_TIME		74
-nim	EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST	libevent/bindings/event.html#EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST	const EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST		75
-nim	EVENT_BASE_FLAG_PRECISE_TIMER	libevent/bindings/event.html#EVENT_BASE_FLAG_PRECISE_TIMER	const EVENT_BASE_FLAG_PRECISE_TIMER		76
-nim	EVLOOP_ONCE	libevent/bindings/event.html#EVLOOP_ONCE	const EVLOOP_ONCE		79
-nim	EVLOOP_NONBLOCK	libevent/bindings/event.html#EVLOOP_NONBLOCK	const EVLOOP_NONBLOCK		80
-nim	EVLOOP_NO_EXIT_ON_EMPTY	libevent/bindings/event.html#EVLOOP_NO_EXIT_ON_EMPTY	const EVLOOP_NO_EXIT_ON_EMPTY		81
-nim	event_base_new	libevent/bindings/event.html#event_base_new	proc event_base_new(): ptr event_base		84
-nim	event_base_free	libevent/bindings/event.html#event_base_free,ptr.event_base	proc event_base_free(base: ptr event_base)		85
-nim	event_new	libevent/bindings/event.html#event_new,ptr.event_base,cint,cushort,EventCallbackFn,pointer	proc event_new(base: ptr event_base; fd: cint; events: cushort; cb: EventCallbackFn;\n          arg: pointer): ptr event		86
-nim	event_free	libevent/bindings/event.html#event_free,ptr.event	proc event_free(ev: ptr event)		87
-nim	event_add	libevent/bindings/event.html#event_add,ptr.event,pointer	proc event_add(ev: ptr event; timeout: pointer): cint		88
-nim	event_del	libevent/bindings/event.html#event_del,ptr.event	proc event_del(ev: ptr event): cint		89
-nim	event_base_dispatch	libevent/bindings/event.html#event_base_dispatch,ptr.event_base	proc event_base_dispatch(base: ptr event_base): cint		90
-nim	event_base_get_method	libevent/bindings/event.html#event_base_get_method,ptr.event_base	proc event_base_get_method(base: ptr event_base): cstring		91
-nim	event_get_supported_methods	libevent/bindings/event.html#event_get_supported_methods	proc event_get_supported_methods(): ptr cstring		92
-nim	event_gettime_monotonic	libevent/bindings/event.html#event_gettime_monotonic,ptr.event_base,pointer	proc event_gettime_monotonic(base: ptr event_base; tp: pointer): cint		93
-nim	event_base_get_num_events	libevent/bindings/event.html#event_base_get_num_events,ptr.event_base,cuint	proc event_base_get_num_events(base: ptr event_base; flags: cuint): cint		94
-nim	event_base_get_max_events	libevent/bindings/event.html#event_base_get_max_events,ptr.event_base,cuint,cint	proc event_base_get_max_events(base: ptr event_base; flags: cuint; clear: cint): cint		95
-nim	event_config_new	libevent/bindings/event.html#event_config_new	proc event_config_new(): ptr event_config		96
-nim	event_config_free	libevent/bindings/event.html#event_config_free,ptr.event_config	proc event_config_free(cfg: ptr event_config)		97
-nim	event_config_avoid_method	libevent/bindings/event.html#event_config_avoid_method,ptr.event_config,cstring	proc event_config_avoid_method(cfg: ptr event_config; method: cstring): cint		98
-nim	event_config_require_features	libevent/bindings/event.html#event_config_require_features,ptr.event_config,cint	proc event_config_require_features(cfg: ptr event_config; feature: cint): cint		99
-nim	event_config_set_flag	libevent/bindings/event.html#event_config_set_flag,ptr.event_config,cint	proc event_config_set_flag(cfg: ptr event_config; flag: cint): cint		100
-nim	event_config_set_num_cpus_hint	libevent/bindings/event.html#event_config_set_num_cpus_hint,ptr.event_config,cint	proc event_config_set_num_cpus_hint(cfg: ptr event_config; cpus: cint): cint		101
-nim	event_config_set_max_dispatch_interval	libevent/bindings/event.html#event_config_set_max_dispatch_interval,ptr.event_config,pointer,cint,cint	proc event_config_set_max_dispatch_interval(cfg: ptr event_config;\n                                       max_interval: pointer;\n                                       max_callbacks: cint; min_priority: cint): cint		102
-nim	event_base_new_with_config	libevent/bindings/event.html#event_base_new_with_config,ptr.event_config	proc event_base_new_with_config(cfg: ptr event_config): ptr event_base		108
-nim	event_base_free_nofinalize	libevent/bindings/event.html#event_base_free_nofinalize,ptr.event_base	proc event_base_free_nofinalize(base: ptr event_base)		109
-nim	event_self_cbarg	libevent/bindings/event.html#event_self_cbarg	proc event_self_cbarg(): pointer		110
-nim	event_base_loop	libevent/bindings/event.html#event_base_loop,ptr.event_base,cint	proc event_base_loop(base: ptr event_base; flags: cint): cint		111
-nim	event_base_loopexit	libevent/bindings/event.html#event_base_loopexit,ptr.event_base,pointer	proc event_base_loopexit(base: ptr event_base; tv: pointer): cint		112
-nim	event_base_loopbreak	libevent/bindings/event.html#event_base_loopbreak,ptr.event_base	proc event_base_loopbreak(base: ptr event_base): cint		113
-nim	event_base_loopcontinue	libevent/bindings/event.html#event_base_loopcontinue,ptr.event_base	proc event_base_loopcontinue(base: ptr event_base): cint		114
-nim	event_base_get_features	libevent/bindings/event.html#event_base_get_features,ptr.event_base	proc event_base_get_features(base: ptr event_base): cint		115
-nim	event_base_set	libevent/bindings/event.html#event_base_set,ptr.event_base,ptr.event	proc event_base_set(base: ptr event_base; ev: ptr event): cint		116
-nim	event_assign	libevent/bindings/event.html#event_assign,ptr.event,ptr.event_base,cint,cushort,EventCallbackFn,pointer	proc event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;\n             cb: EventCallbackFn; arg: pointer): cint		117
-nim	event_finalize	libevent/bindings/event.html#event_finalize,cuint,ptr.event,EventFinalizeCallbackFn	proc event_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint		126
-nim	event_free_finalize	libevent/bindings/event.html#event_free_finalize,cuint,ptr.event,EventFinalizeCallbackFn	proc event_free_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint		127
-nim	event_base_once	libevent/bindings/event.html#event_base_once,ptr.event_base,cint,cushort,EventCallbackFn,pointer,pointer	proc event_base_once(base: ptr event_base; fd: cint; events: cushort;\n                cb: EventCallbackFn; arg: pointer; timeout: pointer): cint		128
-nim	event_remove_timer	libevent/bindings/event.html#event_remove_timer,ptr.event	proc event_remove_timer(ev: ptr event): cint		129
-nim	event_del_noblock	libevent/bindings/event.html#event_del_noblock,ptr.event	proc event_del_noblock(ev: ptr event): cint		130
-nim	event_del_block	libevent/bindings/event.html#event_del_block,ptr.event	proc event_del_block(ev: ptr event): cint		131
-nim	event_active	libevent/bindings/event.html#event_active,ptr.event,cint,cushort	proc event_active(ev: ptr event; res: cint; ncalls: cushort)		132
-nim	event_pending	libevent/bindings/event.html#event_pending,ptr.event,cushort,pointer	proc event_pending(ev: ptr event; events: cushort; tv: pointer): cint		133
-nim	event_base_get_running_event	libevent/bindings/event.html#event_base_get_running_event,ptr.event_base	proc event_base_get_running_event(base: ptr event_base): ptr event		134
-nim	event_initialized	libevent/bindings/event.html#event_initialized,ptr.event	proc event_initialized(ev: ptr event): cint		135
-nim	event_get_fd	libevent/bindings/event.html#event_get_fd,ptr.event	proc event_get_fd(ev: ptr event): cint		136
-nim	event_get_base	libevent/bindings/event.html#event_get_base,ptr.event	proc event_get_base(ev: ptr event): ptr event_base		137
-nim	event_get_events	libevent/bindings/event.html#event_get_events,ptr.event	proc event_get_events(ev: ptr event): cushort		138
-nim	event_get_callback	libevent/bindings/event.html#event_get_callback,ptr.event	proc event_get_callback(ev: ptr event): EventCallbackFn		139
-nim	event_get_callback_arg	libevent/bindings/event.html#event_get_callback_arg,ptr.event	proc event_get_callback_arg(ev: ptr event): pointer		140
-nim	event_get_priority	libevent/bindings/event.html#event_get_priority,ptr.event	proc event_get_priority(ev: ptr event): cint		141
-nim	event_get_assignment	libevent/bindings/event.html#event_get_assignment,ptr.event,ptr.ptr.event_base,ptr.cint,ptr.cushort,ptr.EventCallbackFn,ptr.pointer	proc event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;\n                     fd_out: ptr cint; events_out: ptr cushort;\n                     cb_out: ptr EventCallbackFn; arg_out: ptr pointer)		142
-nim	event_size	libevent/bindings/event.html#event_size	proc event_size(): csize_t		150
-nim	event_get_version	libevent/bindings/event.html#event_get_version	proc event_get_version(): cstring		151
-nim	event_get_version_number	libevent/bindings/event.html#event_get_version_number	proc event_get_version_number(): uint32		152
-nim	event_base_priority_init	libevent/bindings/event.html#event_base_priority_init,ptr.event_base,cint	proc event_base_priority_init(base: ptr event_base; npriorities: cint): cint		153
-nim	event_base_get_npriorities	libevent/bindings/event.html#event_base_get_npriorities,ptr.event_base	proc event_base_get_npriorities(base: ptr event_base): cint		154
-nim	event_priority_set	libevent/bindings/event.html#event_priority_set,ptr.event,cint	proc event_priority_set(ev: ptr event; priority: cint): cint		155
-nim	event_base_init_common_timeout	libevent/bindings/event.html#event_base_init_common_timeout,ptr.event_base,pointer	proc event_base_init_common_timeout(base: ptr event_base; duration: pointer): pointer		156
-nim	event_enable_debug_mode	libevent/bindings/event.html#event_enable_debug_mode	proc event_enable_debug_mode()		157
-nim	event_debug_unassign	libevent/bindings/event.html#event_debug_unassign,ptr.event	proc event_debug_unassign(ev: ptr event)		158
-nim	event_set_log_callback	libevent/bindings/event.html#event_set_log_callback,EventLogCb	proc event_set_log_callback(cb: EventLogCb)		159
-nim	event_set_fatal_callback	libevent/bindings/event.html#event_set_fatal_callback,EventFatalCb	proc event_set_fatal_callback(cb: EventFatalCb)		160
-nim	event_enable_debug_logging	libevent/bindings/event.html#event_enable_debug_logging,uint32	proc event_enable_debug_logging(which: uint32)		161
-nim	event_base_got_exit	libevent/bindings/event.html#event_base_got_exit,ptr.event_base	proc event_base_got_exit(base: ptr event_base): cint		162
-nim	event_base_got_break	libevent/bindings/event.html#event_base_got_break,ptr.event_base	proc event_base_got_break(base: ptr event_base): cint		163
-nim	event_base_dump_events	libevent/bindings/event.html#event_base_dump_events,ptr.event_base,pointer	proc event_base_dump_events(base: ptr event_base; output: pointer)		164
-nim	event_base_active_by_fd	libevent/bindings/event.html#event_base_active_by_fd,ptr.event_base,cint,cushort	proc event_base_active_by_fd(base: ptr event_base; fd: cint; events: cushort)		165
-nim	event_base_active_by_signal	libevent/bindings/event.html#event_base_active_by_signal,ptr.event_base,cint	proc event_base_active_by_signal(base: ptr event_base; sig: cint)		166
-nim	event_base_foreach_event	libevent/bindings/event.html#event_base_foreach_event,ptr.event_base,EventBaseForeachEventCb,pointer	proc event_base_foreach_event(base: ptr event_base; fn: EventBaseForeachEventCb;\n                         arg: pointer): cint		167
-nim	event_base_gettimeofday_cached	libevent/bindings/event.html#event_base_gettimeofday_cached,ptr.event_base,pointer	proc event_base_gettimeofday_cached(base: ptr event_base; tv: pointer): cint		168
-nim	event_base_update_cache_time	libevent/bindings/event.html#event_base_update_cache_time,ptr.event_base	proc event_base_update_cache_time(base: ptr event_base): cint		169
-nim	libevent_global_shutdown	libevent/bindings/event.html#libevent_global_shutdown	proc libevent_global_shutdown()		170
-nim	event_set_mem_functions	libevent/bindings/event.html#event_set_mem_functions,proc(csize_t),proc(pointer,csize_t),proc(pointer)	proc event_set_mem_functions(malloc_fn: proc (sz: csize_t): pointer {.cdecl.};\n    realloc_fn: proc (ptr: pointer; sz: csize_t): pointer {.cdecl.};\n                        free_fn: proc (ptr: pointer) {.cdecl.})		171
+nim	Timeval	libevent/bindings/event.html#Timeval	object Timeval		27
+nim	EventBase	libevent/bindings/event.html#EventBase	object EventBase		32
+nim	Event	libevent/bindings/event.html#Event_2	object Event		33
+nim	EventConfig	libevent/bindings/event.html#EventConfig	object EventConfig		34
+nim	PEventBase	libevent/bindings/event.html#PEventBase	type PEventBase		36
+nim	PEvent	libevent/bindings/event.html#PEvent	type PEvent		37
+nim	PEventConfig	libevent/bindings/event.html#PEventConfig	type PEventConfig		38
+nim	EventCallbackFn	libevent/bindings/event.html#EventCallbackFn	type EventCallbackFn		40
+nim	EventLogCb	libevent/bindings/event.html#EventLogCb	type EventLogCb		41
+nim	EventFatalCb	libevent/bindings/event.html#EventFatalCb	type EventFatalCb		42
+nim	EventFinalizeCallbackFn	libevent/bindings/event.html#EventFinalizeCallbackFn	type EventFinalizeCallbackFn		43
+nim	EventBaseForeachEventCb	libevent/bindings/event.html#EventBaseForeachEventCb	type EventBaseForeachEventCb		44
+nim	EV_TIMEOUT	libevent/bindings/event.html#EV_TIMEOUT	const EV_TIMEOUT		49
+nim	EV_READ	libevent/bindings/event.html#EV_READ	const EV_READ		50
+nim	EV_WRITE	libevent/bindings/event.html#EV_WRITE	const EV_WRITE		51
+nim	EV_SIGNAL	libevent/bindings/event.html#EV_SIGNAL	const EV_SIGNAL		52
+nim	EV_PERSIST	libevent/bindings/event.html#EV_PERSIST	const EV_PERSIST		53
+nim	EV_ET	libevent/bindings/event.html#EV_ET	const EV_ET		54
+nim	EV_FINALIZE	libevent/bindings/event.html#EV_FINALIZE	const EV_FINALIZE		55
+nim	EV_CLOSED	libevent/bindings/event.html#EV_CLOSED	const EV_CLOSED		56
+nim	EVENT_LOG_DEBUG	libevent/bindings/event.html#EVENT_LOG_DEBUG	const EVENT_LOG_DEBUG		59
+nim	EVENT_LOG_MSG	libevent/bindings/event.html#EVENT_LOG_MSG	const EVENT_LOG_MSG		60
+nim	EVENT_LOG_WARN	libevent/bindings/event.html#EVENT_LOG_WARN	const EVENT_LOG_WARN		61
+nim	EVENT_LOG_ERR	libevent/bindings/event.html#EVENT_LOG_ERR	const EVENT_LOG_ERR		62
+nim	EVENT_BASE_COUNT_ACTIVE	libevent/bindings/event.html#EVENT_BASE_COUNT_ACTIVE	const EVENT_BASE_COUNT_ACTIVE		65
+nim	EVENT_BASE_COUNT_VIRTUAL	libevent/bindings/event.html#EVENT_BASE_COUNT_VIRTUAL	const EVENT_BASE_COUNT_VIRTUAL		66
+nim	EVENT_BASE_COUNT_ADDED	libevent/bindings/event.html#EVENT_BASE_COUNT_ADDED	const EVENT_BASE_COUNT_ADDED		67
+nim	EV_FEATURE_ET	libevent/bindings/event.html#EV_FEATURE_ET	const EV_FEATURE_ET		70
+nim	EV_FEATURE_O1	libevent/bindings/event.html#EV_FEATURE_O1	const EV_FEATURE_O1		71
+nim	EV_FEATURE_FDS	libevent/bindings/event.html#EV_FEATURE_FDS	const EV_FEATURE_FDS		72
+nim	EV_FEATURE_EARLY_CLOSE	libevent/bindings/event.html#EV_FEATURE_EARLY_CLOSE	const EV_FEATURE_EARLY_CLOSE		73
+nim	EVENT_BASE_FLAG_NOLOCK	libevent/bindings/event.html#EVENT_BASE_FLAG_NOLOCK	const EVENT_BASE_FLAG_NOLOCK		76
+nim	EVENT_BASE_FLAG_IGNORE_ENV	libevent/bindings/event.html#EVENT_BASE_FLAG_IGNORE_ENV	const EVENT_BASE_FLAG_IGNORE_ENV		77
+nim	EVENT_BASE_FLAG_STARTUP_IOCP	libevent/bindings/event.html#EVENT_BASE_FLAG_STARTUP_IOCP	const EVENT_BASE_FLAG_STARTUP_IOCP		78
+nim	EVENT_BASE_FLAG_NO_CACHE_TIME	libevent/bindings/event.html#EVENT_BASE_FLAG_NO_CACHE_TIME	const EVENT_BASE_FLAG_NO_CACHE_TIME		79
+nim	EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST	libevent/bindings/event.html#EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST	const EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST		80
+nim	EVENT_BASE_FLAG_PRECISE_TIMER	libevent/bindings/event.html#EVENT_BASE_FLAG_PRECISE_TIMER	const EVENT_BASE_FLAG_PRECISE_TIMER		81
+nim	EVLOOP_ONCE	libevent/bindings/event.html#EVLOOP_ONCE	const EVLOOP_ONCE		84
+nim	EVLOOP_NONBLOCK	libevent/bindings/event.html#EVLOOP_NONBLOCK	const EVLOOP_NONBLOCK		85
+nim	EVLOOP_NO_EXIT_ON_EMPTY	libevent/bindings/event.html#EVLOOP_NO_EXIT_ON_EMPTY	const EVLOOP_NO_EXIT_ON_EMPTY		86
+nim	event_base_new	libevent/bindings/event.html#event_base_new	proc event_base_new(): ptr event_base		89
+nim	event_base_free	libevent/bindings/event.html#event_base_free,ptr.event_base	proc event_base_free(base: ptr event_base)		90
+nim	event_new	libevent/bindings/event.html#event_new,ptr.event_base,cint,cushort,EventCallbackFn,pointer	proc event_new(base: ptr event_base; fd: cint; events: cushort; cb: EventCallbackFn;\n          arg: pointer): ptr event		91
+nim	event_free	libevent/bindings/event.html#event_free,ptr.event	proc event_free(ev: ptr event)		92
+nim	event_add	libevent/bindings/event.html#event_add,ptr.event,pointer	proc event_add(ev: ptr event; timeout: pointer): cint		93
+nim	event_del	libevent/bindings/event.html#event_del,ptr.event	proc event_del(ev: ptr event): cint		94
+nim	event_base_dispatch	libevent/bindings/event.html#event_base_dispatch,ptr.event_base	proc event_base_dispatch(base: ptr event_base): cint		95
+nim	event_base_get_method	libevent/bindings/event.html#event_base_get_method,ptr.event_base	proc event_base_get_method(base: ptr event_base): cstring		96
+nim	event_get_supported_methods	libevent/bindings/event.html#event_get_supported_methods	proc event_get_supported_methods(): ptr cstring		97
+nim	event_gettime_monotonic	libevent/bindings/event.html#event_gettime_monotonic,ptr.event_base,pointer	proc event_gettime_monotonic(base: ptr event_base; tp: pointer): cint		98
+nim	event_base_get_num_events	libevent/bindings/event.html#event_base_get_num_events,ptr.event_base,cuint	proc event_base_get_num_events(base: ptr event_base; flags: cuint): cint		99
+nim	event_base_get_max_events	libevent/bindings/event.html#event_base_get_max_events,ptr.event_base,cuint,cint	proc event_base_get_max_events(base: ptr event_base; flags: cuint; clear: cint): cint		100
+nim	event_config_new	libevent/bindings/event.html#event_config_new	proc event_config_new(): ptr event_config		101
+nim	event_config_free	libevent/bindings/event.html#event_config_free,ptr.event_config	proc event_config_free(cfg: ptr event_config)		102
+nim	event_config_avoid_method	libevent/bindings/event.html#event_config_avoid_method,ptr.event_config,cstring	proc event_config_avoid_method(cfg: ptr event_config; method: cstring): cint		103
+nim	event_config_require_features	libevent/bindings/event.html#event_config_require_features,ptr.event_config,cint	proc event_config_require_features(cfg: ptr event_config; feature: cint): cint		104
+nim	event_config_set_flag	libevent/bindings/event.html#event_config_set_flag,ptr.event_config,cint	proc event_config_set_flag(cfg: ptr event_config; flag: cint): cint		105
+nim	event_config_set_num_cpus_hint	libevent/bindings/event.html#event_config_set_num_cpus_hint,ptr.event_config,cint	proc event_config_set_num_cpus_hint(cfg: ptr event_config; cpus: cint): cint		106
+nim	event_config_set_max_dispatch_interval	libevent/bindings/event.html#event_config_set_max_dispatch_interval,ptr.event_config,pointer,cint,cint	proc event_config_set_max_dispatch_interval(cfg: ptr event_config;\n                                       max_interval: pointer;\n                                       max_callbacks: cint; min_priority: cint): cint		107
+nim	event_base_new_with_config	libevent/bindings/event.html#event_base_new_with_config,ptr.event_config	proc event_base_new_with_config(cfg: ptr event_config): ptr event_base		113
+nim	event_base_free_nofinalize	libevent/bindings/event.html#event_base_free_nofinalize,ptr.event_base	proc event_base_free_nofinalize(base: ptr event_base)		114
+nim	event_self_cbarg	libevent/bindings/event.html#event_self_cbarg	proc event_self_cbarg(): pointer		115
+nim	event_base_loop	libevent/bindings/event.html#event_base_loop,ptr.event_base,cint	proc event_base_loop(base: ptr event_base; flags: cint): cint		116
+nim	event_base_loopexit	libevent/bindings/event.html#event_base_loopexit,ptr.event_base,pointer	proc event_base_loopexit(base: ptr event_base; tv: pointer): cint		117
+nim	event_base_loopbreak	libevent/bindings/event.html#event_base_loopbreak,ptr.event_base	proc event_base_loopbreak(base: ptr event_base): cint		118
+nim	event_base_loopcontinue	libevent/bindings/event.html#event_base_loopcontinue,ptr.event_base	proc event_base_loopcontinue(base: ptr event_base): cint		119
+nim	event_base_get_features	libevent/bindings/event.html#event_base_get_features,ptr.event_base	proc event_base_get_features(base: ptr event_base): cint		120
+nim	event_base_set	libevent/bindings/event.html#event_base_set,ptr.event_base,ptr.event	proc event_base_set(base: ptr event_base; ev: ptr event): cint		121
+nim	event_assign	libevent/bindings/event.html#event_assign,ptr.event,ptr.event_base,cint,cushort,EventCallbackFn,pointer	proc event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;\n             cb: EventCallbackFn; arg: pointer): cint		122
+nim	event_finalize	libevent/bindings/event.html#event_finalize,cuint,ptr.event,EventFinalizeCallbackFn	proc event_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint		131
+nim	event_free_finalize	libevent/bindings/event.html#event_free_finalize,cuint,ptr.event,EventFinalizeCallbackFn	proc event_free_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint		132
+nim	event_base_once	libevent/bindings/event.html#event_base_once,ptr.event_base,cint,cushort,EventCallbackFn,pointer,pointer	proc event_base_once(base: ptr event_base; fd: cint; events: cushort;\n                cb: EventCallbackFn; arg: pointer; timeout: pointer): cint		133
+nim	event_remove_timer	libevent/bindings/event.html#event_remove_timer,ptr.event	proc event_remove_timer(ev: ptr event): cint		134
+nim	event_del_noblock	libevent/bindings/event.html#event_del_noblock,ptr.event	proc event_del_noblock(ev: ptr event): cint		135
+nim	event_del_block	libevent/bindings/event.html#event_del_block,ptr.event	proc event_del_block(ev: ptr event): cint		136
+nim	event_active	libevent/bindings/event.html#event_active,ptr.event,cint,cushort	proc event_active(ev: ptr event; res: cint; ncalls: cushort)		137
+nim	event_pending	libevent/bindings/event.html#event_pending,ptr.event,cushort,pointer	proc event_pending(ev: ptr event; events: cushort; tv: pointer): cint		138
+nim	event_base_get_running_event	libevent/bindings/event.html#event_base_get_running_event,ptr.event_base	proc event_base_get_running_event(base: ptr event_base): ptr event		139
+nim	event_initialized	libevent/bindings/event.html#event_initialized,ptr.event	proc event_initialized(ev: ptr event): cint		140
+nim	event_get_fd	libevent/bindings/event.html#event_get_fd,ptr.event	proc event_get_fd(ev: ptr event): cint		141
+nim	event_get_base	libevent/bindings/event.html#event_get_base,ptr.event	proc event_get_base(ev: ptr event): ptr event_base		142
+nim	event_get_events	libevent/bindings/event.html#event_get_events,ptr.event	proc event_get_events(ev: ptr event): cushort		143
+nim	event_get_callback	libevent/bindings/event.html#event_get_callback,ptr.event	proc event_get_callback(ev: ptr event): EventCallbackFn		144
+nim	event_get_callback_arg	libevent/bindings/event.html#event_get_callback_arg,ptr.event	proc event_get_callback_arg(ev: ptr event): pointer		145
+nim	event_get_priority	libevent/bindings/event.html#event_get_priority,ptr.event	proc event_get_priority(ev: ptr event): cint		146
+nim	event_get_assignment	libevent/bindings/event.html#event_get_assignment,ptr.event,ptr.ptr.event_base,ptr.cint,ptr.cushort,ptr.EventCallbackFn,ptr.pointer	proc event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;\n                     fd_out: ptr cint; events_out: ptr cushort;\n                     cb_out: ptr EventCallbackFn; arg_out: ptr pointer)		147
+nim	event_size	libevent/bindings/event.html#event_size	proc event_size(): csize_t		155
+nim	event_get_version	libevent/bindings/event.html#event_get_version	proc event_get_version(): cstring		156
+nim	event_get_version_number	libevent/bindings/event.html#event_get_version_number	proc event_get_version_number(): uint32		157
+nim	event_base_priority_init	libevent/bindings/event.html#event_base_priority_init,ptr.event_base,cint	proc event_base_priority_init(base: ptr event_base; npriorities: cint): cint		158
+nim	event_base_get_npriorities	libevent/bindings/event.html#event_base_get_npriorities,ptr.event_base	proc event_base_get_npriorities(base: ptr event_base): cint		159
+nim	event_priority_set	libevent/bindings/event.html#event_priority_set,ptr.event,cint	proc event_priority_set(ev: ptr event; priority: cint): cint		160
+nim	event_base_init_common_timeout	libevent/bindings/event.html#event_base_init_common_timeout,ptr.event_base,pointer	proc event_base_init_common_timeout(base: ptr event_base; duration: pointer): pointer		161
+nim	event_enable_debug_mode	libevent/bindings/event.html#event_enable_debug_mode	proc event_enable_debug_mode()		162
+nim	event_debug_unassign	libevent/bindings/event.html#event_debug_unassign,ptr.event	proc event_debug_unassign(ev: ptr event)		163
+nim	event_set_log_callback	libevent/bindings/event.html#event_set_log_callback,EventLogCb	proc event_set_log_callback(cb: EventLogCb)		164
+nim	event_set_fatal_callback	libevent/bindings/event.html#event_set_fatal_callback,EventFatalCb	proc event_set_fatal_callback(cb: EventFatalCb)		165
+nim	event_enable_debug_logging	libevent/bindings/event.html#event_enable_debug_logging,uint32	proc event_enable_debug_logging(which: uint32)		166
+nim	event_base_got_exit	libevent/bindings/event.html#event_base_got_exit,ptr.event_base	proc event_base_got_exit(base: ptr event_base): cint		167
+nim	event_base_got_break	libevent/bindings/event.html#event_base_got_break,ptr.event_base	proc event_base_got_break(base: ptr event_base): cint		168
+nim	event_base_dump_events	libevent/bindings/event.html#event_base_dump_events,ptr.event_base,pointer	proc event_base_dump_events(base: ptr event_base; output: pointer)		169
+nim	event_base_active_by_fd	libevent/bindings/event.html#event_base_active_by_fd,ptr.event_base,cint,cushort	proc event_base_active_by_fd(base: ptr event_base; fd: cint; events: cushort)		170
+nim	event_base_active_by_signal	libevent/bindings/event.html#event_base_active_by_signal,ptr.event_base,cint	proc event_base_active_by_signal(base: ptr event_base; sig: cint)		171
+nim	event_base_foreach_event	libevent/bindings/event.html#event_base_foreach_event,ptr.event_base,EventBaseForeachEventCb,pointer	proc event_base_foreach_event(base: ptr event_base; fn: EventBaseForeachEventCb;\n                         arg: pointer): cint		172
+nim	event_base_gettimeofday_cached	libevent/bindings/event.html#event_base_gettimeofday_cached,ptr.event_base,pointer	proc event_base_gettimeofday_cached(base: ptr event_base; tv: pointer): cint		173
+nim	event_base_update_cache_time	libevent/bindings/event.html#event_base_update_cache_time,ptr.event_base	proc event_base_update_cache_time(base: ptr event_base): cint		174
+nim	libevent_global_shutdown	libevent/bindings/event.html#libevent_global_shutdown	proc libevent_global_shutdown()		175
+nim	event_set_mem_functions	libevent/bindings/event.html#event_set_mem_functions,proc(csize_t),proc(pointer,csize_t),proc(pointer)	proc event_set_mem_functions(malloc_fn: proc (sz: csize_t): pointer {.cdecl.};\n    realloc_fn: proc (ptr: pointer; sz: csize_t): pointer {.cdecl.};\n                        free_fn: proc (ptr: pointer) {.cdecl.})		176
+nim	evtimer_add	libevent/bindings/event.html#evtimer_add,ptr.event,ptr.Timeval	proc evtimer_add(ev: ptr event; timeout: ptr Timeval): cint		183
+nim	evtimer_new	libevent/bindings/event.html#evtimer_new,ptr.event_base,EventCallbackFn,pointer	proc evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event		184
+nim	evtimer_del	libevent/bindings/event.html#evtimer_del,ptr.event	proc evtimer_del(ev: ptr event): cint		185

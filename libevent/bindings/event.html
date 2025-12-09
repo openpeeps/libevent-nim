@@ -74,6 +74,9 @@
 <li><a class="reference" href="#PEvent" title="PEvent = ptr event">PEvent</a></li>
 <li><a class="reference" href="#PEventBase" title="PEventBase = ptr event_base">PEventBase</a></li>
 <li><a class="reference" href="#PEventConfig" title="PEventConfig = ptr event_config">PEventConfig</a></li>
+<li><a class="reference" href="#Timeval" title="Timeval {.importc: &quot;struct timeval&quot;, header: &quot;&lt;sys/time.h&gt;&quot;.} = object
+  tv_sec*: clong
+  tv_usec*: clong">Timeval</a></li>
 
     </ul>
   </details>
@@ -406,6 +409,18 @@
   <li><a class="reference" href="#event_size" title="event_size(): csize_t">event_size(): csize_t</a></li>
 
 </ul>
+<ul class="simple nested-toc-section">evtimer_add
+  <li><a class="reference" href="#evtimer_add%2Cptr.event%2Cptr.Timeval" title="evtimer_add(ev: ptr event; timeout: ptr Timeval): cint">evtimer_add(ev: ptr event; timeout: ptr Timeval): cint</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">evtimer_del
+  <li><a class="reference" href="#evtimer_del%2Cptr.event" title="evtimer_del(ev: ptr event): cint">evtimer_del(ev: ptr event): cint</a></li>
+
+</ul>
+<ul class="simple nested-toc-section">evtimer_new
+  <li><a class="reference" href="#evtimer_new%2Cptr.event_base%2CEventCallbackFn%2Cpointer" title="evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event">evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event</a></li>
+
+</ul>
 <ul class="simple nested-toc-section">libevent_global_shutdown
   <li><a class="reference" href="#libevent_global_shutdown" title="libevent_global_shutdown()">libevent_global_shutdown()</a></li>
 
@@ -551,6 +566,16 @@
 </div>
 <div id="PEventConfig">
   <dt><pre><a href="event.html#PEventConfig"><span class="Identifier">PEventConfig</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="Timeval">
+  <dt><pre><a href="event.html#Timeval"><span class="Identifier">Timeval</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct timeval&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;sys/time.h&gt;&quot;</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
+  <span class="Identifier">tv_sec</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">clong</span>
+  <span class="Identifier">tv_usec</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">clong</span></pre></dt>
   <dd>
     
     
@@ -1607,6 +1632,42 @@
 </div>
 
 </div>
+<div id="evtimer_add-procs-all">
+  <div id="evtimer_add,ptr.event,ptr.Timeval">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_add%2Cptr.event%2Cptr.Timeval"><span class="Identifier">evtimer_add</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#Timeval"><span class="Identifier">Timeval</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+    <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="evtimer_del-procs-all">
+  <div id="evtimer_del,ptr.event">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_del%2Cptr.event"><span class="Identifier">evtimer_del</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+                                        <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
+<div id="evtimer_new-procs-all">
+  <div id="evtimer_new,ptr.event_base,EventCallbackFn,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_new%2Cptr.event_base%2CEventCallbackFn%2Cpointer"><span class="Identifier">evtimer_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.
+    <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+
+</div>
 <div id="libevent_global_shutdown-procs-all">
   <div id="libevent_global_shutdown">
   <dt><pre><span class="Keyword">proc</span> <a href="#libevent_global_shutdown"><span class="Identifier">libevent_global_shutdown</span></a><span class="Other">(</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
@@ -1629,7 +1690,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-11-25 15:54:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-12-09 00:29:30 UTC</small>
       </div>
     </div>
   </div>

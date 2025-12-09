@@ -1,18 +1,17 @@
 nimTitle	listener	libevent/bindings/listener.html	module libevent/bindings/listener		0
-nim	sockaddr	libevent/bindings/listener.html#sockaddr	object sockaddr		15
-nim	evconnlistener_cb	libevent/bindings/listener.html#evconnlistener_cb	type evconnlistener_cb		17
-nim	evconnlistener_errorcb	libevent/bindings/listener.html#evconnlistener_errorcb	type evconnlistener_errorcb		25
-nim	LEV_OPT_LEAVE_SOCKETS_BLOCKING	libevent/bindings/listener.html#LEV_OPT_LEAVE_SOCKETS_BLOCKING	const LEV_OPT_LEAVE_SOCKETS_BLOCKING		28
-nim	LEV_OPT_CLOSE_ON_FREE	libevent/bindings/listener.html#LEV_OPT_CLOSE_ON_FREE	const LEV_OPT_CLOSE_ON_FREE		29
-nim	LEV_OPT_CLOSE_ON_EXEC	libevent/bindings/listener.html#LEV_OPT_CLOSE_ON_EXEC	const LEV_OPT_CLOSE_ON_EXEC		30
-nim	LEV_OPT_REUSEABLE	libevent/bindings/listener.html#LEV_OPT_REUSEABLE	const LEV_OPT_REUSEABLE		31
-nim	LEV_OPT_THREADSAFE	libevent/bindings/listener.html#LEV_OPT_THREADSAFE	const LEV_OPT_THREADSAFE		32
-nim	LEV_OPT_DISABLED	libevent/bindings/listener.html#LEV_OPT_DISABLED	const LEV_OPT_DISABLED		33
-nim	LEV_OPT_DEFERRED_ACCEPT	libevent/bindings/listener.html#LEV_OPT_DEFERRED_ACCEPT	const LEV_OPT_DEFERRED_ACCEPT		34
-nim	LEV_OPT_REUSEABLE_PORT	libevent/bindings/listener.html#LEV_OPT_REUSEABLE_PORT	const LEV_OPT_REUSEABLE_PORT		35
-nim	LEV_OPT_BIND_IPV6ONLY	libevent/bindings/listener.html#LEV_OPT_BIND_IPV6ONLY	const LEV_OPT_BIND_IPV6ONLY		36
-nim	evconnlistener_new	libevent/bindings/listener.html#evconnlistener_new,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,evutil_socket_t	proc evconnlistener_new(base: ptr event_base; cb: evconnlistener_cb; res: pointer;\n                   flags: cuint; backlog: cint; fd: evutil_socket_t): ptr evconnlistener		38
-nim	evconnlistener_new_bind	libevent/bindings/listener.html#evconnlistener_new_bind,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,ptr.sockaddr,cint	proc evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;\n                        res: pointer; flags: cuint; backlog: cint;\n                        sa: ptr sockaddr; socklen: cint): ptr evconnlistener		41
+nim	evconnlistener_cb	libevent/bindings/listener.html#evconnlistener_cb	type evconnlistener_cb		15
+nim	evconnlistener_errorcb	libevent/bindings/listener.html#evconnlistener_errorcb	type evconnlistener_errorcb		23
+nim	LEV_OPT_LEAVE_SOCKETS_BLOCKING	libevent/bindings/listener.html#LEV_OPT_LEAVE_SOCKETS_BLOCKING	const LEV_OPT_LEAVE_SOCKETS_BLOCKING		26
+nim	LEV_OPT_CLOSE_ON_FREE	libevent/bindings/listener.html#LEV_OPT_CLOSE_ON_FREE	const LEV_OPT_CLOSE_ON_FREE		27
+nim	LEV_OPT_CLOSE_ON_EXEC	libevent/bindings/listener.html#LEV_OPT_CLOSE_ON_EXEC	const LEV_OPT_CLOSE_ON_EXEC		28
+nim	LEV_OPT_REUSEABLE	libevent/bindings/listener.html#LEV_OPT_REUSEABLE	const LEV_OPT_REUSEABLE		29
+nim	LEV_OPT_THREADSAFE	libevent/bindings/listener.html#LEV_OPT_THREADSAFE	const LEV_OPT_THREADSAFE		30
+nim	LEV_OPT_DISABLED	libevent/bindings/listener.html#LEV_OPT_DISABLED	const LEV_OPT_DISABLED		31
+nim	LEV_OPT_DEFERRED_ACCEPT	libevent/bindings/listener.html#LEV_OPT_DEFERRED_ACCEPT	const LEV_OPT_DEFERRED_ACCEPT		32
+nim	LEV_OPT_REUSEABLE_PORT	libevent/bindings/listener.html#LEV_OPT_REUSEABLE_PORT	const LEV_OPT_REUSEABLE_PORT		33
+nim	LEV_OPT_BIND_IPV6ONLY	libevent/bindings/listener.html#LEV_OPT_BIND_IPV6ONLY	const LEV_OPT_BIND_IPV6ONLY		34
+nim	evconnlistener_new	libevent/bindings/listener.html#evconnlistener_new,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,evutil_socket_t	proc evconnlistener_new(base: ptr event_base; cb: evconnlistener_cb; res: pointer;\n                   flags: cuint; backlog: cint; fd: evutil_socket_t): ptr evconnlistener		36
+nim	evconnlistener_new_bind	libevent/bindings/listener.html#evconnlistener_new_bind,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,ptr.SockAddr,cint	proc evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;\n                        res: pointer; flags: cuint; backlog: cint;\n                        sa: ptr SockAddr; socklen: cint): ptr evconnlistener		40
 nim	evconnlistener_free	libevent/bindings/listener.html#evconnlistener_free,ptr.evconnlistener	proc evconnlistener_free(lev: ptr evconnlistener)		44
 nim	evconnlistener_enable	libevent/bindings/listener.html#evconnlistener_enable,ptr.evconnlistener	proc evconnlistener_enable(lev: ptr evconnlistener): cint		45
 nim	evconnlistener_disable	libevent/bindings/listener.html#evconnlistener_disable,ptr.evconnlistener	proc evconnlistener_disable(lev: ptr evconnlistener): cint		46

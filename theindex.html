@@ -788,9 +788,9 @@
 <li><a class="reference external"
           data-doc-search-tag="listener: proc evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
                         res: pointer; flags: cuint; backlog: cint;
-                        sa: ptr sockaddr; socklen: cint): ptr evconnlistener" href="libevent/bindings/listener.html#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.sockaddr%2Ccint">listener: proc evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
+                        sa: ptr SockAddr; socklen: cint): ptr evconnlistener" href="libevent/bindings/listener.html#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.SockAddr%2Ccint">listener: proc evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
                         res: pointer; flags: cuint; backlog: cint;
-                        sa: ptr sockaddr; socklen: cint): ptr evconnlistener</a></li>
+                        sa: ptr SockAddr; socklen: cint): ptr evconnlistener</a></li>
           </ul></dd>
 <dt><a name="evconnlistener_set_cb" href="#evconnlistener_set_cb"><span>evconnlistener_set_cb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -994,13 +994,13 @@
 <li><a class="reference external"
           data-doc-search-tag="event: type EventCallbackFn" href="libevent/bindings/event.html#EventCallbackFn">event: type EventCallbackFn</a></li>
           </ul></dd>
-<dt><a name="EventConfig" href="#EventConfig"><span>EventConfig:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="event: object EventConfig" href="libevent/bindings/event.html#EventConfig">event: object EventConfig</a></li>
-          </ul></dd>
 <dt><a name="event_config" href="#event_config"><span>event_config:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: object event_config" href="libevent/bindings/event.html#event_config">event: object event_config</a></li>
+          </ul></dd>
+<dt><a name="EventConfig" href="#EventConfig"><span>EventConfig:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: object EventConfig" href="libevent/bindings/event.html#EventConfig">event: object EventConfig</a></li>
           </ul></dd>
 <dt><a name="event_config_avoid_method" href="#event_config_avoid_method"><span>event_config_avoid_method:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1842,6 +1842,18 @@
 <li><a class="reference external"
           data-doc-search-tag="event: const EV_TIMEOUT" href="libevent/bindings/event.html#EV_TIMEOUT">event: const EV_TIMEOUT</a></li>
           </ul></dd>
+<dt><a name="evtimer_add" href="#evtimer_add"><span>evtimer_add:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: proc evtimer_add(ev: ptr event; timeout: ptr Timeval): cint" href="libevent/bindings/event.html#evtimer_add%2Cptr.event%2Cptr.Timeval">event: proc evtimer_add(ev: ptr event; timeout: ptr Timeval): cint</a></li>
+          </ul></dd>
+<dt><a name="evtimer_del" href="#evtimer_del"><span>evtimer_del:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: proc evtimer_del(ev: ptr event): cint" href="libevent/bindings/event.html#evtimer_del%2Cptr.event">event: proc evtimer_del(ev: ptr event): cint</a></li>
+          </ul></dd>
+<dt><a name="evtimer_new" href="#evtimer_new"><span>evtimer_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: proc evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event" href="libevent/bindings/event.html#evtimer_new%2Cptr.event_base%2CEventCallbackFn%2Cpointer">event: proc evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event</a></li>
+          </ul></dd>
 <dt><a name="ev_token_bucket_cfg" href="#ev_token_bucket_cfg"><span>ev_token_bucket_cfg:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: object ev_token_bucket_cfg" href="libevent/bindings/bufferevent.html#ev_token_bucket_cfg">bufferevent: object ev_token_bucket_cfg</a></li>
@@ -1980,15 +1992,15 @@
 <li><a class="reference external"
           data-doc-search-tag="event: type PEventConfig" href="libevent/bindings/event.html#PEventConfig">event: type PEventConfig</a></li>
           </ul></dd>
-<dt><a name="sockaddr" href="#sockaddr"><span>sockaddr:</span></a></dt><dd><ul class="simple">
+<dt><a name="Timeval" href="#Timeval"><span>Timeval:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="listener: object sockaddr" href="libevent/bindings/listener.html#sockaddr">listener: object sockaddr</a></li>
+          data-doc-search-tag="event: object Timeval" href="libevent/bindings/event.html#Timeval">event: object Timeval</a></li>
           </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-11-25 15:54:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-12-09 00:29:30 UTC</small>
       </div>
     </div>
   </div>

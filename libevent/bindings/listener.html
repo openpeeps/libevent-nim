@@ -59,11 +59,10 @@
     <summary><a class="reference reference-toplevel" href="#7" id="57">Types</a></summary>
     <ul class="simple simple-toc-section">
       <li><a class="reference" href="#evconnlistener_cb" title="evconnlistener_cb = proc (listener: ptr evconnlistener; fd: evutil_socket_t;
-                          res: ptr sockaddr; socklen: cint; user_arg: pointer) {.
+                          res: ptr SockAddr; socklen: cint; user_arg: pointer) {.
     cdecl.}">evconnlistener_cb</a></li>
 <li><a class="reference" href="#evconnlistener_errorcb" title="evconnlistener_errorcb = proc (listener: ptr evconnlistener; user_arg: pointer) {.
     cdecl.}">evconnlistener_errorcb</a></li>
-<li><a class="reference" href="#sockaddr" title="sockaddr = object">sockaddr</a></li>
 
     </ul>
   </details>
@@ -116,11 +115,11 @@
 
 </ul>
 <ul class="simple nested-toc-section">evconnlistener_new_bind
-  <li><a class="reference" href="#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.sockaddr%2Ccint" title="evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
+  <li><a class="reference" href="#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.SockAddr%2Ccint" title="evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
                         res: pointer; flags: cuint; backlog: cint;
-                        sa: ptr sockaddr; socklen: cint): ptr evconnlistener">evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
+                        sa: ptr SockAddr; socklen: cint): ptr evconnlistener">evconnlistener_new_bind(base: ptr event_base; cb: evconnlistener_cb;
                         res: pointer; flags: cuint; backlog: cint;
-                        sa: ptr sockaddr; socklen: cint): ptr evconnlistener</a></li>
+                        sa: ptr SockAddr; socklen: cint): ptr evconnlistener</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evconnlistener_set_cb
@@ -159,7 +158,7 @@
   <dl class="item">
     <div id="evconnlistener_cb">
   <dt><pre><a href="listener.html#evconnlistener_cb"><span class="Identifier">evconnlistener_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">listener</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evconnlistener"><span class="Identifier">evconnlistener</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">;</span>
-                          <span class="Identifier">res</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="listener.html#sockaddr"><span class="Identifier">sockaddr</span></a><span class="Other">;</span> <span class="Identifier">socklen</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">user_arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+                          <span class="Identifier">res</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">SockAddr</span><span class="Other">;</span> <span class="Identifier">socklen</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">user_arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
@@ -170,14 +169,6 @@
 <div id="evconnlistener_errorcb">
   <dt><pre><a href="listener.html#evconnlistener_errorcb"><span class="Identifier">evconnlistener_errorcb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">listener</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evconnlistener"><span class="Identifier">evconnlistener</span></a><span class="Other">;</span> <span class="Identifier">user_arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span>.}</pre></dt>
-  <dd>
-    
-    
-    
-  </dd>
-</div>
-<div id="sockaddr">
-  <dt><pre><a href="listener.html#sockaddr"><span class="Identifier">sockaddr</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
     
@@ -343,10 +334,10 @@
 
 </div>
 <div id="evconnlistener_new_bind-procs-all">
-  <div id="evconnlistener_new_bind,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,ptr.sockaddr,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.sockaddr%2Ccint"><span class="Identifier">evconnlistener_new_bind</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="listener.html#evconnlistener_cb"><span class="Identifier">evconnlistener_cb</span></a><span class="Other">;</span>
+  <div id="evconnlistener_new_bind,ptr.event_base,evconnlistener_cb,pointer,cuint,cint,ptr.SockAddr,cint">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evconnlistener_new_bind%2Cptr.event_base%2Cevconnlistener_cb%2Cpointer%2Ccuint%2Ccint%2Cptr.SockAddr%2Ccint"><span class="Identifier">evconnlistener_new_bind</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="listener.html#evconnlistener_cb"><span class="Identifier">evconnlistener_cb</span></a><span class="Other">;</span>
                              <span class="Identifier">res</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">backlog</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                             <span class="Identifier">sa</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="listener.html#sockaddr"><span class="Identifier">sockaddr</span></a><span class="Other">;</span> <span class="Identifier">socklen</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evconnlistener"><span class="Identifier">evconnlistener</span></a> {.
+                             <span class="Identifier">sa</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">SockAddr</span><span class="Other">;</span> <span class="Identifier">socklen</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evconnlistener"><span class="Identifier">evconnlistener</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">cdecl</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -392,7 +383,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2025-11-25 15:54:21 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2025-12-09 00:29:30 UTC</small>
       </div>
     </div>
   </div>
