@@ -12,12 +12,10 @@ import ./http, ./event
 {.push importc, cdecl.}
 
 type
-  sockaddr* = object # opaque, defined in posix
-
   evconnlistener_cb* = proc(
     listener: ptr evconnlistener,
     fd: evutil_socket_t,
-    res: ptr sockaddr,
+    res: ptr SockAddr,
     socklen: cint,
     user_arg: pointer
   ) {.cdecl.}
@@ -35,10 +33,12 @@ const
   LEV_OPT_REUSEABLE_PORT* = (1'u32 shl 7)
   LEV_OPT_BIND_IPV6ONLY* = (1'u32 shl 8)
 
-proc evconnlistener_new*( base: ptr event_base, cb: evconnlistener_cb, res: pointer, flags: cuint, backlog: cint, fd: evutil_socket_t): ptr evconnlistener
+proc evconnlistener_new*( base: ptr event_base, cb: evconnlistener_cb,
+                res: pointer, flags: cuint, backlog: cint, fd: evutil_socket_t): ptr evconnlistener
   ## Creates a new connection listener that will listen for incoming connections on the specified file descriptor `fd`.
 
-proc evconnlistener_new_bind*( base: ptr event_base, cb: evconnlistener_cb, res: pointer, flags: cuint, backlog: cint, sa: ptr sockaddr, socklen: cint): ptr evconnlistener
+proc evconnlistener_new_bind*( base: ptr event_base, cb: evconnlistener_cb, res: pointer,
+                flags: cuint, backlog: cint, sa: ptr SockAddr, socklen: cint): ptr evconnlistener
   ## Creates a new connection listener that will listen for incoming connections on the specified address `sa`.
 
 proc evconnlistener_free*(lev: ptr evconnlistener)

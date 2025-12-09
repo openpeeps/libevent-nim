@@ -24,6 +24,11 @@ type
   evutil_socket_t* = cint
   ev_uint64_t* = uint64
 
+  Timeval* {.importc: "struct timeval", header: "<sys/time.h>".} = object
+    tv_sec*: clong
+    tv_usec*: clong
+
+
   EventBase* = object
   Event* = object
   EventConfig* = object
@@ -173,5 +178,10 @@ proc event_set_mem_functions*(
   realloc_fn: proc(`ptr`: pointer, sz: csize_t): pointer {.cdecl.},
   free_fn: proc(`ptr`: pointer) {.cdecl.}
 )
+
+
+proc evtimer_add*(ev: ptr event, timeout: ptr Timeval): cint
+proc evtimer_new*(base: ptr event_base, cb: EventCallbackFn, arg: pointer): ptr event
+proc evtimer_del*(ev: ptr event): cint
 
 {.pop.}
