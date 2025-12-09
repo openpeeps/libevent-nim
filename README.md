@@ -4,8 +4,8 @@
 </p>
 
 <p align="center">
-  <a href="https://openpeeps.github.io/libevent/">API reference</a><br>
-  <img src="https://github.com/openpeeps/libevent/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/libevent/workflows/docs/badge.svg" alt="Github Actions">
+  <a href="https://openpeeps.github.io/libevent-nim/">API reference</a><br>
+  <img src="https://github.com/openpeeps/libevent-nim/workflows/test/badge.svg" alt="Github Actions">  <img src="https://github.com/openpeeps/libevent-nim/workflows/docs/badge.svg" alt="Github Actions">
 </p>
 
 ## About

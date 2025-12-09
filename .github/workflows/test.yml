@@ -25,6 +25,10 @@ jobs:
         with:
           nim-version: ${{ matrix.nim-version }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install libevent
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libevent-dev
       - run: nimble install -Y
-      - run: nim c -r src/${{ github.event.repository.name }}.nim
+      - run: nim c -r src/libevent.nim
       - run: nimble test
