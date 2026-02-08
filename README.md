@@ -58,6 +58,24 @@ evhttp_free(httpServer)
 event_base_free(eventBase)
 ```
 
+### Linking Libevent library
+By default, the `libevent` Nim package will attempt to dynamically link against the system's Libevent library.
+
+Dynamically linking:
+```
+{.passL:"-L/opt/local/lib -levent", passC:"-I /opt/local/include".}
+```
+
+Also, if you want to enable libevent thread support, you can link against the `event_pthreads` library instead:
+```
+{.passL:"-L/opt/local/lib -levent_pthreads", passC:"-I /opt/local/include".}
+```
+
+Statically linking is also supported, but requires you to have the static library available on your system. You can then enable static linking by adding the following flags to your project `.nims` file:
+```
+  --passL:"/opt/local/lib/libevent.a" # path to the static library
+  --passC:"-I /opt/local/include" # path to the header files
+```
 
 ### ❤ Contributions & Support
 - 🐛 Found a bug? [Create a new Issue](https://github.com/openpeeps/libevent-nim/issues)
