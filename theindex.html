@@ -25,7 +25,7 @@
   <div class="document" id="documentId">
     <div class="container">
       <h1 class="title">Index</h1>
-      Modules: <a href="index.html">libevent</a>, <a href="libevent/bindings/buffer.html">libevent/bindings/buffer</a>, <a href="libevent/bindings/bufferevent.html">libevent/bindings/bufferevent</a>, <a href="libevent/bindings/event.html">libevent/bindings/event</a>, <a href="libevent/bindings/http.html">libevent/bindings/http</a>, <a href="libevent/bindings/listener.html">libevent/bindings/listener</a>.<br/><p /><h2>API symbols</h2>
+      Modules: <a href="index.html">libevent</a>, <a href="libevent/bindings/buffer.html">libevent/bindings/buffer</a>, <a href="libevent/bindings/bufferevent.html">libevent/bindings/bufferevent</a>, <a href="libevent/bindings/bufferevent_ssl.html">libevent/bindings/bufferevent_ssl</a>, <a href="libevent/bindings/event.html">libevent/bindings/event</a>, <a href="libevent/bindings/http.html">libevent/bindings/http</a>, <a href="libevent/bindings/listener.html">libevent/bindings/listener</a>.<br/><p /><h2>API symbols</h2>
 <dl><dt><a name="BEV_ERROR" href="#BEV_ERROR"><span>BEV_ERROR:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: BuffereventFilterResult.BEV_ERROR" href="libevent/bindings/bufferevent.html#BEV_ERROR">bufferevent: BuffereventFilterResult.BEV_ERROR</a></li>
@@ -212,6 +212,14 @@
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_get_max_to_write(bev: ptr bufferevent): csize_t" href="libevent/bindings/bufferevent.html#bufferevent_get_max_to_write%2Cptr.bufferevent">bufferevent: proc bufferevent_get_max_to_write(bev: ptr bufferevent): csize_t</a></li>
           </ul></dd>
+<dt><a name="bufferevent_get_mbedtls_error" href="#bufferevent_get_mbedtls_error"><span>bufferevent_get_mbedtls_error:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_get_mbedtls_error(bev: ptr bufferevent): culong" href="libevent/bindings/bufferevent_ssl.html#bufferevent_get_mbedtls_error%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_get_mbedtls_error(bev: ptr bufferevent): culong</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_get_openssl_error" href="#bufferevent_get_openssl_error"><span>bufferevent_get_openssl_error:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_get_openssl_error(bev: ptr bufferevent): culong" href="libevent/bindings/bufferevent_ssl.html#bufferevent_get_openssl_error%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_get_openssl_error(bev: ptr bufferevent): culong</a></li>
+          </ul></dd>
 <dt><a name="bufferevent_get_output" href="#bufferevent_get_output"><span>bufferevent_get_output:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_get_output(bufev: ptr bufferevent): ptr Evbuffer" href="libevent/bindings/bufferevent.html#bufferevent_get_output%2Cptr.bufferevent">bufferevent: proc bufferevent_get_output(bufev: ptr bufferevent): ptr Evbuffer</a></li>
@@ -249,6 +257,80 @@
 <dt><a name="bufferevent_lock" href="#bufferevent_lock"><span>bufferevent_lock:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_lock(bufev: ptr bufferevent)" href="libevent/bindings/bufferevent.html#bufferevent_lock%2Cptr.bufferevent">bufferevent: proc bufferevent_lock(bufev: ptr bufferevent)</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_dyncontext_free" href="#bufferevent_mbedtls_dyncontext_free"><span>bufferevent_mbedtls_dyncontext_free:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_dyncontext_free(ctx: ptr mbedtls_dyncontext)" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_free%2Cptr.mbedtls_dyncontext">bufferevent_ssl: proc bufferevent_mbedtls_dyncontext_free(ctx: ptr mbedtls_dyncontext)</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_dyncontext_new" href="#bufferevent_mbedtls_dyncontext_new"><span>bufferevent_mbedtls_dyncontext_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_dyncontext_new(conf: ptr mbedtls_ssl_config): ptr mbedtls_dyncontext" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_new%2Cptr.mbedtls_ssl_config">bufferevent_ssl: proc bufferevent_mbedtls_dyncontext_new(conf: ptr mbedtls_ssl_config): ptr mbedtls_dyncontext</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_filter_new" href="#bufferevent_mbedtls_filter_new"><span>bufferevent_mbedtls_filter_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_filter_new(base: ptr event_base;
+                               underlying: ptr bufferevent;
+                               ssl: ptr mbedtls_dyncontext;
+                               state: BuffereventSSLState; options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_filter_new%2Cptr.event_base%2Cptr.bufferevent%2Cptr.mbedtls_dyncontext%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_mbedtls_filter_new(base: ptr event_base;
+                               underlying: ptr bufferevent;
+                               ssl: ptr mbedtls_dyncontext;
+                               state: BuffereventSSLState; options: int): ptr bufferevent</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_get_allow_dirty_shutdown" href="#bufferevent_mbedtls_get_allow_dirty_shutdown"><span>bufferevent_mbedtls_get_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_get_allow_dirty_shutdown(bev: ptr bufferevent): int" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_allow_dirty_shutdown%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_mbedtls_get_allow_dirty_shutdown(bev: ptr bufferevent): int</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_get_ssl" href="#bufferevent_mbedtls_get_ssl"><span>bufferevent_mbedtls_get_ssl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_get_ssl(bufev: ptr bufferevent): ptr mbedtls_ssl_context" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_ssl%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_mbedtls_get_ssl(bufev: ptr bufferevent): ptr mbedtls_ssl_context</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_renegotiate" href="#bufferevent_mbedtls_renegotiate"><span>bufferevent_mbedtls_renegotiate:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_renegotiate(bev: ptr bufferevent): int" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_renegotiate%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_mbedtls_renegotiate(bev: ptr bufferevent): int</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_set_allow_dirty_shutdown" href="#bufferevent_mbedtls_set_allow_dirty_shutdown"><span>bufferevent_mbedtls_set_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_set_allow_dirty_shutdown(bev: ptr bufferevent;
+    allow_dirty_shutdown: int)" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_set_allow_dirty_shutdown%2Cptr.bufferevent%2Cint">bufferevent_ssl: proc bufferevent_mbedtls_set_allow_dirty_shutdown(bev: ptr bufferevent;
+    allow_dirty_shutdown: int)</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_mbedtls_socket_new" href="#bufferevent_mbedtls_socket_new"><span>bufferevent_mbedtls_socket_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_mbedtls_socket_new(base: ptr event_base; fd: evutil_socket_t;
+                               ssl: ptr mbedtls_dyncontext;
+                               state: BuffereventSSLState; options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Cptr.mbedtls_dyncontext%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_mbedtls_socket_new(base: ptr event_base; fd: evutil_socket_t;
+                               ssl: ptr mbedtls_dyncontext;
+                               state: BuffereventSSLState; options: int): ptr bufferevent</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_openssl_filter_new" href="#bufferevent_openssl_filter_new"><span>bufferevent_openssl_filter_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_filter_new(base: ptr event_base;
+                               underlying: ptr bufferevent; ssl: ptr ssl_st;
+                               state: BuffereventSSLState; options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_filter_new%2Cptr.event_base%2Cptr.bufferevent%2Cptr.ssl_st%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_filter_new(base: ptr event_base;
+                               underlying: ptr bufferevent; ssl: ptr ssl_st;
+                               state: BuffereventSSLState; options: int): ptr bufferevent</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_openssl_get_allow_dirty_shutdown" href="#bufferevent_openssl_get_allow_dirty_shutdown"><span>bufferevent_openssl_get_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_get_allow_dirty_shutdown(bev: ptr bufferevent): int" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_allow_dirty_shutdown%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_openssl_get_allow_dirty_shutdown(bev: ptr bufferevent): int</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_openssl_get_ssl" href="#bufferevent_openssl_get_ssl"><span>bufferevent_openssl_get_ssl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr ssl_st" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_ssl%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr ssl_st</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_openssl_set_allow_dirty_shutdown" href="#bufferevent_openssl_set_allow_dirty_shutdown"><span>bufferevent_openssl_set_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_set_allow_dirty_shutdown(bev: ptr bufferevent;
+    allow_dirty_shutdown: int)" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_set_allow_dirty_shutdown%2Cptr.bufferevent%2Cint">bufferevent_ssl: proc bufferevent_openssl_set_allow_dirty_shutdown(bev: ptr bufferevent;
+    allow_dirty_shutdown: int)</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_openssl_socket_new" href="#bufferevent_openssl_socket_new"><span>bufferevent_openssl_socket_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;
+                               ssl: ptr ssl_st; state: BuffereventSSLState;
+                               options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Cptr.ssl_st%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;
+                               ssl: ptr ssl_st; state: BuffereventSSLState;
+                               options: int): ptr bufferevent</a></li>
           </ul></dd>
 <dt><a name="bufferevent_pair_get_partner" href="#bufferevent_pair_get_partner"><span>bufferevent_pair_get_partner:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -402,6 +484,46 @@
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_socket_new(base: ptr event_base; fd: evutil_socket_t; options: cint): ptr bufferevent" href="libevent/bindings/bufferevent.html#bufferevent_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Ccint">bufferevent: proc bufferevent_socket_new(base: ptr event_base; fd: evutil_socket_t; options: cint): ptr bufferevent</a></li>
           </ul></dd>
+<dt><a name="BUFFEREVENT_SSL_ACCEPTING" href="#BUFFEREVENT_SSL_ACCEPTING"><span>BUFFEREVENT_SSL_ACCEPTING:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_ACCEPTING" href="libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_ACCEPTING">bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_ACCEPTING</a></li>
+          </ul></dd>
+<dt><a name="BUFFEREVENT_SSL_BATCH_WRITE" href="#BUFFEREVENT_SSL_BATCH_WRITE"><span>BUFFEREVENT_SSL_BATCH_WRITE:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: const BUFFEREVENT_SSL_BATCH_WRITE" href="libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_BATCH_WRITE">bufferevent_ssl: const BUFFEREVENT_SSL_BATCH_WRITE</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_ssl_clear_flags" href="#bufferevent_ssl_clear_flags"><span>bufferevent_ssl_clear_flags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_ssl_clear_flags(bev: ptr bufferevent; flags: uint64): uint64" href="libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_clear_flags%2Cptr.bufferevent%2Cuint64">bufferevent_ssl: proc bufferevent_ssl_clear_flags(bev: ptr bufferevent; flags: uint64): uint64</a></li>
+          </ul></dd>
+<dt><a name="BUFFEREVENT_SSL_CONNECTING" href="#BUFFEREVENT_SSL_CONNECTING"><span>BUFFEREVENT_SSL_CONNECTING:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_CONNECTING" href="libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_CONNECTING">bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_CONNECTING</a></li>
+          </ul></dd>
+<dt><a name="BUFFEREVENT_SSL_DIRTY_SHUTDOWN" href="#BUFFEREVENT_SSL_DIRTY_SHUTDOWN"><span>BUFFEREVENT_SSL_DIRTY_SHUTDOWN:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: const BUFFEREVENT_SSL_DIRTY_SHUTDOWN" href="libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_DIRTY_SHUTDOWN">bufferevent_ssl: const BUFFEREVENT_SSL_DIRTY_SHUTDOWN</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_ssl_get_flags" href="#bufferevent_ssl_get_flags"><span>bufferevent_ssl_get_flags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_ssl_get_flags(bev: ptr bufferevent): uint64" href="libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_get_flags%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_ssl_get_flags(bev: ptr bufferevent): uint64</a></li>
+          </ul></dd>
+<dt><a name="BUFFEREVENT_SSL_OPEN" href="#BUFFEREVENT_SSL_OPEN"><span>BUFFEREVENT_SSL_OPEN:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_OPEN" href="libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_OPEN">bufferevent_ssl: BuffereventSSLState.BUFFEREVENT_SSL_OPEN</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_ssl_renegotiate" href="#bufferevent_ssl_renegotiate"><span>bufferevent_ssl_renegotiate:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_ssl_renegotiate(bev: ptr bufferevent): int" href="libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_renegotiate%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_ssl_renegotiate(bev: ptr bufferevent): int</a></li>
+          </ul></dd>
+<dt><a name="bufferevent_ssl_set_flags" href="#bufferevent_ssl_set_flags"><span>bufferevent_ssl_set_flags:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_ssl_set_flags(bev: ptr bufferevent; flags: uint64): uint64" href="libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_set_flags%2Cptr.bufferevent%2Cuint64">bufferevent_ssl: proc bufferevent_ssl_set_flags(bev: ptr bufferevent; flags: uint64): uint64</a></li>
+          </ul></dd>
+<dt><a name="BuffereventSSLState" href="#BuffereventSSLState"><span>BuffereventSSLState:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: enum BuffereventSSLState" href="libevent/bindings/bufferevent_ssl.html#BuffereventSSLState">bufferevent_ssl: enum BuffereventSSLState</a></li>
+          </ul></dd>
 <dt><a name="bufferevent_trigger" href="#bufferevent_trigger"><span>bufferevent_trigger:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_trigger(bufev: ptr bufferevent; iotype: cshort; options: cint)" href="libevent/bindings/bufferevent.html#bufferevent_trigger%2Cptr.bufferevent%2Ccshort%2Ccint">bufferevent: proc bufferevent_trigger(bufev: ptr bufferevent; iotype: cshort; options: cint)</a></li>
@@ -421,6 +543,14 @@
 <dt><a name="bufferevent_write_buffer" href="#bufferevent_write_buffer"><span>bufferevent_write_buffer:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent: proc bufferevent_write_buffer(bufev: ptr bufferevent; buf: ptr Evbuffer): cint" href="libevent/bindings/bufferevent.html#bufferevent_write_buffer%2Cptr.bufferevent%2Cptr.Evbuffer">bufferevent: proc bufferevent_write_buffer(bufev: ptr bufferevent; buf: ptr Evbuffer): cint</a></li>
+          </ul></dd>
+<dt><a name="ERR_error_string_n" href="#ERR_error_string_n"><span>ERR_error_string_n:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc ERR_error_string_n(e: culong; buf: cstring; len: csize_t)" href="libevent/bindings/bufferevent_ssl.html#ERR_error_string_n%2Cculong%2Ccstring%2Ccsize_t">bufferevent_ssl: proc ERR_error_string_n(e: culong; buf: cstring; len: csize_t)</a></li>
+          </ul></dd>
+<dt><a name="ERR_get_error" href="#ERR_get_error"><span>ERR_get_error:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc ERR_get_error(): culong" href="libevent/bindings/bufferevent_ssl.html#ERR_get_error">bufferevent_ssl: proc ERR_get_error(): culong</a></li>
           </ul></dd>
 <dt><a name="Evbuffer" href="#Evbuffer"><span>Evbuffer:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -830,13 +960,13 @@
              cb: EventCallbackFn; arg: pointer): cint" href="libevent/bindings/event.html#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer">event: proc event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;
              cb: EventCallbackFn; arg: pointer): cint</a></li>
           </ul></dd>
-<dt><a name="EventBase" href="#EventBase"><span>EventBase:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="event: object EventBase" href="libevent/bindings/event.html#EventBase">event: object EventBase</a></li>
-          </ul></dd>
 <dt><a name="event_base" href="#event_base"><span>event_base:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: object event_base" href="libevent/bindings/event.html#event_base">event: object event_base</a></li>
+          </ul></dd>
+<dt><a name="EventBase" href="#EventBase"><span>EventBase:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: object EventBase" href="libevent/bindings/event.html#EventBase">event: object EventBase</a></li>
           </ul></dd>
 <dt><a name="event_base_active_by_fd" href="#event_base_active_by_fd"><span>event_base_active_by_fd:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -994,13 +1124,13 @@
 <li><a class="reference external"
           data-doc-search-tag="event: type EventCallbackFn" href="libevent/bindings/event.html#EventCallbackFn">event: type EventCallbackFn</a></li>
           </ul></dd>
-<dt><a name="event_config" href="#event_config"><span>event_config:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="event: object event_config" href="libevent/bindings/event.html#event_config">event: object event_config</a></li>
-          </ul></dd>
 <dt><a name="EventConfig" href="#EventConfig"><span>EventConfig:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: object EventConfig" href="libevent/bindings/event.html#EventConfig">event: object EventConfig</a></li>
+          </ul></dd>
+<dt><a name="event_config" href="#event_config"><span>event_config:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: object event_config" href="libevent/bindings/event.html#event_config">event: object event_config</a></li>
           </ul></dd>
 <dt><a name="event_config_avoid_method" href="#event_config_avoid_method"><span>event_config_avoid_method:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1972,6 +2102,18 @@
 <li><a class="reference external"
           data-doc-search-tag="event: proc libevent_global_shutdown()" href="libevent/bindings/event.html#libevent_global_shutdown">event: proc libevent_global_shutdown()</a></li>
           </ul></dd>
+<dt><a name="mbedtls_dyncontext" href="#mbedtls_dyncontext"><span>mbedtls_dyncontext:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object mbedtls_dyncontext" href="libevent/bindings/bufferevent_ssl.html#mbedtls_dyncontext">bufferevent_ssl: object mbedtls_dyncontext</a></li>
+          </ul></dd>
+<dt><a name="mbedtls_ssl_config" href="#mbedtls_ssl_config"><span>mbedtls_ssl_config:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object mbedtls_ssl_config" href="libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_config">bufferevent_ssl: object mbedtls_ssl_config</a></li>
+          </ul></dd>
+<dt><a name="mbedtls_ssl_context" href="#mbedtls_ssl_context"><span>mbedtls_ssl_context:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object mbedtls_ssl_context" href="libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_context">bufferevent_ssl: object mbedtls_ssl_context</a></li>
+          </ul></dd>
 <dt><a name="nim_evkeyvalq_iterate" href="#nim_evkeyvalq_iterate"><span>nim_evkeyvalq_iterate:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: proc nim_evkeyvalq_iterate(headers: pointer;
@@ -1979,6 +2121,10 @@
                       arg: pointer)" href="libevent/bindings/http.html#nim_evkeyvalq_iterate%2Cpointer%2Cproc%28cstring%2Ccstring%2Cpointer%29%2Cpointer">http: proc nim_evkeyvalq_iterate(headers: pointer;
                       cb: proc (key, value: cstring; arg: pointer) {.cdecl.};
                       arg: pointer)</a></li>
+          </ul></dd>
+<dt><a name="OPENSSL_init_ssl" href="#OPENSSL_init_ssl"><span>OPENSSL_init_ssl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc OPENSSL_init_ssl(opts: uint64; settings: pointer): cint" href="libevent/bindings/bufferevent_ssl.html#OPENSSL_init_ssl%2Cuint64%2Cpointer">bufferevent_ssl: proc OPENSSL_init_ssl(opts: uint64; settings: pointer): cint</a></li>
           </ul></dd>
 <dt><a name="PEvent" href="#PEvent"><span>PEvent:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1992,15 +2138,95 @@
 <li><a class="reference external"
           data-doc-search-tag="event: type PEventConfig" href="libevent/bindings/event.html#PEventConfig">event: type PEventConfig</a></li>
           </ul></dd>
+<dt><a name="SSL" href="#SSL"><span>SSL:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: type SSL" href="libevent/bindings/bufferevent_ssl.html#SSL">bufferevent_ssl: type SSL</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTRL_SET_MIN_PROTO_VERSION" href="#SSL_CTRL_SET_MIN_PROTO_VERSION"><span>SSL_CTRL_SET_MIN_PROTO_VERSION:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: const SSL_CTRL_SET_MIN_PROTO_VERSION" href="libevent/bindings/bufferevent_ssl.html#SSL_CTRL_SET_MIN_PROTO_VERSION">bufferevent_ssl: const SSL_CTRL_SET_MIN_PROTO_VERSION</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX" href="#SSL_CTX"><span>SSL_CTX:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: type SSL_CTX" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX">bufferevent_ssl: type SSL_CTX</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_check_private_key" href="#SSL_CTX_check_private_key"><span>SSL_CTX_check_private_key:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr ssl_ctx_st): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_check_private_key%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr ssl_ctx_st): cint</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_ctrl" href="#SSL_CTX_ctrl"><span>SSL_CTX_ctrl:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr ssl_ctx_st; cmd: cint; larg: clong; parg: pointer): clong" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_ctrl%2Cptr.ssl_ctx_st%2Ccint%2Cclong%2Cpointer">bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr ssl_ctx_st; cmd: cint; larg: clong; parg: pointer): clong</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_free" href="#SSL_CTX_free"><span>SSL_CTX_free:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_free(ctx: ptr ssl_ctx_st)" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_free%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_CTX_free(ctx: ptr ssl_ctx_st)</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_new" href="#SSL_CTX_new"><span>SSL_CTX_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_new(m: ptr ssl_method_st): ptr ssl_ctx_st" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_new%2Cptr.ssl_method_st">bufferevent_ssl: proc SSL_CTX_new(m: ptr ssl_method_st): ptr ssl_ctx_st</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_set_min_proto_version" href="#SSL_CTX_set_min_proto_version"><span>SSL_CTX_set_min_proto_version:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr ssl_ctx_st; version: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_set_min_proto_version.t%2Cptr.ssl_ctx_st%2Ccint">bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr ssl_ctx_st; version: cint): cint</a></li>
+          </ul></dd>
+<dt><a name="ssl_ctx_st" href="#ssl_ctx_st"><span>ssl_ctx_st:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object ssl_ctx_st" href="libevent/bindings/bufferevent_ssl.html#ssl_ctx_st">bufferevent_ssl: object ssl_ctx_st</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_use_certificate_file" href="#SSL_CTX_use_certificate_file"><span>SSL_CTX_use_certificate_file:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_certificate_file%2Cptr.ssl_ctx_st%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint</a></li>
+          </ul></dd>
+<dt><a name="SSL_CTX_use_PrivateKey_file" href="#SSL_CTX_use_PrivateKey_file"><span>SSL_CTX_use_PrivateKey_file:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_PrivateKey_file%2Cptr.ssl_ctx_st%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint</a></li>
+          </ul></dd>
+<dt><a name="SSL_FILETYPE_PEM" href="#SSL_FILETYPE_PEM"><span>SSL_FILETYPE_PEM:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: const SSL_FILETYPE_PEM" href="libevent/bindings/bufferevent_ssl.html#SSL_FILETYPE_PEM">bufferevent_ssl: const SSL_FILETYPE_PEM</a></li>
+          </ul></dd>
+<dt><a name="SSL_free" href="#SSL_free"><span>SSL_free:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_free(ssl: ptr ssl_st)" href="libevent/bindings/bufferevent_ssl.html#SSL_free%2Cptr.ssl_st">bufferevent_ssl: proc SSL_free(ssl: ptr ssl_st)</a></li>
+          </ul></dd>
+<dt><a name="SSL_METHOD" href="#SSL_METHOD"><span>SSL_METHOD:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: type SSL_METHOD" href="libevent/bindings/bufferevent_ssl.html#SSL_METHOD">bufferevent_ssl: type SSL_METHOD</a></li>
+          </ul></dd>
+<dt><a name="ssl_method_st" href="#ssl_method_st"><span>ssl_method_st:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#ssl_method_st">bufferevent_ssl: object ssl_method_st</a></li>
+          </ul></dd>
+<dt><a name="SSL_new" href="#SSL_new"><span>SSL_new:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc SSL_new(ctx: ptr ssl_ctx_st): ptr ssl_st" href="libevent/bindings/bufferevent_ssl.html#SSL_new%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_new(ctx: ptr ssl_ctx_st): ptr ssl_st</a></li>
+          </ul></dd>
+<dt><a name="ssl_st" href="#ssl_st"><span>ssl_st:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: object ssl_st" href="libevent/bindings/bufferevent_ssl.html#ssl_st">bufferevent_ssl: object ssl_st</a></li>
+          </ul></dd>
+<dt><a name="SSLv23_server_method" href="#SSLv23_server_method"><span>SSLv23_server_method:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: template SSLv23_server_method(): ptr ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#SSLv23_server_method.t">bufferevent_ssl: template SSLv23_server_method(): ptr ssl_method_st</a></li>
+          </ul></dd>
 <dt><a name="Timeval" href="#Timeval"><span>Timeval:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: object Timeval" href="libevent/bindings/event.html#Timeval">event: object Timeval</a></li>
+          </ul></dd>
+<dt><a name="TLS1_2_VERSION" href="#TLS1_2_VERSION"><span>TLS1_2_VERSION:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: const TLS1_2_VERSION" href="libevent/bindings/bufferevent_ssl.html#TLS1_2_VERSION">bufferevent_ssl: const TLS1_2_VERSION</a></li>
+          </ul></dd>
+<dt><a name="TLS_server_method" href="#TLS_server_method"><span>TLS_server_method:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="bufferevent_ssl: proc TLS_server_method(): ptr ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#TLS_server_method">bufferevent_ssl: proc TLS_server_method(): ptr ssl_method_st</a></li>
           </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-08 14:34:33 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-22 14:08:48 UTC</small>
       </div>
     </div>
   </div>
