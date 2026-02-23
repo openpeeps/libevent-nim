@@ -9,47 +9,45 @@
 import ./bufferevent, ./event
 
 type
-  ssl_ctx_st* {.incompleteStruct.} = object
-  ssl_st* {.incompleteStruct.} = object
-  ssl_method_st* {.incompleteStruct.} = object
+  SSL_CTX* {.importc: "SSL_CTX", header: "<openssl/ssl.h>", incompleteStruct.} = object
+  SSL* {.importc: "SSL", header: "<openssl/ssl.h>", incompleteStruct.} = object
+  SSL_METHOD* {.importc: "SSL_METHOD", header: "<openssl/ssl.h>", incompleteStruct.} = object
+
   mbedtls_dyncontext* {.incompleteStruct.} = object
   mbedtls_ssl_context* {.incompleteStruct.} = object
   mbedtls_ssl_config* {.incompleteStruct.} = object
-
-  SSL_CTX* = ptr ssl_ctx_st
-  SSL* = ptr ssl_st
-  SSL_METHOD* = ptr ssl_method_st
 
 const
   SSL_FILETYPE_PEM* = 1
   TLS1_2_VERSION* = 0x0303
   SSL_CTRL_SET_MIN_PROTO_VERSION* = 123
 
-proc SSL_new*(ctx: ptr ssl_ctx_st): ptr ssl_st
+proc SSL_new*(ctx: ptr SSL_CTX): ptr SSL
   {.cdecl, importc: "SSL_new", header: "<openssl/ssl.h>".}
-proc SSL_free*(ssl: ptr ssl_st)
+proc SSL_free*(ssl: ptr SSL)
   {.cdecl, importc: "SSL_free", header: "<openssl/ssl.h>".}
-proc SSL_CTX_new*(m: ptr ssl_method_st): ptr ssl_ctx_st
+proc SSL_CTX_new*(m: ptr SSL_METHOD): ptr SSL_CTX
   {.cdecl, importc: "SSL_CTX_new", header: "<openssl/ssl.h>".}
-proc SSL_CTX_free*(ctx: ptr ssl_ctx_st)
+proc SSL_CTX_free*(ctx: ptr SSL_CTX)
   {.cdecl, importc: "SSL_CTX_free", header: "<openssl/ssl.h>".}
-proc TLS_server_method*(): ptr ssl_method_st
+proc TLS_server_method*(): ptr SSL_METHOD
   {.cdecl, importc: "TLS_server_method", header: "<openssl/ssl.h>".}
 
-template SSLv23_server_method*(): ptr ssl_method_st = TLS_server_method()
+template SSLv23_server_method*(): ptr SSL_METHOD = TLS_server_method()
 
 proc OPENSSL_init_ssl*(opts: uint64, settings: pointer): cint
   {.cdecl, importc: "OPENSSL_init_ssl", header: "<openssl/ssl.h>".}
-proc SSL_CTX_use_certificate_file*(ctx: ptr ssl_ctx_st, file: cstring, typ: cint): cint
+proc SSL_CTX_use_certificate_file*(ctx: ptr SSL_CTX, file: cstring, typ: cint): cint
   {.cdecl, importc: "SSL_CTX_use_certificate_file", header: "<openssl/ssl.h>".}
-proc SSL_CTX_use_PrivateKey_file*(ctx: ptr ssl_ctx_st, file: cstring, typ: cint): cint
+proc SSL_CTX_use_PrivateKey_file*(ctx: ptr SSL_CTX, file: cstring, typ: cint): cint
   {.cdecl, importc: "SSL_CTX_use_PrivateKey_file", header: "<openssl/ssl.h>".}
-proc SSL_CTX_check_private_key*(ctx: ptr ssl_ctx_st): cint
+proc SSL_CTX_check_private_key*(ctx: ptr SSL_CTX): cint
   {.cdecl, importc: "SSL_CTX_check_private_key", header: "<openssl/ssl.h>".}
-proc SSL_CTX_ctrl*(ctx: ptr ssl_ctx_st, cmd: cint, larg: clong, parg: pointer): clong
+proc SSL_CTX_ctrl*(ctx: ptr SSL_CTX, cmd: cint, larg: clong, parg: pointer): clong
   {.cdecl, importc: "SSL_CTX_ctrl", header: "<openssl/ssl.h>".}
-template SSL_CTX_set_min_proto_version*(ctx: ptr ssl_ctx_st, version: cint): cint =
+template SSL_CTX_set_min_proto_version*(ctx: ptr SSL_CTX, version: cint): cint =
   cint(SSL_CTX_ctrl(ctx, SSL_CTRL_SET_MIN_PROTO_VERSION.cint, clong(version), nil))
+
 
 proc ERR_get_error*(): culong
   {.cdecl, importc: "ERR_get_error", header: "<openssl/err.h>".}
@@ -76,12 +74,23 @@ proc bufferevent_ssl_get_flags*(bev: ptr bufferevent): uint64
 proc bufferevent_ssl_set_flags*(bev: ptr bufferevent, flags: uint64): uint64
 proc bufferevent_ssl_clear_flags*(bev: ptr bufferevent, flags: uint64): uint64
 
-proc bufferevent_openssl_filter_new*(base: ptr event_base, underlying: ptr bufferevent, ssl: ptr ssl_st, state: BuffereventSSLState, options: int): ptr bufferevent
-proc bufferevent_openssl_socket_new*(base: ptr event_base, fd: evutil_socket_t, ssl: ptr ssl_st, state: BuffereventSSLState, options: int): ptr bufferevent
+# proc bufferevent_openssl_filter_new*(base: ptr event_base, underlying: ptr bufferevent, ssl: ptr ssl_st, state: BuffereventSSLState, options: int): ptr bufferevent
+# proc bufferevent_openssl_socket_new*(base: ptr event_base, fd: evutil_socket_t, ssl: ptr ssl_st, state: BuffereventSSLState, options: int): ptr bufferevent
+
+proc bufferevent_openssl_filter_new*(
+  base: ptr event_base, underlying: ptr bufferevent,
+  ssl: ptr SSL, state: BuffereventSSLState, options: int
+): ptr bufferevent
+proc bufferevent_openssl_socket_new*(
+  base: ptr event_base, fd: evutil_socket_t,
+  ssl: ptr SSL, state: BuffereventSSLState, options: int
+): ptr bufferevent
+
+proc bufferevent_openssl_get_ssl*(bufev: ptr bufferevent): ptr SSL
 
 proc bufferevent_openssl_get_allow_dirty_shutdown*(bev: ptr bufferevent): int
 proc bufferevent_openssl_set_allow_dirty_shutdown*(bev: ptr bufferevent, allow_dirty_shutdown: int)
-proc bufferevent_openssl_get_ssl*(bufev: ptr bufferevent): ptr ssl_st
+
 proc bufferevent_ssl_renegotiate*(bev: ptr bufferevent): int
 proc bufferevent_get_openssl_error*(bev: ptr bufferevent): culong
 
