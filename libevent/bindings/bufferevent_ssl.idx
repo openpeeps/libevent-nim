@@ -1,52 +1,49 @@
 nimTitle	bufferevent_ssl	libevent/bindings/bufferevent_ssl.html	module libevent/bindings/bufferevent_ssl		0
-nim	ssl_ctx_st	libevent/bindings/bufferevent_ssl.html#ssl_ctx_st	object ssl_ctx_st		12
-nim	ssl_st	libevent/bindings/bufferevent_ssl.html#ssl_st	object ssl_st		13
-nim	ssl_method_st	libevent/bindings/bufferevent_ssl.html#ssl_method_st	object ssl_method_st		14
-nim	mbedtls_dyncontext	libevent/bindings/bufferevent_ssl.html#mbedtls_dyncontext	object mbedtls_dyncontext		15
-nim	mbedtls_ssl_context	libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_context	object mbedtls_ssl_context		16
-nim	mbedtls_ssl_config	libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_config	object mbedtls_ssl_config		17
-nim	SSL_CTX	libevent/bindings/bufferevent_ssl.html#SSL_CTX	type SSL_CTX		19
-nim	SSL	libevent/bindings/bufferevent_ssl.html#SSL	type SSL		20
-nim	SSL_METHOD	libevent/bindings/bufferevent_ssl.html#SSL_METHOD	type SSL_METHOD		21
-nim	SSL_FILETYPE_PEM	libevent/bindings/bufferevent_ssl.html#SSL_FILETYPE_PEM	const SSL_FILETYPE_PEM		24
-nim	TLS1_2_VERSION	libevent/bindings/bufferevent_ssl.html#TLS1_2_VERSION	const TLS1_2_VERSION		25
-nim	SSL_CTRL_SET_MIN_PROTO_VERSION	libevent/bindings/bufferevent_ssl.html#SSL_CTRL_SET_MIN_PROTO_VERSION	const SSL_CTRL_SET_MIN_PROTO_VERSION		26
-nim	SSL_new	libevent/bindings/bufferevent_ssl.html#SSL_new,ptr.ssl_ctx_st	proc SSL_new(ctx: ptr ssl_ctx_st): ptr ssl_st		28
-nim	SSL_free	libevent/bindings/bufferevent_ssl.html#SSL_free,ptr.ssl_st	proc SSL_free(ssl: ptr ssl_st)		30
-nim	SSL_CTX_new	libevent/bindings/bufferevent_ssl.html#SSL_CTX_new,ptr.ssl_method_st	proc SSL_CTX_new(m: ptr ssl_method_st): ptr ssl_ctx_st		32
-nim	SSL_CTX_free	libevent/bindings/bufferevent_ssl.html#SSL_CTX_free,ptr.ssl_ctx_st	proc SSL_CTX_free(ctx: ptr ssl_ctx_st)		34
-nim	TLS_server_method	libevent/bindings/bufferevent_ssl.html#TLS_server_method	proc TLS_server_method(): ptr ssl_method_st		36
-nim	SSLv23_server_method	libevent/bindings/bufferevent_ssl.html#SSLv23_server_method.t	template SSLv23_server_method(): ptr ssl_method_st		39
-nim	OPENSSL_init_ssl	libevent/bindings/bufferevent_ssl.html#OPENSSL_init_ssl,uint64,pointer	proc OPENSSL_init_ssl(opts: uint64; settings: pointer): cint		41
-nim	SSL_CTX_use_certificate_file	libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_certificate_file,ptr.ssl_ctx_st,cstring,cint	proc SSL_CTX_use_certificate_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint		43
-nim	SSL_CTX_use_PrivateKey_file	libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_PrivateKey_file,ptr.ssl_ctx_st,cstring,cint	proc SSL_CTX_use_PrivateKey_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint		45
-nim	SSL_CTX_check_private_key	libevent/bindings/bufferevent_ssl.html#SSL_CTX_check_private_key,ptr.ssl_ctx_st	proc SSL_CTX_check_private_key(ctx: ptr ssl_ctx_st): cint		47
-nim	SSL_CTX_ctrl	libevent/bindings/bufferevent_ssl.html#SSL_CTX_ctrl,ptr.ssl_ctx_st,cint,clong,pointer	proc SSL_CTX_ctrl(ctx: ptr ssl_ctx_st; cmd: cint; larg: clong; parg: pointer): clong		49
-nim	SSL_CTX_set_min_proto_version	libevent/bindings/bufferevent_ssl.html#SSL_CTX_set_min_proto_version.t,ptr.ssl_ctx_st,cint	template SSL_CTX_set_min_proto_version(ctx: ptr ssl_ctx_st; version: cint): cint		51
-nim	ERR_get_error	libevent/bindings/bufferevent_ssl.html#ERR_get_error	proc ERR_get_error(): culong		54
-nim	ERR_error_string_n	libevent/bindings/bufferevent_ssl.html#ERR_error_string_n,culong,cstring,csize_t	proc ERR_error_string_n(e: culong; buf: cstring; len: csize_t)		56
-nim	BUFFEREVENT_SSL_OPEN	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_OPEN	BuffereventSSLState.BUFFEREVENT_SSL_OPEN		63
-nim	BUFFEREVENT_SSL_CONNECTING	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_CONNECTING	BuffereventSSLState.BUFFEREVENT_SSL_CONNECTING		63
-nim	BUFFEREVENT_SSL_ACCEPTING	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_ACCEPTING	BuffereventSSLState.BUFFEREVENT_SSL_ACCEPTING		63
-nim	BuffereventSSLState	libevent/bindings/bufferevent_ssl.html#BuffereventSSLState	enum BuffereventSSLState		63
-nim	BUFFEREVENT_SSL_DIRTY_SHUTDOWN	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_DIRTY_SHUTDOWN	const BUFFEREVENT_SSL_DIRTY_SHUTDOWN		70
-nim	BUFFEREVENT_SSL_BATCH_WRITE	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_BATCH_WRITE	const BUFFEREVENT_SSL_BATCH_WRITE		71
-nim	bufferevent_ssl_get_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_get_flags,ptr.bufferevent	proc bufferevent_ssl_get_flags(bev: ptr bufferevent): uint64		75
-nim	bufferevent_ssl_set_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_set_flags,ptr.bufferevent,uint64	proc bufferevent_ssl_set_flags(bev: ptr bufferevent; flags: uint64): uint64		76
-nim	bufferevent_ssl_clear_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_clear_flags,ptr.bufferevent,uint64	proc bufferevent_ssl_clear_flags(bev: ptr bufferevent; flags: uint64): uint64		77
-nim	bufferevent_openssl_filter_new	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_filter_new,ptr.event_base,ptr.bufferevent,ptr.ssl_st,BuffereventSSLState,int	proc bufferevent_openssl_filter_new(base: ptr event_base;\n                               underlying: ptr bufferevent; ssl: ptr ssl_st;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		79
-nim	bufferevent_openssl_socket_new	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_socket_new,ptr.event_base,evutil_socket_t,ptr.ssl_st,BuffereventSSLState,int	proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;\n                               ssl: ptr ssl_st; state: BuffereventSSLState;\n                               options: int): ptr bufferevent		80
-nim	bufferevent_openssl_get_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_allow_dirty_shutdown,ptr.bufferevent	proc bufferevent_openssl_get_allow_dirty_shutdown(bev: ptr bufferevent): int		82
-nim	bufferevent_openssl_set_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_set_allow_dirty_shutdown,ptr.bufferevent,int	proc bufferevent_openssl_set_allow_dirty_shutdown(bev: ptr bufferevent;\n    allow_dirty_shutdown: int)		83
-nim	bufferevent_openssl_get_ssl	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_ssl,ptr.bufferevent	proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr ssl_st		84
-nim	bufferevent_ssl_renegotiate	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_renegotiate,ptr.bufferevent	proc bufferevent_ssl_renegotiate(bev: ptr bufferevent): int		85
-nim	bufferevent_get_openssl_error	libevent/bindings/bufferevent_ssl.html#bufferevent_get_openssl_error,ptr.bufferevent	proc bufferevent_get_openssl_error(bev: ptr bufferevent): culong		86
-nim	bufferevent_mbedtls_filter_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_filter_new,ptr.event_base,ptr.bufferevent,ptr.mbedtls_dyncontext,BuffereventSSLState,int	proc bufferevent_mbedtls_filter_new(base: ptr event_base;\n                               underlying: ptr bufferevent;\n                               ssl: ptr mbedtls_dyncontext;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		89
-nim	bufferevent_mbedtls_socket_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_socket_new,ptr.event_base,evutil_socket_t,ptr.mbedtls_dyncontext,BuffereventSSLState,int	proc bufferevent_mbedtls_socket_new(base: ptr event_base; fd: evutil_socket_t;\n                               ssl: ptr mbedtls_dyncontext;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		90
-nim	bufferevent_mbedtls_get_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_allow_dirty_shutdown,ptr.bufferevent	proc bufferevent_mbedtls_get_allow_dirty_shutdown(bev: ptr bufferevent): int		92
-nim	bufferevent_mbedtls_set_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_set_allow_dirty_shutdown,ptr.bufferevent,int	proc bufferevent_mbedtls_set_allow_dirty_shutdown(bev: ptr bufferevent;\n    allow_dirty_shutdown: int)		93
-nim	bufferevent_mbedtls_get_ssl	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_ssl,ptr.bufferevent	proc bufferevent_mbedtls_get_ssl(bufev: ptr bufferevent): ptr mbedtls_ssl_context		94
-nim	bufferevent_mbedtls_renegotiate	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_renegotiate,ptr.bufferevent	proc bufferevent_mbedtls_renegotiate(bev: ptr bufferevent): int		95
-nim	bufferevent_get_mbedtls_error	libevent/bindings/bufferevent_ssl.html#bufferevent_get_mbedtls_error,ptr.bufferevent	proc bufferevent_get_mbedtls_error(bev: ptr bufferevent): culong		96
-nim	bufferevent_mbedtls_dyncontext_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_new,ptr.mbedtls_ssl_config	proc bufferevent_mbedtls_dyncontext_new(conf: ptr mbedtls_ssl_config): ptr mbedtls_dyncontext		98
-nim	bufferevent_mbedtls_dyncontext_free	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_free,ptr.mbedtls_dyncontext	proc bufferevent_mbedtls_dyncontext_free(ctx: ptr mbedtls_dyncontext)		99
+nim	SSL_CTX	libevent/bindings/bufferevent_ssl.html#SSL_CTX	object SSL_CTX		12
+nim	SSL	libevent/bindings/bufferevent_ssl.html#SSL	object SSL		13
+nim	SSL_METHOD	libevent/bindings/bufferevent_ssl.html#SSL_METHOD	object SSL_METHOD		14
+nim	mbedtls_dyncontext	libevent/bindings/bufferevent_ssl.html#mbedtls_dyncontext	object mbedtls_dyncontext		16
+nim	mbedtls_ssl_context	libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_context	object mbedtls_ssl_context		17
+nim	mbedtls_ssl_config	libevent/bindings/bufferevent_ssl.html#mbedtls_ssl_config	object mbedtls_ssl_config		18
+nim	SSL_FILETYPE_PEM	libevent/bindings/bufferevent_ssl.html#SSL_FILETYPE_PEM	const SSL_FILETYPE_PEM		21
+nim	TLS1_2_VERSION	libevent/bindings/bufferevent_ssl.html#TLS1_2_VERSION	const TLS1_2_VERSION		22
+nim	SSL_CTRL_SET_MIN_PROTO_VERSION	libevent/bindings/bufferevent_ssl.html#SSL_CTRL_SET_MIN_PROTO_VERSION	const SSL_CTRL_SET_MIN_PROTO_VERSION		23
+nim	SSL_new	libevent/bindings/bufferevent_ssl.html#SSL_new,ptr.SSL_CTX	proc SSL_new(ctx: ptr SSL_CTX): ptr SSL		25
+nim	SSL_free	libevent/bindings/bufferevent_ssl.html#SSL_free,ptr.SSL	proc SSL_free(ssl: ptr SSL)		27
+nim	SSL_CTX_new	libevent/bindings/bufferevent_ssl.html#SSL_CTX_new,ptr.SSL_METHOD	proc SSL_CTX_new(m: ptr SSL_METHOD): ptr SSL_CTX		29
+nim	SSL_CTX_free	libevent/bindings/bufferevent_ssl.html#SSL_CTX_free,ptr.SSL_CTX	proc SSL_CTX_free(ctx: ptr SSL_CTX)		31
+nim	TLS_server_method	libevent/bindings/bufferevent_ssl.html#TLS_server_method	proc TLS_server_method(): ptr SSL_METHOD		33
+nim	SSLv23_server_method	libevent/bindings/bufferevent_ssl.html#SSLv23_server_method.t	template SSLv23_server_method(): ptr SSL_METHOD		36
+nim	OPENSSL_init_ssl	libevent/bindings/bufferevent_ssl.html#OPENSSL_init_ssl,uint64,pointer	proc OPENSSL_init_ssl(opts: uint64; settings: pointer): cint		38
+nim	SSL_CTX_use_certificate_file	libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_certificate_file,ptr.SSL_CTX,cstring,cint	proc SSL_CTX_use_certificate_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint		40
+nim	SSL_CTX_use_PrivateKey_file	libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_PrivateKey_file,ptr.SSL_CTX,cstring,cint	proc SSL_CTX_use_PrivateKey_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint		42
+nim	SSL_CTX_check_private_key	libevent/bindings/bufferevent_ssl.html#SSL_CTX_check_private_key,ptr.SSL_CTX	proc SSL_CTX_check_private_key(ctx: ptr SSL_CTX): cint		44
+nim	SSL_CTX_ctrl	libevent/bindings/bufferevent_ssl.html#SSL_CTX_ctrl,ptr.SSL_CTX,cint,clong,pointer	proc SSL_CTX_ctrl(ctx: ptr SSL_CTX; cmd: cint; larg: clong; parg: pointer): clong		46
+nim	SSL_CTX_set_min_proto_version	libevent/bindings/bufferevent_ssl.html#SSL_CTX_set_min_proto_version.t,ptr.SSL_CTX,cint	template SSL_CTX_set_min_proto_version(ctx: ptr SSL_CTX; version: cint): cint		48
+nim	ERR_get_error	libevent/bindings/bufferevent_ssl.html#ERR_get_error	proc ERR_get_error(): culong		52
+nim	ERR_error_string_n	libevent/bindings/bufferevent_ssl.html#ERR_error_string_n,culong,cstring,csize_t	proc ERR_error_string_n(e: culong; buf: cstring; len: csize_t)		54
+nim	BUFFEREVENT_SSL_OPEN	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_OPEN	BuffereventSSLState.BUFFEREVENT_SSL_OPEN		61
+nim	BUFFEREVENT_SSL_CONNECTING	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_CONNECTING	BuffereventSSLState.BUFFEREVENT_SSL_CONNECTING		61
+nim	BUFFEREVENT_SSL_ACCEPTING	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_ACCEPTING	BuffereventSSLState.BUFFEREVENT_SSL_ACCEPTING		61
+nim	BuffereventSSLState	libevent/bindings/bufferevent_ssl.html#BuffereventSSLState	enum BuffereventSSLState		61
+nim	BUFFEREVENT_SSL_DIRTY_SHUTDOWN	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_DIRTY_SHUTDOWN	const BUFFEREVENT_SSL_DIRTY_SHUTDOWN		68
+nim	BUFFEREVENT_SSL_BATCH_WRITE	libevent/bindings/bufferevent_ssl.html#BUFFEREVENT_SSL_BATCH_WRITE	const BUFFEREVENT_SSL_BATCH_WRITE		69
+nim	bufferevent_ssl_get_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_get_flags,ptr.bufferevent	proc bufferevent_ssl_get_flags(bev: ptr bufferevent): uint64		73
+nim	bufferevent_ssl_set_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_set_flags,ptr.bufferevent,uint64	proc bufferevent_ssl_set_flags(bev: ptr bufferevent; flags: uint64): uint64		74
+nim	bufferevent_ssl_clear_flags	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_clear_flags,ptr.bufferevent,uint64	proc bufferevent_ssl_clear_flags(bev: ptr bufferevent; flags: uint64): uint64		75
+nim	bufferevent_openssl_filter_new	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_filter_new,ptr.event_base,ptr.bufferevent,ptr.SSL,BuffereventSSLState,int	proc bufferevent_openssl_filter_new(base: ptr event_base;\n                               underlying: ptr bufferevent; ssl: ptr SSL;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		80
+nim	bufferevent_openssl_socket_new	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_socket_new,ptr.event_base,evutil_socket_t,ptr.SSL,BuffereventSSLState,int	proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;\n                               ssl: ptr SSL; state: BuffereventSSLState;\n                               options: int): ptr bufferevent		84
+nim	bufferevent_openssl_get_ssl	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_ssl,ptr.bufferevent	proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr SSL		89
+nim	bufferevent_openssl_get_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_allow_dirty_shutdown,ptr.bufferevent	proc bufferevent_openssl_get_allow_dirty_shutdown(bev: ptr bufferevent): int		91
+nim	bufferevent_openssl_set_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_set_allow_dirty_shutdown,ptr.bufferevent,int	proc bufferevent_openssl_set_allow_dirty_shutdown(bev: ptr bufferevent;\n    allow_dirty_shutdown: int)		92
+nim	bufferevent_ssl_renegotiate	libevent/bindings/bufferevent_ssl.html#bufferevent_ssl_renegotiate,ptr.bufferevent	proc bufferevent_ssl_renegotiate(bev: ptr bufferevent): int		94
+nim	bufferevent_get_openssl_error	libevent/bindings/bufferevent_ssl.html#bufferevent_get_openssl_error,ptr.bufferevent	proc bufferevent_get_openssl_error(bev: ptr bufferevent): culong		95
+nim	bufferevent_mbedtls_filter_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_filter_new,ptr.event_base,ptr.bufferevent,ptr.mbedtls_dyncontext,BuffereventSSLState,int	proc bufferevent_mbedtls_filter_new(base: ptr event_base;\n                               underlying: ptr bufferevent;\n                               ssl: ptr mbedtls_dyncontext;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		98
+nim	bufferevent_mbedtls_socket_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_socket_new,ptr.event_base,evutil_socket_t,ptr.mbedtls_dyncontext,BuffereventSSLState,int	proc bufferevent_mbedtls_socket_new(base: ptr event_base; fd: evutil_socket_t;\n                               ssl: ptr mbedtls_dyncontext;\n                               state: BuffereventSSLState; options: int): ptr bufferevent		99
+nim	bufferevent_mbedtls_get_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_allow_dirty_shutdown,ptr.bufferevent	proc bufferevent_mbedtls_get_allow_dirty_shutdown(bev: ptr bufferevent): int		101
+nim	bufferevent_mbedtls_set_allow_dirty_shutdown	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_set_allow_dirty_shutdown,ptr.bufferevent,int	proc bufferevent_mbedtls_set_allow_dirty_shutdown(bev: ptr bufferevent;\n    allow_dirty_shutdown: int)		102
+nim	bufferevent_mbedtls_get_ssl	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_get_ssl,ptr.bufferevent	proc bufferevent_mbedtls_get_ssl(bufev: ptr bufferevent): ptr mbedtls_ssl_context		103
+nim	bufferevent_mbedtls_renegotiate	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_renegotiate,ptr.bufferevent	proc bufferevent_mbedtls_renegotiate(bev: ptr bufferevent): int		104
+nim	bufferevent_get_mbedtls_error	libevent/bindings/bufferevent_ssl.html#bufferevent_get_mbedtls_error,ptr.bufferevent	proc bufferevent_get_mbedtls_error(bev: ptr bufferevent): culong		105
+nim	bufferevent_mbedtls_dyncontext_new	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_new,ptr.mbedtls_ssl_config	proc bufferevent_mbedtls_dyncontext_new(conf: ptr mbedtls_ssl_config): ptr mbedtls_dyncontext		107
+nim	bufferevent_mbedtls_dyncontext_free	libevent/bindings/bufferevent_ssl.html#bufferevent_mbedtls_dyncontext_free,ptr.mbedtls_dyncontext	proc bufferevent_mbedtls_dyncontext_free(ctx: ptr mbedtls_dyncontext)		108

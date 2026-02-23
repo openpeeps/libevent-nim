@@ -16,10 +16,10 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.6">
+<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.8">
 
 <!-- JS -->
-<script type="text/javascript" src="dochack.js?v=2.2.6"></script>
+<script type="text/javascript" src="dochack.js?v=2.2.8"></script>
 </head>
 <body>
   <div class="document" id="documentId">
@@ -305,9 +305,9 @@
 <dt><a name="bufferevent_openssl_filter_new" href="#bufferevent_openssl_filter_new"><span>bufferevent_openssl_filter_new:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_filter_new(base: ptr event_base;
-                               underlying: ptr bufferevent; ssl: ptr ssl_st;
-                               state: BuffereventSSLState; options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_filter_new%2Cptr.event_base%2Cptr.bufferevent%2Cptr.ssl_st%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_filter_new(base: ptr event_base;
-                               underlying: ptr bufferevent; ssl: ptr ssl_st;
+                               underlying: ptr bufferevent; ssl: ptr SSL;
+                               state: BuffereventSSLState; options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_filter_new%2Cptr.event_base%2Cptr.bufferevent%2Cptr.SSL%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_filter_new(base: ptr event_base;
+                               underlying: ptr bufferevent; ssl: ptr SSL;
                                state: BuffereventSSLState; options: int): ptr bufferevent</a></li>
           </ul></dd>
 <dt><a name="bufferevent_openssl_get_allow_dirty_shutdown" href="#bufferevent_openssl_get_allow_dirty_shutdown"><span>bufferevent_openssl_get_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
@@ -316,7 +316,7 @@
           </ul></dd>
 <dt><a name="bufferevent_openssl_get_ssl" href="#bufferevent_openssl_get_ssl"><span>bufferevent_openssl_get_ssl:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr ssl_st" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_ssl%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr ssl_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr SSL" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_get_ssl%2Cptr.bufferevent">bufferevent_ssl: proc bufferevent_openssl_get_ssl(bufev: ptr bufferevent): ptr SSL</a></li>
           </ul></dd>
 <dt><a name="bufferevent_openssl_set_allow_dirty_shutdown" href="#bufferevent_openssl_set_allow_dirty_shutdown"><span>bufferevent_openssl_set_allow_dirty_shutdown:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -327,9 +327,9 @@
 <dt><a name="bufferevent_openssl_socket_new" href="#bufferevent_openssl_socket_new"><span>bufferevent_openssl_socket_new:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="bufferevent_ssl: proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;
-                               ssl: ptr ssl_st; state: BuffereventSSLState;
-                               options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Cptr.ssl_st%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;
-                               ssl: ptr ssl_st; state: BuffereventSSLState;
+                               ssl: ptr SSL; state: BuffereventSSLState;
+                               options: int): ptr bufferevent" href="libevent/bindings/bufferevent_ssl.html#bufferevent_openssl_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Cptr.SSL%2CBuffereventSSLState%2Cint">bufferevent_ssl: proc bufferevent_openssl_socket_new(base: ptr event_base; fd: evutil_socket_t;
+                               ssl: ptr SSL; state: BuffereventSSLState;
                                options: int): ptr bufferevent</a></li>
           </ul></dd>
 <dt><a name="bufferevent_pair_get_partner" href="#bufferevent_pair_get_partner"><span>bufferevent_pair_get_partner:</span></a></dt><dd><ul class="simple">
@@ -2140,7 +2140,7 @@
           </ul></dd>
 <dt><a name="SSL" href="#SSL"><span>SSL:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: type SSL" href="libevent/bindings/bufferevent_ssl.html#SSL">bufferevent_ssl: type SSL</a></li>
+          data-doc-search-tag="bufferevent_ssl: object SSL" href="libevent/bindings/bufferevent_ssl.html#SSL">bufferevent_ssl: object SSL</a></li>
           </ul></dd>
 <dt><a name="SSL_CTRL_SET_MIN_PROTO_VERSION" href="#SSL_CTRL_SET_MIN_PROTO_VERSION"><span>SSL_CTRL_SET_MIN_PROTO_VERSION:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -2148,39 +2148,35 @@
           </ul></dd>
 <dt><a name="SSL_CTX" href="#SSL_CTX"><span>SSL_CTX:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: type SSL_CTX" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX">bufferevent_ssl: type SSL_CTX</a></li>
+          data-doc-search-tag="bufferevent_ssl: object SSL_CTX" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX">bufferevent_ssl: object SSL_CTX</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_check_private_key" href="#SSL_CTX_check_private_key"><span>SSL_CTX_check_private_key:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr ssl_ctx_st): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_check_private_key%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr ssl_ctx_st): cint</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr SSL_CTX): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_check_private_key%2Cptr.SSL_CTX">bufferevent_ssl: proc SSL_CTX_check_private_key(ctx: ptr SSL_CTX): cint</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_ctrl" href="#SSL_CTX_ctrl"><span>SSL_CTX_ctrl:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr ssl_ctx_st; cmd: cint; larg: clong; parg: pointer): clong" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_ctrl%2Cptr.ssl_ctx_st%2Ccint%2Cclong%2Cpointer">bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr ssl_ctx_st; cmd: cint; larg: clong; parg: pointer): clong</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr SSL_CTX; cmd: cint; larg: clong; parg: pointer): clong" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_ctrl%2Cptr.SSL_CTX%2Ccint%2Cclong%2Cpointer">bufferevent_ssl: proc SSL_CTX_ctrl(ctx: ptr SSL_CTX; cmd: cint; larg: clong; parg: pointer): clong</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_free" href="#SSL_CTX_free"><span>SSL_CTX_free:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_free(ctx: ptr ssl_ctx_st)" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_free%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_CTX_free(ctx: ptr ssl_ctx_st)</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_free(ctx: ptr SSL_CTX)" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_free%2Cptr.SSL_CTX">bufferevent_ssl: proc SSL_CTX_free(ctx: ptr SSL_CTX)</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_new" href="#SSL_CTX_new"><span>SSL_CTX_new:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_new(m: ptr ssl_method_st): ptr ssl_ctx_st" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_new%2Cptr.ssl_method_st">bufferevent_ssl: proc SSL_CTX_new(m: ptr ssl_method_st): ptr ssl_ctx_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_new(m: ptr SSL_METHOD): ptr SSL_CTX" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_new%2Cptr.SSL_METHOD">bufferevent_ssl: proc SSL_CTX_new(m: ptr SSL_METHOD): ptr SSL_CTX</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_set_min_proto_version" href="#SSL_CTX_set_min_proto_version"><span>SSL_CTX_set_min_proto_version:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr ssl_ctx_st; version: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_set_min_proto_version.t%2Cptr.ssl_ctx_st%2Ccint">bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr ssl_ctx_st; version: cint): cint</a></li>
-          </ul></dd>
-<dt><a name="ssl_ctx_st" href="#ssl_ctx_st"><span>ssl_ctx_st:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: object ssl_ctx_st" href="libevent/bindings/bufferevent_ssl.html#ssl_ctx_st">bufferevent_ssl: object ssl_ctx_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr SSL_CTX; version: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_set_min_proto_version.t%2Cptr.SSL_CTX%2Ccint">bufferevent_ssl: template SSL_CTX_set_min_proto_version(ctx: ptr SSL_CTX; version: cint): cint</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_use_certificate_file" href="#SSL_CTX_use_certificate_file"><span>SSL_CTX_use_certificate_file:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_certificate_file%2Cptr.ssl_ctx_st%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_certificate_file%2Cptr.SSL_CTX%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_certificate_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint</a></li>
           </ul></dd>
 <dt><a name="SSL_CTX_use_PrivateKey_file" href="#SSL_CTX_use_PrivateKey_file"><span>SSL_CTX_use_PrivateKey_file:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_PrivateKey_file%2Cptr.ssl_ctx_st%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr ssl_ctx_st; file: cstring; typ: cint): cint</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint" href="libevent/bindings/bufferevent_ssl.html#SSL_CTX_use_PrivateKey_file%2Cptr.SSL_CTX%2Ccstring%2Ccint">bufferevent_ssl: proc SSL_CTX_use_PrivateKey_file(ctx: ptr SSL_CTX; file: cstring; typ: cint): cint</a></li>
           </ul></dd>
 <dt><a name="SSL_FILETYPE_PEM" href="#SSL_FILETYPE_PEM"><span>SSL_FILETYPE_PEM:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -2188,27 +2184,19 @@
           </ul></dd>
 <dt><a name="SSL_free" href="#SSL_free"><span>SSL_free:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_free(ssl: ptr ssl_st)" href="libevent/bindings/bufferevent_ssl.html#SSL_free%2Cptr.ssl_st">bufferevent_ssl: proc SSL_free(ssl: ptr ssl_st)</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_free(ssl: ptr SSL)" href="libevent/bindings/bufferevent_ssl.html#SSL_free%2Cptr.SSL">bufferevent_ssl: proc SSL_free(ssl: ptr SSL)</a></li>
           </ul></dd>
 <dt><a name="SSL_METHOD" href="#SSL_METHOD"><span>SSL_METHOD:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: type SSL_METHOD" href="libevent/bindings/bufferevent_ssl.html#SSL_METHOD">bufferevent_ssl: type SSL_METHOD</a></li>
-          </ul></dd>
-<dt><a name="ssl_method_st" href="#ssl_method_st"><span>ssl_method_st:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: object ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#ssl_method_st">bufferevent_ssl: object ssl_method_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: object SSL_METHOD" href="libevent/bindings/bufferevent_ssl.html#SSL_METHOD">bufferevent_ssl: object SSL_METHOD</a></li>
           </ul></dd>
 <dt><a name="SSL_new" href="#SSL_new"><span>SSL_new:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc SSL_new(ctx: ptr ssl_ctx_st): ptr ssl_st" href="libevent/bindings/bufferevent_ssl.html#SSL_new%2Cptr.ssl_ctx_st">bufferevent_ssl: proc SSL_new(ctx: ptr ssl_ctx_st): ptr ssl_st</a></li>
-          </ul></dd>
-<dt><a name="ssl_st" href="#ssl_st"><span>ssl_st:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: object ssl_st" href="libevent/bindings/bufferevent_ssl.html#ssl_st">bufferevent_ssl: object ssl_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc SSL_new(ctx: ptr SSL_CTX): ptr SSL" href="libevent/bindings/bufferevent_ssl.html#SSL_new%2Cptr.SSL_CTX">bufferevent_ssl: proc SSL_new(ctx: ptr SSL_CTX): ptr SSL</a></li>
           </ul></dd>
 <dt><a name="SSLv23_server_method" href="#SSLv23_server_method"><span>SSLv23_server_method:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: template SSLv23_server_method(): ptr ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#SSLv23_server_method.t">bufferevent_ssl: template SSLv23_server_method(): ptr ssl_method_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: template SSLv23_server_method(): ptr SSL_METHOD" href="libevent/bindings/bufferevent_ssl.html#SSLv23_server_method.t">bufferevent_ssl: template SSLv23_server_method(): ptr SSL_METHOD</a></li>
           </ul></dd>
 <dt><a name="Timeval" href="#Timeval"><span>Timeval:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -2220,13 +2208,13 @@
           </ul></dd>
 <dt><a name="TLS_server_method" href="#TLS_server_method"><span>TLS_server_method:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="bufferevent_ssl: proc TLS_server_method(): ptr ssl_method_st" href="libevent/bindings/bufferevent_ssl.html#TLS_server_method">bufferevent_ssl: proc TLS_server_method(): ptr ssl_method_st</a></li>
+          data-doc-search-tag="bufferevent_ssl: proc TLS_server_method(): ptr SSL_METHOD" href="libevent/bindings/bufferevent_ssl.html#TLS_server_method">bufferevent_ssl: proc TLS_server_method(): ptr SSL_METHOD</a></li>
           </ul></dd>
 </dl>
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-22 14:23:04 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-23 12:08:19 UTC</small>
       </div>
     </div>
   </div>
