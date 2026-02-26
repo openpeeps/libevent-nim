@@ -63,33 +63,44 @@
 <li><a class="reference" href="#evdns_base" title="evdns_base {.importc: &quot;struct evdns_base&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
              incompleteStruct.} = object">evdns_base</a></li>
 <li><a class="reference" href="#evhttp" title="evhttp {.importc: &quot;struct evhttp&quot;, header: &quot;&lt;event2/http.h&gt;&quot;, incompleteStruct.} = object">evhttp</a></li>
+<li><a class="reference" href="#evhttp_bevcb" title="evhttp_bevcb = proc (base: ptr event_base; arg: pointer): pointer {.cdecl.}">evhttp_bevcb</a></li>
 <li><a class="reference" href="#evhttp_bound_socket" title="evhttp_bound_socket {.importc: &quot;struct evhttp_bound_socket&quot;,
                       header: &quot;&lt;event2/http.h&gt;&quot;, incompleteStruct.} = object">evhttp_bound_socket</a></li>
-<li><a class="reference" href="#evhttp_connection" title="evhttp_connection {.importc: &quot;struct evhttp_connection&quot;,
-                    header: &quot;&lt;event2/http.h&gt;&quot;, incompleteStruct.} = object">evhttp_connection</a></li>
-<li><a class="reference" href="#evhttp_request_2" title="evhttp_request {.importc: &quot;struct evhttp_request&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
-                 incompleteStruct.} = object">evhttp_request</a></li>
-<li><a class="reference" href="#evhttp_request_kind" title="evhttp_request_kind = enum
-  Evhttp_request = 0, Evhttp_response = 1">evhttp_request_kind</a></li>
-<li><a class="reference" href="#evhttp_uri" title="evhttp_uri {.importc: &quot;struct evhttp_uri&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
-             incompleteStruct.} = object">evhttp_uri</a></li>
-<li><a class="reference" href="#EvhttpBevcb" title="EvhttpBevcb = proc (base: ptr event_base; arg: pointer): pointer {.cdecl.}">EvhttpBevcb</a></li>
-<li><a class="reference" href="#EvhttpBoundSocketForeachFn" title="EvhttpBoundSocketForeachFn = proc (sock: ptr evhttp_bound_socket; arg: pointer) {.
-    cdecl.}">EvhttpBoundSocketForeachFn</a></li>
-<li><a class="reference" href="#EvhttpCmdType" title="EvhttpCmdType = enum
+<li><a class="reference" href="#evhttp_bound_socket_foreach_fn" title="evhttp_bound_socket_foreach_fn = proc (sock: ptr evhttp_bound_socket;
+                                       arg: pointer) {.cdecl.}">evhttp_bound_socket_foreach_fn</a></li>
+<li><a class="reference" href="#evhttp_cmd_type" title="evhttp_cmd_type = enum
   EVHTTP_REQ_GET = 1, EVHTTP_REQ_POST = 2, EVHTTP_REQ_HEAD = 4,
   EVHTTP_REQ_PUT = 8, EVHTTP_REQ_DELETE = 16, EVHTTP_REQ_OPTIONS = 32,
-  EVHTTP_REQ_TRACE = 64, EVHTTP_REQ_CONNECT = 128, EVHTTP_REQ_PATCH = 256">EvhttpCmdType</a></li>
-<li><a class="reference" href="#EvhttpConnectionCloseCb" title="EvhttpConnectionCloseCb = proc (conn: ptr evhttp_connection; arg: pointer) {.
-    cdecl.}">EvhttpConnectionCloseCb</a></li>
-<li><a class="reference" href="#EvhttpRequestCb" title="EvhttpRequestCb = proc (req: ptr evhttp_request; arg: pointer) {.cdecl.}">EvhttpRequestCb</a></li>
-<li><a class="reference" href="#EvhttpRequestError" title="EvhttpRequestError = enum
+  EVHTTP_REQ_TRACE = 64, EVHTTP_REQ_CONNECT = 128, EVHTTP_REQ_PATCH = 256">evhttp_cmd_type</a></li>
+<li><a class="reference" href="#evhttp_connection" title="evhttp_connection {.importc: &quot;struct evhttp_connection&quot;,
+                    header: &quot;&lt;event2/http.h&gt;&quot;, incompleteStruct.} = object">evhttp_connection</a></li>
+<li><a class="reference" href="#evhttp_connection_close_cb" title="evhttp_connection_close_cb = proc (conn: ptr evhttp_connection; arg: pointer) {.
+    cdecl.}">evhttp_connection_close_cb</a></li>
+<li><a class="reference" href="#evhttp_request_2" title="evhttp_request {.importc: &quot;struct evhttp_request&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
+                 incompleteStruct.} = object">evhttp_request</a></li>
+<li><a class="reference" href="#evhttp_request_cb" title="evhttp_request_cb = proc (req: ptr evhttp_request; arg: pointer) {.cdecl.}">evhttp_request_cb</a></li>
+<li><a class="reference" href="#evhttp_request_error" title="evhttp_request_error = enum
   EVREQ_HTTP_TIMEOUT, EVREQ_HTTP_EOF, EVREQ_HTTP_INVALID_HEADER,
-  EVREQ_HTTP_BUFFER_ERROR, EVREQ_HTTP_REQUEST_CANCEL, EVREQ_HTTP_DATA_TOO_LONG">EvhttpRequestError</a></li>
-<li><a class="reference" href="#EvhttpRequestErrorCb" title="EvhttpRequestErrorCb = proc (err: EvhttpRequestError; arg: pointer) {.cdecl.}">EvhttpRequestErrorCb</a></li>
-<li><a class="reference" href="#EvhttpRequestHeaderCb" title="EvhttpRequestHeaderCb = proc (req: ptr evhttp_request; arg: pointer): cint {.
-    cdecl.}">EvhttpRequestHeaderCb</a></li>
-<li><a class="reference" href="#EvhttpRequestOnCompleteCb" title="EvhttpRequestOnCompleteCb = proc (req: ptr evhttp_request; arg: pointer) {.cdecl.}">EvhttpRequestOnCompleteCb</a></li>
+  EVREQ_HTTP_BUFFER_ERROR, EVREQ_HTTP_REQUEST_CANCEL, EVREQ_HTTP_DATA_TOO_LONG">evhttp_request_error</a></li>
+<li><a class="reference" href="#evhttp_request_error_cb" title="evhttp_request_error_cb = proc (err: EvhttpRequestError; arg: pointer) {.cdecl.}">evhttp_request_error_cb</a></li>
+<li><a class="reference" href="#evhttp_request_header_cb" title="evhttp_request_header_cb = proc (req: ptr evhttp_request; arg: pointer): cint {.
+    cdecl.}">evhttp_request_header_cb</a></li>
+<li><a class="reference" href="#evhttp_request_kind" title="evhttp_request_kind = enum
+  Evhttp_request = 0, Evhttp_response = 1">evhttp_request_kind</a></li>
+<li><a class="reference" href="#evhttp_request_on_complete_cb" title="evhttp_request_on_complete_cb = proc (req: ptr evhttp_request; arg: pointer) {.
+    cdecl.}">evhttp_request_on_complete_cb</a></li>
+<li><a class="reference" href="#evhttp_uri" title="evhttp_uri {.importc: &quot;struct evhttp_uri&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
+             incompleteStruct.} = object">evhttp_uri</a></li>
+<li><a class="reference" href="#EvhttpBevcb" title="EvhttpBevcb = evhttp_bevcb">EvhttpBevcb</a></li>
+<li><a class="reference" href="#EvhttpBoundSocketForeachFn" title="EvhttpBoundSocketForeachFn = evhttp_bound_socket_foreach_fn">EvhttpBoundSocketForeachFn</a></li>
+<li><a class="reference" href="#EvhttpCmdType" title="EvhttpCmdType = evhttp_cmd_type">EvhttpCmdType</a></li>
+<li><a class="reference" href="#EvhttpConnectionCloseCb" title="EvhttpConnectionCloseCb = evhttp_connection_close_cb">EvhttpConnectionCloseCb</a></li>
+<li><a class="reference" href="#EvhttpRequestCb" title="EvhttpRequestCb = evhttp_request_cb">EvhttpRequestCb</a></li>
+<li><a class="reference" href="#EvhttpRequestError" title="EvhttpRequestError = evhttp_request_error">EvhttpRequestError</a></li>
+<li><a class="reference" href="#EvhttpRequestErrorCb" title="EvhttpRequestErrorCb = evhttp_request_error_cb">EvhttpRequestErrorCb</a></li>
+<li><a class="reference" href="#EvhttpRequestHeaderCb" title="EvhttpRequestHeaderCb = evhttp_request_header_cb">EvhttpRequestHeaderCb</a></li>
+<li><a class="reference" href="#EvhttpRequestKind" title="EvhttpRequestKind = evhttp_request_kind">EvhttpRequestKind</a></li>
+<li><a class="reference" href="#EvhttpRequestOnCompleteCb" title="EvhttpRequestOnCompleteCb = evhttp_request_on_complete_cb">EvhttpRequestOnCompleteCb</a></li>
 <li><a class="reference" href="#evkeyvalq" title="evkeyvalq {.importc: &quot;struct evkeyvalq&quot;, header: &quot;&lt;event2/http.h&gt;&quot;,
             incompleteStruct.} = object">evkeyvalq</a></li>
 
@@ -307,9 +318,9 @@
 
 </ul>
 <ul class="simple nested-toc-section">evhttp_make_request
-  <li><a class="reference" href="#evhttp_make_request%2Cptr.evhttp_connection%2Cptr.evhttp_request%2CEvhttpCmdType%2Ccstring" title="evhttp_make_request(evcon: ptr evhttp_connection; req: ptr evhttp_request;
-                    typ: EvhttpCmdType; uri: cstring): cint">evhttp_make_request(evcon: ptr evhttp_connection; req: ptr evhttp_request;
-                    typ: EvhttpCmdType; uri: cstring): cint</a></li>
+  <li><a class="reference" href="#evhttp_make_request%2Cptr.evhttp_connection%2Cptr.evhttp_request%2Cevhttp_cmd_type%2Ccstring" title="evhttp_make_request(evcon: ptr evhttp_connection; req: ptr evhttp_request;
+                    typ: evhttp_cmd_type; uri: cstring): cint">evhttp_make_request(evcon: ptr evhttp_connection; req: ptr evhttp_request;
+                    typ: evhttp_cmd_type; uri: cstring): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evhttp_new
@@ -341,7 +352,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">evhttp_request_get_command
-  <li><a class="reference" href="#evhttp_request_get_command%2Cptr.evhttp_request" title="evhttp_request_get_command(req: ptr evhttp_request): EvhttpCmdType">evhttp_request_get_command(req: ptr evhttp_request): EvhttpCmdType</a></li>
+  <li><a class="reference" href="#evhttp_request_get_command%2Cptr.evhttp_request" title="evhttp_request_get_command(req: ptr evhttp_request): evhttp_cmd_type">evhttp_request_get_command(req: ptr evhttp_request): evhttp_cmd_type</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evhttp_request_get_connection
@@ -628,9 +639,37 @@
     
   </dd>
 </div>
+<div id="evhttp_bevcb">
+  <dt><pre><a href="http.html#evhttp_bevcb"><span class="Identifier">evhttp_bevcb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
 <div id="evhttp_bound_socket">
   <dt><pre><a href="http.html#evhttp_bound_socket"><span class="Identifier">evhttp_bound_socket</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evhttp_bound_socket&quot;</span><span class="Other">,</span>
                       <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/http.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_bound_socket_foreach_fn">
+  <dt><pre><a href="http.html#evhttp_bound_socket_foreach_fn"><span class="Identifier">evhttp_bound_socket_foreach_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">sock</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_bound_socket"><span class="Identifier">evhttp_bound_socket</span></a><span class="Other">;</span>
+                                       <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_cmd_type">
+  <dt><pre><a href="http.html#evhttp_cmd_type"><span class="Identifier">evhttp_cmd_type</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">EVHTTP_REQ_GET</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_POST</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_HEAD</span> <span class="Other">=</span> <span class="DecNumber">4</span><span class="Other">,</span>
+  <span class="Identifier">EVHTTP_REQ_PUT</span> <span class="Other">=</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_DELETE</span> <span class="Other">=</span> <span class="DecNumber">16</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_OPTIONS</span> <span class="Other">=</span> <span class="DecNumber">32</span><span class="Other">,</span>
+  <span class="Identifier">EVHTTP_REQ_TRACE</span> <span class="Other">=</span> <span class="DecNumber">64</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_CONNECT</span> <span class="Other">=</span> <span class="DecNumber">128</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_PATCH</span> <span class="Other">=</span> <span class="DecNumber">256</span></pre></dt>
   <dd>
     
     
@@ -646,6 +685,15 @@
     
   </dd>
 </div>
+<div id="evhttp_connection_close_cb">
+  <dt><pre><a href="http.html#evhttp_connection_close_cb"><span class="Identifier">evhttp_connection_close_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">conn</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_connection"><span class="Identifier">evhttp_connection</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+    <span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
 <div id="evhttp_request_2">
   <dt><pre><a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evhttp_request&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/http.h&gt;&quot;</span><span class="Other">,</span>
                  <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
@@ -655,9 +703,53 @@
     
   </dd>
 </div>
+<div id="evhttp_request_cb">
+  <dt><pre><a href="http.html#evhttp_request_cb"><span class="Identifier">evhttp_request_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_request_error">
+  <dt><pre><a href="http.html#evhttp_request_error"><span class="Identifier">evhttp_request_error</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">EVREQ_HTTP_TIMEOUT</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_EOF</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_INVALID_HEADER</span><span class="Other">,</span>
+  <span class="Identifier">EVREQ_HTTP_BUFFER_ERROR</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_REQUEST_CANCEL</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_DATA_TOO_LONG</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_request_error_cb">
+  <dt><pre><a href="http.html#evhttp_request_error_cb"><span class="Identifier">evhttp_request_error_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <a href="http.html#EvhttpRequestError"><span class="Identifier">EvhttpRequestError</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_request_header_cb">
+  <dt><pre><a href="http.html#evhttp_request_header_cb"><span class="Identifier">evhttp_request_header_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+    <span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
 <div id="evhttp_request_kind">
   <dt><pre><a href="http.html#evhttp_request_kind"><span class="Identifier">evhttp_request_kind</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">Evhttp_request</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">Evhttp_response</span> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evhttp_request_on_complete_cb">
+  <dt><pre><a href="http.html#evhttp_request_on_complete_cb"><span class="Identifier">evhttp_request_on_complete_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+    <span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -674,7 +766,7 @@
   </dd>
 </div>
 <div id="EvhttpBevcb">
-  <dt><pre><a href="http.html#EvhttpBevcb"><span class="Identifier">EvhttpBevcb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpBevcb"><span class="Identifier">EvhttpBevcb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_bevcb"><span class="Identifier">evhttp_bevcb</span></a></pre></dt>
   <dd>
     
     
@@ -682,8 +774,7 @@
   </dd>
 </div>
 <div id="EvhttpBoundSocketForeachFn">
-  <dt><pre><a href="http.html#EvhttpBoundSocketForeachFn"><span class="Identifier">EvhttpBoundSocketForeachFn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">sock</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_bound_socket"><span class="Identifier">evhttp_bound_socket</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
-    <span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpBoundSocketForeachFn"><span class="Identifier">EvhttpBoundSocketForeachFn</span></a> <span class="Other">=</span> <a href="http.html#evhttp_bound_socket_foreach_fn"><span class="Identifier">evhttp_bound_socket_foreach_fn</span></a></pre></dt>
   <dd>
     
     
@@ -691,10 +782,7 @@
   </dd>
 </div>
 <div id="EvhttpCmdType">
-  <dt><pre><a href="http.html#EvhttpCmdType"><span class="Identifier">EvhttpCmdType</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">EVHTTP_REQ_GET</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_POST</span> <span class="Other">=</span> <span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_HEAD</span> <span class="Other">=</span> <span class="DecNumber">4</span><span class="Other">,</span>
-  <span class="Identifier">EVHTTP_REQ_PUT</span> <span class="Other">=</span> <span class="DecNumber">8</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_DELETE</span> <span class="Other">=</span> <span class="DecNumber">16</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_OPTIONS</span> <span class="Other">=</span> <span class="DecNumber">32</span><span class="Other">,</span>
-  <span class="Identifier">EVHTTP_REQ_TRACE</span> <span class="Other">=</span> <span class="DecNumber">64</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_CONNECT</span> <span class="Other">=</span> <span class="DecNumber">128</span><span class="Other">,</span> <span class="Identifier">EVHTTP_REQ_PATCH</span> <span class="Other">=</span> <span class="DecNumber">256</span></pre></dt>
+  <dt><pre><a href="http.html#EvhttpCmdType"><span class="Identifier">EvhttpCmdType</span></a> <span class="Other">=</span> <a href="http.html#evhttp_cmd_type"><span class="Identifier">evhttp_cmd_type</span></a></pre></dt>
   <dd>
     
     
@@ -702,8 +790,7 @@
   </dd>
 </div>
 <div id="EvhttpConnectionCloseCb">
-  <dt><pre><a href="http.html#EvhttpConnectionCloseCb"><span class="Identifier">EvhttpConnectionCloseCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">conn</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_connection"><span class="Identifier">evhttp_connection</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
-    <span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpConnectionCloseCb"><span class="Identifier">EvhttpConnectionCloseCb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_connection_close_cb"><span class="Identifier">evhttp_connection_close_cb</span></a></pre></dt>
   <dd>
     
     
@@ -711,7 +798,7 @@
   </dd>
 </div>
 <div id="EvhttpRequestCb">
-  <dt><pre><a href="http.html#EvhttpRequestCb"><span class="Identifier">EvhttpRequestCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpRequestCb"><span class="Identifier">EvhttpRequestCb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_cb"><span class="Identifier">evhttp_request_cb</span></a></pre></dt>
   <dd>
     
     
@@ -719,9 +806,7 @@
   </dd>
 </div>
 <div id="EvhttpRequestError">
-  <dt><pre><a href="http.html#EvhttpRequestError"><span class="Identifier">EvhttpRequestError</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">EVREQ_HTTP_TIMEOUT</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_EOF</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_INVALID_HEADER</span><span class="Other">,</span>
-  <span class="Identifier">EVREQ_HTTP_BUFFER_ERROR</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_REQUEST_CANCEL</span><span class="Other">,</span> <span class="Identifier">EVREQ_HTTP_DATA_TOO_LONG</span></pre></dt>
+  <dt><pre><a href="http.html#EvhttpRequestError"><span class="Identifier">EvhttpRequestError</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_error"><span class="Identifier">evhttp_request_error</span></a></pre></dt>
   <dd>
     
     
@@ -729,7 +814,7 @@
   </dd>
 </div>
 <div id="EvhttpRequestErrorCb">
-  <dt><pre><a href="http.html#EvhttpRequestErrorCb"><span class="Identifier">EvhttpRequestErrorCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <a href="http.html#EvhttpRequestError"><span class="Identifier">EvhttpRequestError</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpRequestErrorCb"><span class="Identifier">EvhttpRequestErrorCb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_error_cb"><span class="Identifier">evhttp_request_error_cb</span></a></pre></dt>
   <dd>
     
     
@@ -737,8 +822,15 @@
   </dd>
 </div>
 <div id="EvhttpRequestHeaderCb">
-  <dt><pre><a href="http.html#EvhttpRequestHeaderCb"><span class="Identifier">EvhttpRequestHeaderCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
-    <span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpRequestHeaderCb"><span class="Identifier">EvhttpRequestHeaderCb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_header_cb"><span class="Identifier">evhttp_request_header_cb</span></a></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="EvhttpRequestKind">
+  <dt><pre><a href="http.html#EvhttpRequestKind"><span class="Identifier">EvhttpRequestKind</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_kind"><span class="Identifier">evhttp_request_kind</span></a></pre></dt>
   <dd>
     
     
@@ -746,7 +838,7 @@
   </dd>
 </div>
 <div id="EvhttpRequestOnCompleteCb">
-  <dt><pre><a href="http.html#EvhttpRequestOnCompleteCb"><span class="Identifier">EvhttpRequestOnCompleteCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="http.html#EvhttpRequestOnCompleteCb"><span class="Identifier">EvhttpRequestOnCompleteCb</span></a> <span class="Other">=</span> <a href="http.html#evhttp_request_on_complete_cb"><span class="Identifier">evhttp_request_on_complete_cb</span></a></pre></dt>
   <dd>
     
     
@@ -1411,9 +1503,9 @@
 
 </div>
 <div id="evhttp_make_request-procs-all">
-  <div id="evhttp_make_request,ptr.evhttp_connection,ptr.evhttp_request,EvhttpCmdType,cstring">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evhttp_make_request%2Cptr.evhttp_connection%2Cptr.evhttp_request%2CEvhttpCmdType%2Ccstring"><span class="Identifier">evhttp_make_request</span></a><span class="Other">(</span><span class="Identifier">evcon</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_connection"><span class="Identifier">evhttp_connection</span></a><span class="Other">;</span> <span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span>
-                         <span class="Identifier">typ</span><span class="Other">:</span> <a href="http.html#EvhttpCmdType"><span class="Identifier">EvhttpCmdType</span></a><span class="Other">;</span> <span class="Identifier">uri</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="evhttp_make_request,ptr.evhttp_connection,ptr.evhttp_request,evhttp_cmd_type,cstring">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evhttp_make_request%2Cptr.evhttp_connection%2Cptr.evhttp_request%2Cevhttp_cmd_type%2Ccstring"><span class="Identifier">evhttp_make_request</span></a><span class="Other">(</span><span class="Identifier">evcon</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_connection"><span class="Identifier">evhttp_connection</span></a><span class="Other">;</span> <span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">;</span>
+                         <span class="Identifier">typ</span><span class="Other">:</span> <a href="http.html#evhttp_cmd_type"><span class="Identifier">evhttp_cmd_type</span></a><span class="Other">;</span> <span class="Identifier">uri</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/http.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1509,7 +1601,7 @@
 </div>
 <div id="evhttp_request_get_command-procs-all">
   <div id="evhttp_request_get_command,ptr.evhttp_request">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evhttp_request_get_command%2Cptr.evhttp_request"><span class="Identifier">evhttp_request_get_command</span></a><span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">)</span><span class="Other">:</span> <a href="http.html#EvhttpCmdType"><span class="Identifier">EvhttpCmdType</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#evhttp_request_get_command%2Cptr.evhttp_request"><span class="Identifier">evhttp_request_get_command</span></a><span class="Other">(</span><span class="Identifier">req</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="http.html#evhttp_request"><span class="Identifier">evhttp_request</span></a><span class="Other">)</span><span class="Other">:</span> <a href="http.html#evhttp_cmd_type"><span class="Identifier">evhttp_cmd_type</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/http.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -2211,7 +2303,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-23 22:26:30 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
       </div>
     </div>
   </div>

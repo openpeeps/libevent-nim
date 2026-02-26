@@ -57,19 +57,21 @@
     <ul class="simple simple-toc-section">
       <li><a class="reference" href="#ev_uint64_t" title="ev_uint64_t = uint64">ev_uint64_t</a></li>
 <li><a class="reference" href="#event" title="event {.importc: &quot;struct event&quot;, header: &quot;&lt;event2/event.h&gt;&quot;, incompleteStruct.} = object">event</a></li>
-<li><a class="reference" href="#Event_2" title="Event = object">Event</a></li>
 <li><a class="reference" href="#event_base" title="event_base {.importc: &quot;struct event_base&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
              incompleteStruct.} = object">event_base</a></li>
+<li><a class="reference" href="#event_base_foreach_event_cb" title="event_base_foreach_event_cb = proc (base: ptr event_base; ev: ptr event;
+                                    arg: pointer): cint {.cdecl.}">event_base_foreach_event_cb</a></li>
+<li><a class="reference" href="#event_callback_fn" title="event_callback_fn = proc (fd: cint; events: cshort; arg: pointer) {.cdecl.}">event_callback_fn</a></li>
 <li><a class="reference" href="#event_config" title="event_config {.importc: &quot;struct event_config&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
                incompleteStruct.} = object">event_config</a></li>
-<li><a class="reference" href="#EventBase" title="EventBase = object">EventBase</a></li>
-<li><a class="reference" href="#EventBaseForeachEventCb" title="EventBaseForeachEventCb = proc (base: ptr event_base; ev: ptr event;
-                                arg: pointer): cint {.cdecl.}">EventBaseForeachEventCb</a></li>
-<li><a class="reference" href="#EventCallbackFn" title="EventCallbackFn = proc (fd: cint; events: cshort; arg: pointer) {.cdecl.}">EventCallbackFn</a></li>
-<li><a class="reference" href="#EventConfig" title="EventConfig = object">EventConfig</a></li>
-<li><a class="reference" href="#EventFatalCb" title="EventFatalCb = proc (err: cint) {.cdecl.}">EventFatalCb</a></li>
-<li><a class="reference" href="#EventFinalizeCallbackFn" title="EventFinalizeCallbackFn = proc (ev: ptr event; arg: pointer) {.cdecl.}">EventFinalizeCallbackFn</a></li>
-<li><a class="reference" href="#EventLogCb" title="EventLogCb = proc (severity: cint; msg: cstring) {.cdecl.}">EventLogCb</a></li>
+<li><a class="reference" href="#event_fatal_cb" title="event_fatal_cb = proc (err: cint) {.cdecl.}">event_fatal_cb</a></li>
+<li><a class="reference" href="#event_finalize_callback_fn" title="event_finalize_callback_fn = proc (ev: ptr event; arg: pointer) {.cdecl.}">event_finalize_callback_fn</a></li>
+<li><a class="reference" href="#event_log_cb" title="event_log_cb = proc (severity: cint; msg: cstring) {.cdecl.}">event_log_cb</a></li>
+<li><a class="reference" href="#EventBaseForeachEventCb" title="EventBaseForeachEventCb = event_base_foreach_event_cb">EventBaseForeachEventCb</a></li>
+<li><a class="reference" href="#EventCallbackFn" title="EventCallbackFn = event_callback_fn">EventCallbackFn</a></li>
+<li><a class="reference" href="#EventFatalCb" title="EventFatalCb = event_fatal_cb">EventFatalCb</a></li>
+<li><a class="reference" href="#EventFinalizeCallbackFn" title="EventFinalizeCallbackFn = event_finalize_callback_fn">EventFinalizeCallbackFn</a></li>
+<li><a class="reference" href="#EventLogCb" title="EventLogCb = event_log_cb">EventLogCb</a></li>
 <li><a class="reference" href="#evutil_socket_t" title="evutil_socket_t = cint">evutil_socket_t</a></li>
 <li><a class="reference" href="#PEvent" title="PEvent = ptr event">PEvent</a></li>
 <li><a class="reference" href="#PEventBase" title="PEventBase = ptr event_base">PEventBase</a></li>
@@ -130,9 +132,9 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_assign
-  <li><a class="reference" href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer" title="event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;
-             cb: EventCallbackFn; arg: pointer): cint">event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;
-             cb: EventCallbackFn; arg: pointer): cint</a></li>
+  <li><a class="reference" href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer" title="event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;
+             cb: event_callback_fn; arg: pointer): cint">event_assign(ev: ptr event; base: ptr event_base; fd: cint; events: cushort;
+             cb: event_callback_fn; arg: pointer): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_base_active_by_fd
@@ -152,8 +154,8 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_base_foreach_event
-  <li><a class="reference" href="#event_base_foreach_event%2Cptr.event_base%2CEventBaseForeachEventCb%2Cpointer" title="event_base_foreach_event(base: ptr event_base; fn: EventBaseForeachEventCb;
-                         arg: pointer): cint">event_base_foreach_event(base: ptr event_base; fn: EventBaseForeachEventCb;
+  <li><a class="reference" href="#event_base_foreach_event%2Cptr.event_base%2Cevent_base_foreach_event_cb%2Cpointer" title="event_base_foreach_event(base: ptr event_base; fn: event_base_foreach_event_cb;
+                         arg: pointer): cint">event_base_foreach_event(base: ptr event_base; fn: event_base_foreach_event_cb;
                          arg: pointer): cint</a></li>
 
 </ul>
@@ -230,9 +232,9 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_base_once
-  <li><a class="reference" href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer%2Cpointer" title="event_base_once(base: ptr event_base; fd: cint; events: cushort;
-                cb: EventCallbackFn; arg: pointer; timeout: pointer): cint">event_base_once(base: ptr event_base; fd: cint; events: cushort;
-                cb: EventCallbackFn; arg: pointer; timeout: pointer): cint</a></li>
+  <li><a class="reference" href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer%2Cpointer" title="event_base_once(base: ptr event_base; fd: cint; events: cushort;
+                cb: event_callback_fn; arg: pointer; timeout: pointer): cint">event_base_once(base: ptr event_base; fd: cint; events: cushort;
+                cb: event_callback_fn; arg: pointer; timeout: pointer): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_base_priority_init
@@ -304,7 +306,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_finalize
-  <li><a class="reference" href="#event_finalize%2Ccuint%2Cptr.event%2CEventFinalizeCallbackFn" title="event_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint">event_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint</a></li>
+  <li><a class="reference" href="#event_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn" title="event_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint">event_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_free
@@ -312,15 +314,15 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_free_finalize
-  <li><a class="reference" href="#event_free_finalize%2Ccuint%2Cptr.event%2CEventFinalizeCallbackFn" title="event_free_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint">event_free_finalize(flags: cuint; ev: ptr event; cb: EventFinalizeCallbackFn): cint</a></li>
+  <li><a class="reference" href="#event_free_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn" title="event_free_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint">event_free_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_get_assignment
-  <li><a class="reference" href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.EventCallbackFn%2Cptr.pointer" title="event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;
+  <li><a class="reference" href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.event_callback_fn%2Cptr.pointer" title="event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;
                      fd_out: ptr cint; events_out: ptr cushort;
-                     cb_out: ptr EventCallbackFn; arg_out: ptr pointer)">event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;
+                     cb_out: ptr event_callback_fn; arg_out: ptr pointer)">event_get_assignment(ev: ptr event; base_out: ptr ptr event_base;
                      fd_out: ptr cint; events_out: ptr cushort;
-                     cb_out: ptr EventCallbackFn; arg_out: ptr pointer)</a></li>
+                     cb_out: ptr event_callback_fn; arg_out: ptr pointer)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_get_base
@@ -328,7 +330,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_get_callback
-  <li><a class="reference" href="#event_get_callback%2Cptr.event" title="event_get_callback(ev: ptr event): EventCallbackFn">event_get_callback(ev: ptr event): EventCallbackFn</a></li>
+  <li><a class="reference" href="#event_get_callback%2Cptr.event" title="event_get_callback(ev: ptr event): event_callback_fn">event_get_callback(ev: ptr event): event_callback_fn</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_get_callback_arg
@@ -368,9 +370,9 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_new
-  <li><a class="reference" href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer" title="event_new(base: ptr event_base; fd: cint; events: cushort; cb: EventCallbackFn;
-          arg: pointer): ptr event">event_new(base: ptr event_base; fd: cint; events: cushort; cb: EventCallbackFn;
-          arg: pointer): ptr event</a></li>
+  <li><a class="reference" href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer" title="event_new(base: ptr event_base; fd: cint; events: cushort;
+          cb: event_callback_fn; arg: pointer): ptr event">event_new(base: ptr event_base; fd: cint; events: cushort;
+          cb: event_callback_fn; arg: pointer): ptr event</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_pending
@@ -390,11 +392,11 @@
 
 </ul>
 <ul class="simple nested-toc-section">event_set_fatal_callback
-  <li><a class="reference" href="#event_set_fatal_callback%2CEventFatalCb" title="event_set_fatal_callback(cb: EventFatalCb)">event_set_fatal_callback(cb: EventFatalCb)</a></li>
+  <li><a class="reference" href="#event_set_fatal_callback%2Cevent_fatal_cb" title="event_set_fatal_callback(cb: event_fatal_cb)">event_set_fatal_callback(cb: event_fatal_cb)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_set_log_callback
-  <li><a class="reference" href="#event_set_log_callback%2CEventLogCb" title="event_set_log_callback(cb: EventLogCb)">event_set_log_callback(cb: EventLogCb)</a></li>
+  <li><a class="reference" href="#event_set_log_callback%2Cevent_log_cb" title="event_set_log_callback(cb: event_log_cb)">event_set_log_callback(cb: event_log_cb)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">event_set_mem_functions
@@ -418,7 +420,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">evtimer_new
-  <li><a class="reference" href="#evtimer_new%2Cptr.event_base%2CEventCallbackFn%2Cpointer" title="evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event">evtimer_new(base: ptr event_base; cb: EventCallbackFn; arg: pointer): ptr event</a></li>
+  <li><a class="reference" href="#evtimer_new%2Cptr.event_base%2Cevent_callback_fn%2Cpointer" title="evtimer_new(base: ptr event_base; cb: event_callback_fn; arg: pointer): ptr event">evtimer_new(base: ptr event_base; cb: event_callback_fn; arg: pointer): ptr event</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">libevent_global_shutdown
@@ -457,17 +459,26 @@
     
   </dd>
 </div>
-<div id="Event_2">
-  <dt><pre><a href="event.html#Event"><span class="Identifier">Event</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+<div id="event_base">
+  <dt><pre><a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_base&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+             <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
     
     
   </dd>
 </div>
-<div id="event_base">
-  <dt><pre><a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_base&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
-             <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+<div id="event_base_foreach_event_cb">
+  <dt><pre><a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
+                                    <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="event_callback_fn">
+  <dt><pre><a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -483,8 +494,24 @@
     
   </dd>
 </div>
-<div id="EventBase">
-  <dt><pre><a href="event.html#EventBase"><span class="Identifier">EventBase</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+<div id="event_fatal_cb">
+  <dt><pre><a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="event_finalize_callback_fn">
+  <dt><pre><a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="event_log_cb">
+  <dt><pre><a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">severity</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -492,8 +519,7 @@
   </dd>
 </div>
 <div id="EventBaseForeachEventCb">
-  <dt><pre><a href="event.html#EventBaseForeachEventCb"><span class="Identifier">EventBaseForeachEventCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
-                                <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="event.html#EventBaseForeachEventCb"><span class="Identifier">EventBaseForeachEventCb</span></a> <span class="Other">=</span> <a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a></pre></dt>
   <dd>
     
     
@@ -501,15 +527,7 @@
   </dd>
 </div>
 <div id="EventCallbackFn">
-  <dt><pre><a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
-  <dd>
-    
-    
-    
-  </dd>
-</div>
-<div id="EventConfig">
-  <dt><pre><a href="event.html#EventConfig"><span class="Identifier">EventConfig</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dt><pre><a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a> <span class="Other">=</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a></pre></dt>
   <dd>
     
     
@@ -517,7 +535,7 @@
   </dd>
 </div>
 <div id="EventFatalCb">
-  <dt><pre><a href="event.html#EventFatalCb"><span class="Identifier">EventFatalCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="event.html#EventFatalCb"><span class="Identifier">EventFatalCb</span></a> <span class="Other">=</span> <a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a></pre></dt>
   <dd>
     
     
@@ -525,7 +543,7 @@
   </dd>
 </div>
 <div id="EventFinalizeCallbackFn">
-  <dt><pre><a href="event.html#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="event.html#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a> <span class="Other">=</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a></pre></dt>
   <dd>
     
     
@@ -533,7 +551,7 @@
   </dd>
 </div>
 <div id="EventLogCb">
-  <dt><pre><a href="event.html#EventLogCb"><span class="Identifier">EventLogCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">severity</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="event.html#EventLogCb"><span class="Identifier">EventLogCb</span></a> <span class="Other">=</span> <a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a></pre></dt>
   <dd>
     
     
@@ -843,9 +861,9 @@
 
 </div>
 <div id="event_assign-procs-all">
-  <div id="event_assign,ptr.event,ptr.event_base,cint,cushort,EventCallbackFn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer"><span class="Identifier">event_assign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                  <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <div id="event_assign,ptr.event,ptr.event_base,cint,cushort,event_callback_fn,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_assign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
+                  <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -904,10 +922,10 @@
 
 </div>
 <div id="event_base_foreach_event-procs-all">
-  <div id="event_base_foreach_event,ptr.event_base,EventBaseForeachEventCb,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_foreach_event%2Cptr.event_base%2CEventBaseForeachEventCb%2Cpointer"><span class="Identifier">event_base_foreach_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fn</span><span class="Other">:</span> <a href="event.html#EventBaseForeachEventCb"><span class="Identifier">EventBaseForeachEventCb</span></a><span class="Other">;</span>
-                              <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
-    <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <div id="event_base_foreach_event,ptr.event_base,event_base_foreach_event_cb,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_foreach_event%2Cptr.event_base%2Cevent_base_foreach_event_cb%2Cpointer"><span class="Identifier">event_base_foreach_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
+                              <span class="Identifier">fn</span><span class="Other">:</span> <a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+    <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -1133,9 +1151,9 @@
 
 </div>
 <div id="event_base_once-procs-all">
-  <div id="event_base_once,ptr.event_base,cint,cushort,EventCallbackFn,pointer,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer%2Cpointer"><span class="Identifier">event_base_once</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-                     <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <div id="event_base_once,ptr.event_base,cint,cushort,event_callback_fn,pointer,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer%2Cpointer"><span class="Identifier">event_base_once</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
+                     <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1339,8 +1357,8 @@
 
 </div>
 <div id="event_finalize-procs-all">
-  <div id="event_finalize,cuint,ptr.event,EventFinalizeCallbackFn">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_finalize%2Ccuint%2Cptr.event%2CEventFinalizeCallbackFn"><span class="Identifier">event_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <div id="event_finalize,cuint,ptr.event,event_finalize_callback_fn">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1363,9 +1381,9 @@
 
 </div>
 <div id="event_free_finalize-procs-all">
-  <div id="event_free_finalize,cuint,ptr.event,EventFinalizeCallbackFn">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_free_finalize%2Ccuint%2Cptr.event%2CEventFinalizeCallbackFn"><span class="Identifier">event_free_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
-                         <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="event_free_finalize,cuint,ptr.event,event_finalize_callback_fn">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_free_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_free_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
+                         <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1376,10 +1394,10 @@
 
 </div>
 <div id="event_get_assignment-procs-all">
-  <div id="event_get_assignment,ptr.event,ptr.ptr.event_base,ptr.cint,ptr.cushort,ptr.EventCallbackFn,ptr.pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.EventCallbackFn%2Cptr.pointer"><span class="Identifier">event_get_assignment</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
+  <div id="event_get_assignment,ptr.event,ptr.ptr.event_base,ptr.cint,ptr.cushort,ptr.event_callback_fn,ptr.pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.event_callback_fn%2Cptr.pointer"><span class="Identifier">event_get_assignment</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
                           <span class="Identifier">fd_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-                          <span class="Identifier">cb_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+                          <span class="Identifier">cb_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1403,7 +1421,7 @@
 </div>
 <div id="event_get_callback-procs-all">
   <div id="event_get_callback,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback%2Cptr.event"><span class="Identifier">event_get_callback</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback%2Cptr.event"><span class="Identifier">event_get_callback</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1522,9 +1540,9 @@
 
 </div>
 <div id="event_new-procs-all">
-  <div id="event_new,ptr.event_base,cint,cushort,EventCallbackFn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2CEventCallbackFn%2Cpointer"><span class="Identifier">event_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-               <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="event_new,ptr.event_base,cint,cushort,event_callback_fn,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
+               <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1583,8 +1601,8 @@
 
 </div>
 <div id="event_set_fatal_callback-procs-all">
-  <div id="event_set_fatal_callback,EventFatalCb">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_fatal_callback%2CEventFatalCb"><span class="Identifier">event_set_fatal_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventFatalCb"><span class="Identifier">EventFatalCb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="event_set_fatal_callback,event_fatal_cb">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_fatal_callback%2Cevent_fatal_cb"><span class="Identifier">event_set_fatal_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1595,8 +1613,8 @@
 
 </div>
 <div id="event_set_log_callback-procs-all">
-  <div id="event_set_log_callback,EventLogCb">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_log_callback%2CEventLogCb"><span class="Identifier">event_set_log_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventLogCb"><span class="Identifier">EventLogCb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="event_set_log_callback,event_log_cb">
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_log_callback%2Cevent_log_cb"><span class="Identifier">event_set_log_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1657,8 +1675,8 @@
 
 </div>
 <div id="evtimer_new-procs-all">
-  <div id="evtimer_new,ptr.event_base,EventCallbackFn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_new%2Cptr.event_base%2CEventCallbackFn%2Cpointer"><span class="Identifier">evtimer_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.
+  <div id="evtimer_new,ptr.event_base,event_callback_fn,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_new%2Cptr.event_base%2Cevent_callback_fn%2Cpointer"><span class="Identifier">evtimer_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1690,7 +1708,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-23 22:26:30 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
       </div>
     </div>
   </div>

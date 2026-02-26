@@ -58,30 +58,35 @@
   <details open>
     <summary><a class="reference reference-toplevel" href="#7" id="57">Types</a></summary>
     <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#Evbuffer" title="Evbuffer = object">Evbuffer</a></li>
-<li><a class="reference" href="#EvbufferCbEntry" title="EvbufferCbEntry = object">EvbufferCbEntry</a></li>
-<li><a class="reference" href="#EvbufferCbFunc" title="EvbufferCbFunc = proc (buf: ptr Evbuffer; info: ptr EvbufferCbInfo; arg: pointer) {.
-    cdecl.}">EvbufferCbFunc</a></li>
-<li><a class="reference" href="#EvbufferCbInfo" title="EvbufferCbInfo = object
+      <li><a class="reference" href="#Evbuffer" title="Evbuffer {.importc: &quot;struct evbuffer&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
+           incompleteStruct.} = object">Evbuffer</a></li>
+<li><a class="reference" href="#evbuffer_cb_func" title="evbuffer_cb_func = proc (buf: ptr Evbuffer; info: ptr EvbufferCbInfo;
+                         arg: pointer) {.cdecl.}">evbuffer_cb_func</a></li>
+<li><a class="reference" href="#evbuffer_file_segment" title="evbuffer_file_segment = object">evbuffer_file_segment</a></li>
+<li><a class="reference" href="#evbuffer_file_segment_cleanup_cb" title="evbuffer_file_segment_cleanup_cb = proc (seg: ptr evbuffer_file_segment;
+    flags: cint; arg: pointer) {.cdecl.}">evbuffer_file_segment_cleanup_cb</a></li>
+<li><a class="reference" href="#evbuffer_ref_cleanup_cb" title="evbuffer_ref_cleanup_cb = proc (data: pointer; datalen: csize_t; extra: pointer) {.
+    cdecl.}">evbuffer_ref_cleanup_cb</a></li>
+<li><a class="reference" href="#EvbufferCbEntry" title="EvbufferCbEntry {.importc: &quot;struct evbuffer_cb_entry&quot;,
+                  header: &quot;&lt;event2/event.h&gt;&quot;, incompleteStruct.} = object">EvbufferCbEntry</a></li>
+<li><a class="reference" href="#EvbufferCbInfo" title="EvbufferCbInfo {.importc: &quot;struct evbuffer_cb_info&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
+                 incompleteStruct.} = object
   orig_size*: csize_t
   n_added*: csize_t
   n_deleted*: csize_t">EvbufferCbInfo</a></li>
 <li><a class="reference" href="#EvbufferEolStyle" title="EvbufferEolStyle = enum
   EVBUFFER_EOL_ANY, EVBUFFER_EOL_CRLF, EVBUFFER_EOL_CRLF_STRICT,
   EVBUFFER_EOL_LF, EVBUFFER_EOL_NUL">EvbufferEolStyle</a></li>
-<li><a class="reference" href="#EvbufferFileSegment" title="EvbufferFileSegment = object">EvbufferFileSegment</a></li>
-<li><a class="reference" href="#EvbufferFileSegmentCleanupCb" title="EvbufferFileSegmentCleanupCb = proc (seg: ptr EvbufferFileSegment; flags: cint;
-                                     arg: pointer) {.cdecl.}">EvbufferFileSegmentCleanupCb</a></li>
-<li><a class="reference" href="#EvbufferIovec" title="EvbufferIovec = object
+<li><a class="reference" href="#EvbufferIovec" title="EvbufferIovec {.importc: &quot;struct evbuffer_iovec&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
+                incompleteStruct.} = object
   iov_base*: pointer
   iov_len*: csize_t">EvbufferIovec</a></li>
-<li><a class="reference" href="#EvbufferPtr" title="EvbufferPtr = object
+<li><a class="reference" href="#EvbufferPtr" title="EvbufferPtr {.importc: &quot;struct evbuffer_ptr&quot;, header: &quot;&lt;event2/event.h&gt;&quot;,
+              incompleteStruct.} = object
   pos*: int64
   internal*: array[2, pointer]">EvbufferPtr</a></li>
 <li><a class="reference" href="#EvbufferPtrHow" title="EvbufferPtrHow = enum
   EVBUFFER_PTR_SET, EVBUFFER_PTR_ADD">EvbufferPtrHow</a></li>
-<li><a class="reference" href="#EvbufferRefCleanupCb" title="EvbufferRefCleanupCb = proc (data: pointer; datalen: csize_t; extra: pointer) {.
-    cdecl.}">EvbufferRefCleanupCb</a></li>
 
     </ul>
   </details>
@@ -117,7 +122,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_add_cb
-  <li><a class="reference" href="#evbuffer_add_cb%2Cptr.Evbuffer%2CEvbufferCbFunc%2Cpointer" title="evbuffer_add_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): ptr EvbufferCbEntry">evbuffer_add_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): ptr EvbufferCbEntry</a></li>
+  <li><a class="reference" href="#evbuffer_add_cb%2Cptr.Evbuffer%2Cevbuffer_cb_func%2Cpointer" title="evbuffer_add_cb(buffer: ptr Evbuffer; cb: evbuffer_cb_func; cbarg: pointer): ptr EvbufferCbEntry">evbuffer_add_cb(buffer: ptr Evbuffer; cb: evbuffer_cb_func; cbarg: pointer): ptr EvbufferCbEntry</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_add_file
@@ -125,8 +130,8 @@
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_add_file_segment
-  <li><a class="reference" href="#evbuffer_add_file_segment%2Cptr.Evbuffer%2Cptr.EvbufferFileSegment%2Cint64%2Cint64" title="evbuffer_add_file_segment(buf: ptr Evbuffer; seg: ptr EvbufferFileSegment;
-                          offset: int64; length: int64): cint">evbuffer_add_file_segment(buf: ptr Evbuffer; seg: ptr EvbufferFileSegment;
+  <li><a class="reference" href="#evbuffer_add_file_segment%2Cptr.Evbuffer%2Cptr.evbuffer_file_segment%2Cint64%2Cint64" title="evbuffer_add_file_segment(buf: ptr Evbuffer; seg: ptr evbuffer_file_segment;
+                          offset: int64; length: int64): cint">evbuffer_add_file_segment(buf: ptr Evbuffer; seg: ptr evbuffer_file_segment;
                           offset: int64; length: int64): cint</a></li>
 
 </ul>
@@ -139,9 +144,11 @@
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_add_reference
-  <li><a class="reference" href="#evbuffer_add_reference%2Cptr.Evbuffer%2Cpointer%2Ccsize_t%2CEvbufferRefCleanupCb%2Cpointer" title="evbuffer_add_reference(outbuf: ptr Evbuffer; data: pointer; datlen: csize_t;
-                       cleanupfn: EvbufferRefCleanupCb; cleanupfn_arg: pointer): cint">evbuffer_add_reference(outbuf: ptr Evbuffer; data: pointer; datlen: csize_t;
-                       cleanupfn: EvbufferRefCleanupCb; cleanupfn_arg: pointer): cint</a></li>
+  <li><a class="reference" href="#evbuffer_add_reference%2Cptr.Evbuffer%2Cpointer%2Ccsize_t%2Cevbuffer_ref_cleanup_cb%2Cpointer" title="evbuffer_add_reference(outbuf: ptr Evbuffer; data: pointer; datlen: csize_t;
+                       cleanupfn: evbuffer_ref_cleanup_cb;
+                       cleanupfn_arg: pointer): cint">evbuffer_add_reference(outbuf: ptr Evbuffer; data: pointer; datlen: csize_t;
+                       cleanupfn: evbuffer_ref_cleanup_cb;
+                       cleanupfn_arg: pointer): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_add_vprintf
@@ -195,19 +202,19 @@
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_file_segment_add_cleanup_cb
-  <li><a class="reference" href="#evbuffer_file_segment_add_cleanup_cb%2Cptr.EvbufferFileSegment%2CEvbufferFileSegmentCleanupCb%2Cpointer" title="evbuffer_file_segment_add_cleanup_cb(seg: ptr EvbufferFileSegment;
-                                     cb: EvbufferFileSegmentCleanupCb;
-                                     arg: pointer)">evbuffer_file_segment_add_cleanup_cb(seg: ptr EvbufferFileSegment;
-                                     cb: EvbufferFileSegmentCleanupCb;
+  <li><a class="reference" href="#evbuffer_file_segment_add_cleanup_cb%2Cptr.evbuffer_file_segment%2Cevbuffer_file_segment_cleanup_cb%2Cpointer" title="evbuffer_file_segment_add_cleanup_cb(seg: ptr evbuffer_file_segment;
+                                     cb: evbuffer_file_segment_cleanup_cb;
+                                     arg: pointer)">evbuffer_file_segment_add_cleanup_cb(seg: ptr evbuffer_file_segment;
+                                     cb: evbuffer_file_segment_cleanup_cb;
                                      arg: pointer)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_file_segment_free
-  <li><a class="reference" href="#evbuffer_file_segment_free%2Cptr.EvbufferFileSegment" title="evbuffer_file_segment_free(seg: ptr EvbufferFileSegment)">evbuffer_file_segment_free(seg: ptr EvbufferFileSegment)</a></li>
+  <li><a class="reference" href="#evbuffer_file_segment_free%2Cptr.evbuffer_file_segment" title="evbuffer_file_segment_free(seg: ptr evbuffer_file_segment)">evbuffer_file_segment_free(seg: ptr evbuffer_file_segment)</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_file_segment_new
-  <li><a class="reference" href="#evbuffer_file_segment_new%2Ccint%2Cint64%2Cint64%2Ccuint" title="evbuffer_file_segment_new(fd: cint; offset: int64; length: int64; flags: cuint): ptr EvbufferFileSegment">evbuffer_file_segment_new(fd: cint; offset: int64; length: int64; flags: cuint): ptr EvbufferFileSegment</a></li>
+  <li><a class="reference" href="#evbuffer_file_segment_new%2Ccint%2Cint64%2Cint64%2Ccuint" title="evbuffer_file_segment_new(fd: cint; offset: int64; length: int64; flags: cuint): ptr evbuffer_file_segment">evbuffer_file_segment_new(fd: cint; offset: int64; length: int64; flags: cuint): ptr evbuffer_file_segment</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_free
@@ -277,7 +284,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_remove_cb
-  <li><a class="reference" href="#evbuffer_remove_cb%2Cptr.Evbuffer%2CEvbufferCbFunc%2Cpointer" title="evbuffer_remove_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): cint">evbuffer_remove_cb(buffer: ptr Evbuffer; cb: EvbufferCbFunc; cbarg: pointer): cint</a></li>
+  <li><a class="reference" href="#evbuffer_remove_cb%2Cptr.Evbuffer%2Cevbuffer_cb_func%2Cpointer" title="evbuffer_remove_cb(buffer: ptr Evbuffer; cb: evbuffer_cb_func; cbarg: pointer): cint">evbuffer_remove_cb(buffer: ptr Evbuffer; cb: evbuffer_cb_func; cbarg: pointer): cint</a></li>
 
 </ul>
 <ul class="simple nested-toc-section">evbuffer_remove_cb_entry
@@ -351,23 +358,42 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="Evbuffer">
-  <dt><pre><a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dt><pre><a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evbuffer&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+           <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
     
     
   </dd>
 </div>
-<div id="EvbufferCbEntry">
-  <dt><pre><a href="buffer.html#EvbufferCbEntry"><span class="Identifier">EvbufferCbEntry</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+<div id="evbuffer_cb_func">
+  <dt><pre><a href="buffer.html#evbuffer_cb_func"><span class="Identifier">evbuffer_cb_func</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">info</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferCbInfo"><span class="Identifier">EvbufferCbInfo</span></a><span class="Other">;</span>
+                         <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
     
   </dd>
 </div>
-<div id="EvbufferCbFunc">
-  <dt><pre><a href="buffer.html#EvbufferCbFunc"><span class="Identifier">EvbufferCbFunc</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">info</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferCbInfo"><span class="Identifier">EvbufferCbInfo</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+<div id="evbuffer_file_segment">
+  <dt><pre><a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evbuffer_file_segment_cleanup_cb">
+  <dt><pre><a href="buffer.html#evbuffer_file_segment_cleanup_cb"><span class="Identifier">evbuffer_file_segment_cleanup_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a><span class="Other">;</span>
+    <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="evbuffer_ref_cleanup_cb">
+  <dt><pre><a href="buffer.html#evbuffer_ref_cleanup_cb"><span class="Identifier">evbuffer_ref_cleanup_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">datalen</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">extra</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
@@ -375,8 +401,18 @@
     
   </dd>
 </div>
+<div id="EvbufferCbEntry">
+  <dt><pre><a href="buffer.html#EvbufferCbEntry"><span class="Identifier">EvbufferCbEntry</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evbuffer_cb_entry&quot;</span><span class="Other">,</span>
+                  <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
 <div id="EvbufferCbInfo">
-  <dt><pre><a href="buffer.html#EvbufferCbInfo"><span class="Identifier">EvbufferCbInfo</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="buffer.html#EvbufferCbInfo"><span class="Identifier">EvbufferCbInfo</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evbuffer_cb_info&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+                 <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">orig_size</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">csize_t</span>
   <span class="Identifier">n_added</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">csize_t</span>
   <span class="Identifier">n_deleted</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">csize_t</span></pre></dt>
@@ -396,25 +432,9 @@
     
   </dd>
 </div>
-<div id="EvbufferFileSegment">
-  <dt><pre><a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a> <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
-  <dd>
-    
-    
-    
-  </dd>
-</div>
-<div id="EvbufferFileSegmentCleanupCb">
-  <dt><pre><a href="buffer.html#EvbufferFileSegmentCleanupCb"><span class="Identifier">EvbufferFileSegmentCleanupCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                                     <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
-  <dd>
-    
-    
-    
-  </dd>
-</div>
 <div id="EvbufferIovec">
-  <dt><pre><a href="buffer.html#EvbufferIovec"><span class="Identifier">EvbufferIovec</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="buffer.html#EvbufferIovec"><span class="Identifier">EvbufferIovec</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evbuffer_iovec&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+                <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">iov_base</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">pointer</span>
   <span class="Identifier">iov_len</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">csize_t</span></pre></dt>
   <dd>
@@ -424,7 +444,8 @@
   </dd>
 </div>
 <div id="EvbufferPtr">
-  <dt><pre><a href="buffer.html#EvbufferPtr"><span class="Identifier">EvbufferPtr</span></a> <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="buffer.html#EvbufferPtr"><span class="Identifier">EvbufferPtr</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct evbuffer_ptr&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+              <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">pos</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">int64</span>
   <span class="Identifier">internal</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">array</span><span class="Other">[</span><span class="DecNumber">2</span><span class="Other">,</span> <span class="Identifier">pointer</span><span class="Other">]</span></pre></dt>
   <dd>
@@ -436,15 +457,6 @@
 <div id="EvbufferPtrHow">
   <dt><pre><a href="buffer.html#EvbufferPtrHow"><span class="Identifier">EvbufferPtrHow</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">EVBUFFER_PTR_SET</span><span class="Other">,</span> <span class="Identifier">EVBUFFER_PTR_ADD</span></pre></dt>
-  <dd>
-    
-    
-    
-  </dd>
-</div>
-<div id="EvbufferRefCleanupCb">
-  <dt><pre><a href="buffer.html#EvbufferRefCleanupCb"><span class="Identifier">EvbufferRefCleanupCb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">datalen</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">extra</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
-    <span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -548,8 +560,8 @@
 
 </div>
 <div id="evbuffer_add_cb-procs-all">
-  <div id="evbuffer_add_cb,ptr.Evbuffer,EvbufferCbFunc,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_cb%2Cptr.Evbuffer%2CEvbufferCbFunc%2Cpointer"><span class="Identifier">evbuffer_add_cb</span></a><span class="Other">(</span><span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#EvbufferCbFunc"><span class="Identifier">EvbufferCbFunc</span></a><span class="Other">;</span> <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferCbEntry"><span class="Identifier">EvbufferCbEntry</span></a> {.
+  <div id="evbuffer_add_cb,ptr.Evbuffer,evbuffer_cb_func,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_cb%2Cptr.Evbuffer%2Cevbuffer_cb_func%2Cpointer"><span class="Identifier">evbuffer_add_cb</span></a><span class="Other">(</span><span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#evbuffer_cb_func"><span class="Identifier">evbuffer_cb_func</span></a><span class="Other">;</span> <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferCbEntry"><span class="Identifier">EvbufferCbEntry</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -573,9 +585,10 @@
 
 </div>
 <div id="evbuffer_add_file_segment-procs-all">
-  <div id="evbuffer_add_file_segment,ptr.Evbuffer,ptr.EvbufferFileSegment,int64,int64">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_file_segment%2Cptr.Evbuffer%2Cptr.EvbufferFileSegment%2Cint64%2Cint64"><span class="Identifier">evbuffer_add_file_segment</span></a><span class="Other">(</span><span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a><span class="Other">;</span>
-                               <span class="Identifier">offset</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">;</span> <span class="Identifier">length</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="evbuffer_add_file_segment,ptr.Evbuffer,ptr.evbuffer_file_segment,int64,int64">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_file_segment%2Cptr.Evbuffer%2Cptr.evbuffer_file_segment%2Cint64%2Cint64"><span class="Identifier">evbuffer_add_file_segment</span></a><span class="Other">(</span><span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span>
+                               <span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a><span class="Other">;</span> <span class="Identifier">offset</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">;</span>
+                               <span class="Identifier">length</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -612,9 +625,9 @@
 
 </div>
 <div id="evbuffer_add_reference-procs-all">
-  <div id="evbuffer_add_reference,ptr.Evbuffer,pointer,csize_t,EvbufferRefCleanupCb,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_reference%2Cptr.Evbuffer%2Cpointer%2Ccsize_t%2CEvbufferRefCleanupCb%2Cpointer"><span class="Identifier">evbuffer_add_reference</span></a><span class="Other">(</span><span class="Identifier">outbuf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
-                            <span class="Identifier">datlen</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">cleanupfn</span><span class="Other">:</span> <a href="buffer.html#EvbufferRefCleanupCb"><span class="Identifier">EvbufferRefCleanupCb</span></a><span class="Other">;</span>
+  <div id="evbuffer_add_reference,ptr.Evbuffer,pointer,csize_t,evbuffer_ref_cleanup_cb,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_add_reference%2Cptr.Evbuffer%2Cpointer%2Ccsize_t%2Cevbuffer_ref_cleanup_cb%2Cpointer"><span class="Identifier">evbuffer_add_reference</span></a><span class="Other">(</span><span class="Identifier">outbuf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
+                            <span class="Identifier">datlen</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">cleanupfn</span><span class="Other">:</span> <a href="buffer.html#evbuffer_ref_cleanup_cb"><span class="Identifier">evbuffer_ref_cleanup_cb</span></a><span class="Other">;</span>
                             <span class="Identifier">cleanupfn_arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -762,9 +775,9 @@
 
 </div>
 <div id="evbuffer_file_segment_add_cleanup_cb-procs-all">
-  <div id="evbuffer_file_segment_add_cleanup_cb,ptr.EvbufferFileSegment,EvbufferFileSegmentCleanupCb,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_file_segment_add_cleanup_cb%2Cptr.EvbufferFileSegment%2CEvbufferFileSegmentCleanupCb%2Cpointer"><span class="Identifier">evbuffer_file_segment_add_cleanup_cb</span></a><span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a><span class="Other">;</span>
-    <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#EvbufferFileSegmentCleanupCb"><span class="Identifier">EvbufferFileSegmentCleanupCb</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="evbuffer_file_segment_add_cleanup_cb,ptr.evbuffer_file_segment,evbuffer_file_segment_cleanup_cb,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_file_segment_add_cleanup_cb%2Cptr.evbuffer_file_segment%2Cevbuffer_file_segment_cleanup_cb%2Cpointer"><span class="Identifier">evbuffer_file_segment_add_cleanup_cb</span></a><span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a><span class="Other">;</span>
+    <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#evbuffer_file_segment_cleanup_cb"><span class="Identifier">evbuffer_file_segment_cleanup_cb</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -775,8 +788,8 @@
 
 </div>
 <div id="evbuffer_file_segment_free-procs-all">
-  <div id="evbuffer_file_segment_free,ptr.EvbufferFileSegment">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_file_segment_free%2Cptr.EvbufferFileSegment"><span class="Identifier">evbuffer_file_segment_free</span></a><span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <div id="evbuffer_file_segment_free,ptr.evbuffer_file_segment">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_file_segment_free%2Cptr.evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment_free</span></a><span class="Other">(</span><span class="Identifier">seg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -789,8 +802,8 @@
 <div id="evbuffer_file_segment_new-procs-all">
   <div id="evbuffer_file_segment_new,cint,int64,int64,cuint">
   <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_file_segment_new%2Ccint%2Cint64%2Cint64%2Ccuint"><span class="Identifier">evbuffer_file_segment_new</span></a><span class="Other">(</span><span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">offset</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">;</span> <span class="Identifier">length</span><span class="Other">:</span> <span class="Identifier">int64</span><span class="Other">;</span>
-                               <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#EvbufferFileSegment"><span class="Identifier">EvbufferFileSegment</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
-    <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+                               <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#evbuffer_file_segment"><span class="Identifier">evbuffer_file_segment</span></a> {.
+    <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -984,9 +997,10 @@
 
 </div>
 <div id="evbuffer_remove_cb-procs-all">
-  <div id="evbuffer_remove_cb,ptr.Evbuffer,EvbufferCbFunc,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_remove_cb%2Cptr.Evbuffer%2CEvbufferCbFunc%2Cpointer"><span class="Identifier">evbuffer_remove_cb</span></a><span class="Other">(</span><span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#EvbufferCbFunc"><span class="Identifier">EvbufferCbFunc</span></a><span class="Other">;</span> <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
-    <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
+  <div id="evbuffer_remove_cb,ptr.Evbuffer,evbuffer_cb_func,pointer">
+  <dt><pre><span class="Keyword">proc</span> <a href="#evbuffer_remove_cb%2Cptr.Evbuffer%2Cevbuffer_cb_func%2Cpointer"><span class="Identifier">evbuffer_remove_cb</span></a><span class="Other">(</span><span class="Identifier">buffer</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="buffer.html#evbuffer_cb_func"><span class="Identifier">evbuffer_cb_func</span></a><span class="Other">;</span>
+                        <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+    <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/buffer.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
     
@@ -1129,7 +1143,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-23 22:26:30 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
       </div>
     </div>
   </div>

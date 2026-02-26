@@ -66,13 +66,15 @@
 <li><a class="reference" href="#bufferevent_filter_cb" title="bufferevent_filter_cb = proc (src: ptr Evbuffer; dst: ptr Evbuffer;
                               dst_limit: csize_t; mode: BuffereventFlushMode;
                               ctx: pointer): BuffereventFilterResult {.cdecl.}">bufferevent_filter_cb</a></li>
+<li><a class="reference" href="#bufferevent_filter_result" title="bufferevent_filter_result = enum
+  BEV_OK = 0, BEV_NEED_MORE = 1, BEV_ERROR = 2">bufferevent_filter_result</a></li>
+<li><a class="reference" href="#bufferevent_flush_mode" title="bufferevent_flush_mode = enum
+  BEV_NORMAL = 0, BEV_FLUSH = 1, BEV_FINISHED = 2">bufferevent_flush_mode</a></li>
 <li><a class="reference" href="#bufferevent_rate_limit_group" title="bufferevent_rate_limit_group {.importc: &quot;struct bufferevent_rate_limit_group&quot;,
                                header: &quot;&lt;event2/bufferevent.h&gt;&quot;,
                                incompleteStruct.} = object">bufferevent_rate_limit_group</a></li>
-<li><a class="reference" href="#BuffereventFilterResult" title="BuffereventFilterResult = enum
-  BEV_OK = 0, BEV_NEED_MORE = 1, BEV_ERROR = 2">BuffereventFilterResult</a></li>
-<li><a class="reference" href="#BuffereventFlushMode" title="BuffereventFlushMode = enum
-  BEV_NORMAL = 0, BEV_FLUSH = 1, BEV_FINISHED = 2">BuffereventFlushMode</a></li>
+<li><a class="reference" href="#BuffereventFilterResult" title="BuffereventFilterResult = bufferevent_filter_result">BuffereventFilterResult</a></li>
+<li><a class="reference" href="#BuffereventFlushMode" title="BuffereventFlushMode = bufferevent_flush_mode">BuffereventFlushMode</a></li>
 <li><a class="reference" href="#ev_token_bucket_cfg" title="ev_token_bucket_cfg {.importc: &quot;struct ev_token_bucket_cfg&quot;,
                       header: &quot;&lt;event2/bufferevent.h&gt;&quot;, incompleteStruct.} = object">ev_token_bucket_cfg</a></li>
 
@@ -144,7 +146,7 @@
 
 </ul>
 <ul class="simple nested-toc-section">bufferevent_flush
-  <li><a class="reference" href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2CBuffereventFlushMode" title="bufferevent_flush(bufev: ptr bufferevent; iotype: cshort;
+  <li><a class="reference" href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2Cbufferevent_flush_mode" title="bufferevent_flush(bufev: ptr bufferevent; iotype: cshort;
                   mode: BuffereventFlushMode): cint">bufferevent_flush(bufev: ptr bufferevent; iotype: cshort;
                   mode: BuffereventFlushMode): cint</a></li>
 
@@ -467,6 +469,24 @@
     
   </dd>
 </div>
+<div id="bufferevent_filter_result">
+  <dt><pre><a href="bufferevent.html#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">BEV_OK</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_NEED_MORE</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_ERROR</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
+<div id="bufferevent_flush_mode">
+  <dt><pre><a href="bufferevent.html#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <span class="Identifier">BEV_NORMAL</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_FLUSH</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_FINISHED</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dd>
+    
+    
+    
+  </dd>
+</div>
 <div id="bufferevent_rate_limit_group">
   <dt><pre><a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct bufferevent_rate_limit_group&quot;</span><span class="Other">,</span>
                                <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span>
@@ -478,8 +498,7 @@
   </dd>
 </div>
 <div id="BuffereventFilterResult">
-  <dt><pre><a href="bufferevent.html#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">BEV_OK</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_NEED_MORE</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_ERROR</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dt><pre><a href="bufferevent.html#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> <span class="Other">=</span> <a href="bufferevent.html#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a></pre></dt>
   <dd>
     
     
@@ -487,8 +506,7 @@
   </dd>
 </div>
 <div id="BuffereventFlushMode">
-  <dt><pre><a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
-  <span class="Identifier">BEV_NORMAL</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_FLUSH</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_FINISHED</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dt><pre><a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a> <span class="Other">=</span> <a href="bufferevent.html#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a></pre></dt>
   <dd>
     
     
@@ -717,8 +735,8 @@
 
 </div>
 <div id="bufferevent_flush-procs-all">
-  <div id="bufferevent_flush,ptr.bufferevent,cshort,BuffereventFlushMode">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2CBuffereventFlushMode"><span class="Identifier">bufferevent_flush</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
+  <div id="bufferevent_flush,ptr.bufferevent,cshort,bufferevent_flush_mode">
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2Cbufferevent_flush_mode"><span class="Identifier">bufferevent_flush</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
                        <span class="Identifier">mode</span><span class="Other">:</span> <a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1446,7 +1464,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-23 22:26:30 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
       </div>
     </div>
   </div>
