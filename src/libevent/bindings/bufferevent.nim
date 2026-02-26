@@ -27,10 +27,12 @@ const
 
 # Bufferevent flush modes
 type
-  BuffereventFlushMode* = enum
+  bufferevent_flush_mode* = enum
     BEV_NORMAL = 0,
     BEV_FLUSH = 1,
     BEV_FINISHED = 2
+
+  BuffereventFlushMode* = bufferevent_flush_mode
 
 # Bufferevent trigger options
 const
@@ -39,10 +41,12 @@ const
 
 # Bufferevent filter result
 type
-  BuffereventFilterResult* = enum
+  bufferevent_filter_result* = enum
     BEV_OK = 0,
     BEV_NEED_MORE = 1,
     BEV_ERROR = 2
+
+  BuffereventFilterResult* = bufferevent_filter_result
 
 # Opaque types
 type

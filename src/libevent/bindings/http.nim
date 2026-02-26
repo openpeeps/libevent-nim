@@ -33,7 +33,7 @@ const
 
 # Enum types
 type
-  EvhttpCmdType* = enum
+  evhttp_cmd_type* = enum
     EVHTTP_REQ_GET     = 1 shl 0
     EVHTTP_REQ_POST    = 1 shl 1
     EVHTTP_REQ_HEAD    = 1 shl 2
@@ -48,13 +48,17 @@ type
     Evhttp_request  = 0
     Evhttp_response = 1
 
-  EvhttpRequestError* = enum
+  evhttp_request_error* = enum
     EVREQ_HTTP_TIMEOUT
     EVREQ_HTTP_EOF
     EVREQ_HTTP_INVALID_HEADER
     EVREQ_HTTP_BUFFER_ERROR
     EVREQ_HTTP_REQUEST_CANCEL
     EVREQ_HTTP_DATA_TOO_LONG
+
+  EvhttpCmdType* = evhttp_cmd_type
+  EvhttpRequestKind* = evhttp_request_kind
+  EvhttpRequestError* = evhttp_request_error
 
 # Opaque types
 type
@@ -73,13 +77,26 @@ proc nim_evkeyvalq_iterate*(headers: pointer, cb: proc(key, value: cstring, arg:
 
 # Callback types
 type
-  EvhttpRequestCb* = proc(req: ptr evhttp_request, arg: pointer) {.cdecl.}
-  EvhttpBoundSocketForeachFn* = proc(sock: ptr evhttp_bound_socket, arg: pointer) {.cdecl.}
-  EvhttpRequestHeaderCb* = proc(req: ptr evhttp_request, arg: pointer): cint {.cdecl.}
-  EvhttpRequestErrorCb* = proc(err: EvhttpRequestError, arg: pointer) {.cdecl.}
-  EvhttpRequestOnCompleteCb* = proc(req: ptr evhttp_request, arg: pointer) {.cdecl.}
-  EvhttpConnectionCloseCb* = proc(conn: ptr evhttp_connection, arg: pointer) {.cdecl.}
-  EvhttpBevcb* = proc(base: ptr event_base, arg: pointer): pointer {.cdecl.}
+  evhttp_request_cb* = proc(req: ptr evhttp_request, arg: pointer) {.cdecl.}
+  EvhttpRequestCb* = evhttp_request_cb
+
+  evhttp_bound_socket_foreach_fn* = proc(sock: ptr evhttp_bound_socket, arg: pointer) {.cdecl.}
+  EvhttpBoundSocketForeachFn* = evhttp_bound_socket_foreach_fn
+
+  evhttp_request_header_cb* = proc(req: ptr evhttp_request, arg: pointer): cint {.cdecl.}
+  EvhttpRequestHeaderCb* = evhttp_request_header_cb
+
+  evhttp_request_error_cb* = proc(err: EvhttpRequestError, arg: pointer) {.cdecl.}
+  EvhttpRequestErrorCb* = evhttp_request_error_cb
+
+  evhttp_request_on_complete_cb* = proc(req: ptr evhttp_request, arg: pointer) {.cdecl.}
+  EvhttpRequestOnCompleteCb* = evhttp_request_on_complete_cb
+
+  evhttp_connection_close_cb* = proc(conn: ptr evhttp_connection, arg: pointer) {.cdecl.}
+  EvhttpConnectionCloseCb* = evhttp_connection_close_cb
+
+  evhttp_bevcb* = proc(base: ptr event_base, arg: pointer): pointer {.cdecl.}
+  EvhttpBevcb* = evhttp_bevcb
 
 # HTTP server API
 proc evhttp_new*(base: ptr event_base): ptr evhttp {.importc, header: "<event2/http.h>".}
@@ -159,13 +176,13 @@ proc evhttp_connection_set_retries*(evcon: ptr evhttp_connection, retry_max: cin
 proc evhttp_connection_set_closecb*(evcon: ptr evhttp_connection, cb: EvhttpConnectionCloseCb, arg: pointer) {.importc, header: "<event2/http.h>".}
 proc evhttp_connection_get_peer*(evcon: ptr evhttp_connection, address: ptr cstring, port: ptr uint16) {.importc, header: "<event2/http.h>".}
 proc evhttp_connection_get_addr*(evcon: ptr evhttp_connection): pointer {.importc, header: "<event2/http.h>".}
-proc evhttp_make_request*(evcon: ptr evhttp_connection, req: ptr evhttp_request, typ: EvhttpCmdType, uri: cstring): cint {.importc, header: "<event2/http.h>".}
+proc evhttp_make_request*(evcon: ptr evhttp_connection, req: ptr evhttp_request, typ: evhttp_cmd_type, uri: cstring): cint {.importc, header: "<event2/http.h>".}
 proc evhttp_cancel_request*(req: ptr evhttp_request) {.importc, header: "<event2/http.h>".}
 
 # Request accessors
 proc evhttp_request_get_uri*(req: ptr evhttp_request): cstring {.importc, header: "<event2/http.h>".}
 proc evhttp_request_get_evhttp_uri*(req: ptr evhttp_request): ptr evhttp_uri {.importc, header: "<event2/http.h>".}
-proc evhttp_request_get_command*(req: ptr evhttp_request): EvhttpCmdType {.importc, header: "<event2/http.h>".}
+proc evhttp_request_get_command*(req: ptr evhttp_request): evhttp_cmd_type {.importc, header: "<event2/http.h>".}
 proc evhttp_request_get_response_code*(req: ptr evhttp_request): cint {.importc, header: "<event2/http.h>".}
 proc evhttp_request_get_response_code_line*(req: ptr evhttp_request): cstring {.importc, header: "<event2/http.h>".}
 proc evhttp_request_get_input_headers*(req: ptr evhttp_request): ptr evkeyvalq {.importc, header: "<event2/http.h>".}

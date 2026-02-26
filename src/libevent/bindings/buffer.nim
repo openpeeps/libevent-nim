@@ -8,29 +8,27 @@
 
 import ./event
 
-{.push, importc, header:"<event2/buffer.h>".}
-
 type
-  Evbuffer* = object
-  EvbufferPtr* = object
+  Evbuffer* {.importc: "struct evbuffer", header: "<event2/event.h>", incompleteStruct.} = object
+  EvbufferPtr* {.importc: "struct evbuffer_ptr", header: "<event2/event.h>", incompleteStruct.} = object
     pos*: int64
     internal*: array[2, pointer] # Opaque, do not access directly
 
-  EvbufferIovec* = object
+  EvbufferIovec* {.importc: "struct evbuffer_iovec", header: "<event2/event.h>", incompleteStruct.} = object
     iov_base*: pointer
     iov_len*: csize_t
 
-  EvbufferCbInfo* = object
+  EvbufferCbInfo* {.importc: "struct evbuffer_cb_info", header: "<event2/event.h>", incompleteStruct.} = object
     orig_size*: csize_t
     n_added*: csize_t
     n_deleted*: csize_t
 
-  EvbufferCbEntry* = object
+  EvbufferCbEntry* {.importc: "struct evbuffer_cb_entry", header: "<event2/event.h>", incompleteStruct.} = object
 
-  EvbufferCbFunc* = proc(buf: ptr Evbuffer, info: ptr EvbufferCbInfo, arg: pointer) {.cdecl.}
-  EvbufferRefCleanupCb* = proc(data: pointer, datalen: csize_t, extra: pointer) {.cdecl.}
-  EvbufferFileSegment* = object
-  EvbufferFileSegmentCleanupCb* = proc(seg: ptr EvbufferFileSegment, flags: cint, arg: pointer) {.cdecl.}
+  evbuffer_cb_func* = proc(buf: ptr Evbuffer, info: ptr EvbufferCbInfo, arg: pointer) {.cdecl.}
+  evbuffer_ref_cleanup_cb* = proc(data: pointer, datalen: csize_t, extra: pointer) {.cdecl.}
+  evbuffer_file_segment* = object
+  evbuffer_file_segment_cleanup_cb* = proc(seg: ptr evbuffer_file_segment, flags: cint, arg: pointer) {.cdecl.}
 
 const
   EVBUFFER_FLAG_DRAINS_TO_FD* = 1
@@ -52,7 +50,7 @@ type
     EVBUFFER_PTR_SET,
     EVBUFFER_PTR_ADD
 
-
+{.push, importc, header:"<event2/buffer.h>".}
 # Core buffer functions
 proc evbuffer_new*(): ptr Evbuffer
 proc evbuffer_free*(buf: ptr Evbuffer)
@@ -74,12 +72,12 @@ proc evbuffer_remove_buffer*(src: ptr Evbuffer, dst: ptr Evbuffer, datlen: csize
 proc evbuffer_readln*(buffer: ptr Evbuffer, n_read_out: ptr csize_t, eol_style: EvbufferEolStyle): cstring
 proc evbuffer_add_buffer*(outbuf: ptr Evbuffer, inbuf: ptr Evbuffer): cint
 proc evbuffer_add_buffer_reference*(outbuf: ptr Evbuffer, inbuf: ptr Evbuffer): cint
-proc evbuffer_add_reference*(outbuf: ptr Evbuffer, data: pointer, datlen: csize_t, cleanupfn: EvbufferRefCleanupCb, cleanupfn_arg: pointer): cint
+proc evbuffer_add_reference*(outbuf: ptr Evbuffer, data: pointer, datlen: csize_t, cleanupfn: evbuffer_ref_cleanup_cb, cleanupfn_arg: pointer): cint
 proc evbuffer_add_file*(outbuf: ptr Evbuffer, fd: cint, offset: int64, length: int64): cint
-proc evbuffer_file_segment_new*(fd: cint, offset: int64, length: int64, flags: cuint): ptr EvbufferFileSegment
-proc evbuffer_file_segment_free*(seg: ptr EvbufferFileSegment)
-proc evbuffer_file_segment_add_cleanup_cb*(seg: ptr EvbufferFileSegment, cb: EvbufferFileSegmentCleanupCb, arg: pointer)
-proc evbuffer_add_file_segment*(buf: ptr Evbuffer, seg: ptr EvbufferFileSegment, offset: int64, length: int64): cint
+proc evbuffer_file_segment_new*(fd: cint, offset: int64, length: int64, flags: cuint): ptr evbuffer_file_segment
+proc evbuffer_file_segment_free*(seg: ptr evbuffer_file_segment)
+proc evbuffer_file_segment_add_cleanup_cb*(seg: ptr evbuffer_file_segment, cb: evbuffer_file_segment_cleanup_cb, arg: pointer)
+proc evbuffer_add_file_segment*(buf: ptr Evbuffer, seg: ptr evbuffer_file_segment, offset: int64, length: int64): cint
 proc evbuffer_add_printf*(buf: ptr Evbuffer, fmt: cstring): cint {.importc, varargs, header: "<event2/buffer.h>".}
 proc evbuffer_add_vprintf*(buf: ptr Evbuffer, fmt: cstring, ap: pointer): cint
 proc evbuffer_drain*(buf: ptr Evbuffer, len: csize_t): cint
@@ -91,9 +89,9 @@ proc evbuffer_search_range*(buffer: ptr Evbuffer, what: cstring, len: csize_t, s
 proc evbuffer_ptr_set*(buffer: ptr Evbuffer, `ptr`: ptr EvbufferPtr, position: csize_t, how: EvbufferPtrHow): cint
 proc evbuffer_search_eol*(buffer: ptr Evbuffer, start: ptr EvbufferPtr, eol_len_out: ptr csize_t, eol_style: EvbufferEolStyle): EvbufferPtr
 proc evbuffer_peek*(buffer: ptr Evbuffer, len: int64, start_at: ptr EvbufferPtr, vec_out: ptr EvbufferIovec, n_vec: cint): cint
-proc evbuffer_add_cb*(buffer: ptr Evbuffer, cb: EvbufferCbFunc, cbarg: pointer): ptr EvbufferCbEntry
+proc evbuffer_add_cb*(buffer: ptr Evbuffer, cb: evbuffer_cb_func, cbarg: pointer): ptr EvbufferCbEntry
 proc evbuffer_remove_cb_entry*(buffer: ptr Evbuffer, ent: ptr EvbufferCbEntry): cint
-proc evbuffer_remove_cb*(buffer: ptr Evbuffer, cb: EvbufferCbFunc, cbarg: pointer): cint
+proc evbuffer_remove_cb*(buffer: ptr Evbuffer, cb: evbuffer_cb_func, cbarg: pointer): cint
 proc evbuffer_cb_set_flags*(buffer: ptr Evbuffer, cb: ptr EvbufferCbEntry, flags: uint32): cint
 proc evbuffer_cb_clear_flags*(buffer: ptr Evbuffer, cb: ptr EvbufferCbEntry, flags: uint32): cint
 proc evbuffer_pullup*(buf: ptr Evbuffer, size: int64): ptr uint8

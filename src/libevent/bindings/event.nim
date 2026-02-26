@@ -28,20 +28,21 @@ type
     tv_sec*: clong
     tv_usec*: clong
 
-
-  EventBase* = object
-  Event* = object
-  EventConfig* = object
-
   PEventBase* = ptr event_base
   PEvent* = ptr event
   PEventConfig* = ptr event_config
 
-  EventCallbackFn* = proc(fd: cint, events: cshort, arg: pointer) {.cdecl.}
-  EventLogCb* = proc(severity: cint, msg: cstring) {.cdecl.}
-  EventFatalCb* = proc(err: cint) {.cdecl.}
-  EventFinalizeCallbackFn* = proc(ev: ptr event, arg: pointer) {.cdecl.}
-  EventBaseForeachEventCb* = proc(base: ptr event_base, ev: ptr event, arg: pointer): cint {.cdecl.}
+  event_callback_fn* = proc(fd: cint, events: cshort, arg: pointer) {.cdecl.}
+  event_log_cb* = proc(severity: cint, msg: cstring) {.cdecl.}
+  event_fatal_cb* = proc(err: cint) {.cdecl.}
+  event_finalize_callback_fn* = proc(ev: ptr event, arg: pointer) {.cdecl.}
+  event_base_foreach_event_cb* = proc(base: ptr event_base, ev: ptr event, arg: pointer): cint {.cdecl.}
+
+  EventCallbackFn* = event_callback_fn
+  EventLogCb* = event_log_cb
+  EventFatalCb* = event_fatal_cb
+  EventFinalizeCallbackFn* = event_finalize_callback_fn
+  EventBaseForeachEventCb* = event_base_foreach_event_cb
 
 {.push, importc, header:"<event2/event.h>", dynlib: "libevent." & ext.}
 
@@ -88,7 +89,7 @@ const
 # Function bindings
 proc event_base_new*(): ptr event_base
 proc event_base_free*(base: ptr event_base)
-proc event_new*(base: ptr event_base, fd: cint, events: cushort, cb: EventCallbackFn, arg: pointer): ptr event
+proc event_new*(base: ptr event_base, fd: cint, events: cushort, cb: event_callback_fn, arg: pointer): ptr event
 proc event_free*(ev: ptr event)
 proc event_add*(ev: ptr event, timeout: pointer): cint
 proc event_del*(ev: ptr event): cint
@@ -124,13 +125,13 @@ proc event_assign*(
   base: ptr event_base,
   fd: cint,
   events: cushort,
-  cb: EventCallbackFn,
+  cb: event_callback_fn,
   arg: pointer
 ): cint
 
-proc event_finalize*(flags: cuint, ev: ptr event, cb: EventFinalizeCallbackFn): cint
-proc event_free_finalize*(flags: cuint, ev: ptr event, cb: EventFinalizeCallbackFn): cint
-proc event_base_once*(base: ptr event_base, fd: cint, events: cushort, cb: EventCallbackFn, arg: pointer, timeout: pointer): cint
+proc event_finalize*(flags: cuint, ev: ptr event, cb: event_finalize_callback_fn): cint
+proc event_free_finalize*(flags: cuint, ev: ptr event, cb: event_finalize_callback_fn): cint
+proc event_base_once*(base: ptr event_base, fd: cint, events: cushort, cb: event_callback_fn, arg: pointer, timeout: pointer): cint
 proc event_remove_timer*(ev: ptr event): cint
 proc event_del_noblock*(ev: ptr event): cint
 proc event_del_block*(ev: ptr event): cint
@@ -141,7 +142,7 @@ proc event_initialized*(ev: ptr event): cint
 proc event_get_fd*(ev: ptr event): cint
 proc event_get_base*(ev: ptr event): ptr event_base
 proc event_get_events*(ev: ptr event): cushort
-proc event_get_callback*(ev: ptr event): EventCallbackFn
+proc event_get_callback*(ev: ptr event): event_callback_fn
 proc event_get_callback_arg*(ev: ptr event): pointer
 proc event_get_priority*(ev: ptr event): cint
 proc event_get_assignment*(
@@ -149,7 +150,7 @@ proc event_get_assignment*(
   base_out: ptr ptr event_base,
   fd_out: ptr cint,
   events_out: ptr cushort,
-  cb_out: ptr EventCallbackFn,
+  cb_out: ptr event_callback_fn,
   arg_out: ptr pointer
 )
 proc event_size*(): csize_t
@@ -161,15 +162,15 @@ proc event_priority_set*(ev: ptr event, priority: cint): cint
 proc event_base_init_common_timeout*(base: ptr event_base, duration: pointer): pointer
 proc event_enable_debug_mode*()
 proc event_debug_unassign*(ev: ptr event)
-proc event_set_log_callback*(cb: EventLogCb)
-proc event_set_fatal_callback*(cb: EventFatalCb)
+proc event_set_log_callback*(cb: event_log_cb)
+proc event_set_fatal_callback*(cb: event_fatal_cb)
 proc event_enable_debug_logging*(which: uint32)
 proc event_base_got_exit*(base: ptr event_base): cint
 proc event_base_got_break*(base: ptr event_base): cint
 proc event_base_dump_events*(base: ptr event_base, output: pointer)
 proc event_base_active_by_fd*(base: ptr event_base, fd: cint, events: cushort)
 proc event_base_active_by_signal*(base: ptr event_base, sig: cint)
-proc event_base_foreach_event*(base: ptr event_base, fn: EventBaseForeachEventCb, arg: pointer): cint
+proc event_base_foreach_event*(base: ptr event_base, fn: event_base_foreach_event_cb, arg: pointer): cint
 proc event_base_gettimeofday_cached*(base: ptr event_base, tv: pointer): cint
 proc event_base_update_cache_time*(base: ptr event_base): cint
 proc libevent_global_shutdown*()
@@ -181,7 +182,7 @@ proc event_set_mem_functions*(
 
 
 proc evtimer_add*(ev: ptr event, timeout: ptr Timeval): cint
-proc evtimer_new*(base: ptr event_base, cb: EventCallbackFn, arg: pointer): ptr event
+proc evtimer_new*(base: ptr event_base, cb: event_callback_fn, arg: pointer): ptr event
 proc evtimer_del*(ev: ptr event): cint
 
 {.pop.}

@@ -33,7 +33,7 @@ type
     # ...define fields if needed...
 
   # Lock callbacks structure
-  EvthreadLockCallbacks* = object
+  EvthreadLockCallbacks* {.importc: "struct evthread_lock_callbacks", header: "<event2/http.h>", incompleteStruct.} = object
     lock_api_version*: cint
     supported_locktypes*: cuint
     alloc*: proc(locktype: cuint): pointer {.cdecl.}
@@ -42,7 +42,7 @@ type
     unlock*: proc(mode: cuint, lock: pointer): cint {.cdecl.}
 
   # Condition callbacks structure
-  EvthreadConditionCallbacks* = object
+  EvthreadConditionCallbacks* {.importc: "struct evthread_condition_callbacks", header: "<event2/http.h>", incompleteStruct.} = object
     condition_api_version*: cint
     alloc_condition*: proc(condtype: cuint): pointer {.cdecl.}
     free_condition*: proc(cond: pointer) {.cdecl.}
