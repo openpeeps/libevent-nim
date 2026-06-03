@@ -16,13 +16,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">Index</h1>
       Modules: <a href="index.html">libevent</a>, <a href="libevent/bindings/buffer.html">libevent/bindings/buffer</a>, <a href="libevent/bindings/bufferevent.html">libevent/bindings/bufferevent</a>, <a href="libevent/bindings/bufferevent_ssl.html">libevent/bindings/bufferevent_ssl</a>, <a href="libevent/bindings/event.html">libevent/bindings/event</a>, <a href="libevent/bindings/http.html">libevent/bindings/http</a>, <a href="libevent/bindings/listener.html">libevent/bindings/listener</a>.<br/><p /><h2>API symbols</h2>
@@ -1192,13 +1195,13 @@
 <li><a class="reference external"
           data-doc-search-tag="event: proc event_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint" href="libevent/bindings/event.html#event_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn">event: proc event_finalize(flags: cuint; ev: ptr event; cb: event_finalize_callback_fn): cint</a></li>
           </ul></dd>
-<dt><a name="EventFinalizeCallbackFn" href="#EventFinalizeCallbackFn"><span>EventFinalizeCallbackFn:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="event: type EventFinalizeCallbackFn" href="libevent/bindings/event.html#EventFinalizeCallbackFn">event: type EventFinalizeCallbackFn</a></li>
-          </ul></dd>
 <dt><a name="event_finalize_callback_fn" href="#event_finalize_callback_fn"><span>event_finalize_callback_fn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: type event_finalize_callback_fn" href="libevent/bindings/event.html#event_finalize_callback_fn">event: type event_finalize_callback_fn</a></li>
+          </ul></dd>
+<dt><a name="EventFinalizeCallbackFn" href="#EventFinalizeCallbackFn"><span>EventFinalizeCallbackFn:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: type EventFinalizeCallbackFn" href="libevent/bindings/event.html#EventFinalizeCallbackFn">event: type EventFinalizeCallbackFn</a></li>
           </ul></dd>
 <dt><a name="event_free" href="#event_free"><span>event_free:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1260,13 +1263,13 @@
 <li><a class="reference external"
           data-doc-search-tag="event: proc event_initialized(ev: ptr event): cint" href="libevent/bindings/event.html#event_initialized%2Cptr.event">event: proc event_initialized(ev: ptr event): cint</a></li>
           </ul></dd>
-<dt><a name="EventLogCb" href="#EventLogCb"><span>EventLogCb:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="event: type EventLogCb" href="libevent/bindings/event.html#EventLogCb">event: type EventLogCb</a></li>
-          </ul></dd>
 <dt><a name="event_log_cb" href="#event_log_cb"><span>event_log_cb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="event: type event_log_cb" href="libevent/bindings/event.html#event_log_cb">event: type event_log_cb</a></li>
+          </ul></dd>
+<dt><a name="EventLogCb" href="#EventLogCb"><span>EventLogCb:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="event: type EventLogCb" href="libevent/bindings/event.html#EventLogCb">event: type EventLogCb</a></li>
           </ul></dd>
 <dt><a name="EVENT_LOG_DEBUG" href="#EVENT_LOG_DEBUG"><span>EVENT_LOG_DEBUG:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1398,13 +1401,13 @@
 <li><a class="reference external"
           data-doc-search-tag="http: object evhttp_bound_socket" href="libevent/bindings/http.html#evhttp_bound_socket">http: object evhttp_bound_socket</a></li>
           </ul></dd>
-<dt><a name="EvhttpBoundSocketForeachFn" href="#EvhttpBoundSocketForeachFn"><span>EvhttpBoundSocketForeachFn:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="http: type EvhttpBoundSocketForeachFn" href="libevent/bindings/http.html#EvhttpBoundSocketForeachFn">http: type EvhttpBoundSocketForeachFn</a></li>
-          </ul></dd>
 <dt><a name="evhttp_bound_socket_foreach_fn" href="#evhttp_bound_socket_foreach_fn"><span>evhttp_bound_socket_foreach_fn:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type evhttp_bound_socket_foreach_fn" href="libevent/bindings/http.html#evhttp_bound_socket_foreach_fn">http: type evhttp_bound_socket_foreach_fn</a></li>
+          </ul></dd>
+<dt><a name="EvhttpBoundSocketForeachFn" href="#EvhttpBoundSocketForeachFn"><span>EvhttpBoundSocketForeachFn:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="http: type EvhttpBoundSocketForeachFn" href="libevent/bindings/http.html#EvhttpBoundSocketForeachFn">http: type EvhttpBoundSocketForeachFn</a></li>
           </ul></dd>
 <dt><a name="evhttp_bound_socket_get_fd" href="#evhttp_bound_socket_get_fd"><span>evhttp_bound_socket_get_fd:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1664,29 +1667,29 @@
 <li><a class="reference external"
           data-doc-search-tag="http: object evhttp_request" href="libevent/bindings/http.html#evhttp_request_2">http: object evhttp_request</a></li>
           </ul></dd>
-<dt><a name="evhttp_request_cb" href="#evhttp_request_cb"><span>evhttp_request_cb:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="http: type evhttp_request_cb" href="libevent/bindings/http.html#evhttp_request_cb">http: type evhttp_request_cb</a></li>
-          </ul></dd>
 <dt><a name="EvhttpRequestCb" href="#EvhttpRequestCb"><span>EvhttpRequestCb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type EvhttpRequestCb" href="libevent/bindings/http.html#EvhttpRequestCb">http: type EvhttpRequestCb</a></li>
           </ul></dd>
-<dt><a name="evhttp_request_error" href="#evhttp_request_error"><span>evhttp_request_error:</span></a></dt><dd><ul class="simple">
+<dt><a name="evhttp_request_cb" href="#evhttp_request_cb"><span>evhttp_request_cb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="http: enum evhttp_request_error" href="libevent/bindings/http.html#evhttp_request_error">http: enum evhttp_request_error</a></li>
+          data-doc-search-tag="http: type evhttp_request_cb" href="libevent/bindings/http.html#evhttp_request_cb">http: type evhttp_request_cb</a></li>
           </ul></dd>
 <dt><a name="EvhttpRequestError" href="#EvhttpRequestError"><span>EvhttpRequestError:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type EvhttpRequestError" href="libevent/bindings/http.html#EvhttpRequestError">http: type EvhttpRequestError</a></li>
           </ul></dd>
-<dt><a name="evhttp_request_error_cb" href="#evhttp_request_error_cb"><span>evhttp_request_error_cb:</span></a></dt><dd><ul class="simple">
+<dt><a name="evhttp_request_error" href="#evhttp_request_error"><span>evhttp_request_error:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
-          data-doc-search-tag="http: type evhttp_request_error_cb" href="libevent/bindings/http.html#evhttp_request_error_cb">http: type evhttp_request_error_cb</a></li>
+          data-doc-search-tag="http: enum evhttp_request_error" href="libevent/bindings/http.html#evhttp_request_error">http: enum evhttp_request_error</a></li>
           </ul></dd>
 <dt><a name="EvhttpRequestErrorCb" href="#EvhttpRequestErrorCb"><span>EvhttpRequestErrorCb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type EvhttpRequestErrorCb" href="libevent/bindings/http.html#EvhttpRequestErrorCb">http: type EvhttpRequestErrorCb</a></li>
+          </ul></dd>
+<dt><a name="evhttp_request_error_cb" href="#evhttp_request_error_cb"><span>evhttp_request_error_cb:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="http: type evhttp_request_error_cb" href="libevent/bindings/http.html#evhttp_request_error_cb">http: type evhttp_request_error_cb</a></li>
           </ul></dd>
 <dt><a name="evhttp_request_free" href="#evhttp_request_free"><span>evhttp_request_free:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1736,13 +1739,13 @@
 <li><a class="reference external"
           data-doc-search-tag="http: proc evhttp_request_get_uri(req: ptr evhttp_request): cstring" href="libevent/bindings/http.html#evhttp_request_get_uri%2Cptr.evhttp_request">http: proc evhttp_request_get_uri(req: ptr evhttp_request): cstring</a></li>
           </ul></dd>
-<dt><a name="evhttp_request_header_cb" href="#evhttp_request_header_cb"><span>evhttp_request_header_cb:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="http: type evhttp_request_header_cb" href="libevent/bindings/http.html#evhttp_request_header_cb">http: type evhttp_request_header_cb</a></li>
-          </ul></dd>
 <dt><a name="EvhttpRequestHeaderCb" href="#EvhttpRequestHeaderCb"><span>EvhttpRequestHeaderCb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type EvhttpRequestHeaderCb" href="libevent/bindings/http.html#EvhttpRequestHeaderCb">http: type EvhttpRequestHeaderCb</a></li>
+          </ul></dd>
+<dt><a name="evhttp_request_header_cb" href="#evhttp_request_header_cb"><span>evhttp_request_header_cb:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="http: type evhttp_request_header_cb" href="libevent/bindings/http.html#evhttp_request_header_cb">http: type evhttp_request_header_cb</a></li>
           </ul></dd>
 <dt><a name="evhttp_request_is_owned" href="#evhttp_request_is_owned"><span>evhttp_request_is_owned:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -1760,13 +1763,13 @@
 <li><a class="reference external"
           data-doc-search-tag="http: proc evhttp_request_new(cb: EvhttpRequestCb; arg: pointer): ptr evhttp_request" href="libevent/bindings/http.html#evhttp_request_new%2CEvhttpRequestCb%2Cpointer">http: proc evhttp_request_new(cb: EvhttpRequestCb; arg: pointer): ptr evhttp_request</a></li>
           </ul></dd>
-<dt><a name="EvhttpRequestOnCompleteCb" href="#EvhttpRequestOnCompleteCb"><span>EvhttpRequestOnCompleteCb:</span></a></dt><dd><ul class="simple">
-<li><a class="reference external"
-          data-doc-search-tag="http: type EvhttpRequestOnCompleteCb" href="libevent/bindings/http.html#EvhttpRequestOnCompleteCb">http: type EvhttpRequestOnCompleteCb</a></li>
-          </ul></dd>
 <dt><a name="evhttp_request_on_complete_cb" href="#evhttp_request_on_complete_cb"><span>evhttp_request_on_complete_cb:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
           data-doc-search-tag="http: type evhttp_request_on_complete_cb" href="libevent/bindings/http.html#evhttp_request_on_complete_cb">http: type evhttp_request_on_complete_cb</a></li>
+          </ul></dd>
+<dt><a name="EvhttpRequestOnCompleteCb" href="#EvhttpRequestOnCompleteCb"><span>EvhttpRequestOnCompleteCb:</span></a></dt><dd><ul class="simple">
+<li><a class="reference external"
+          data-doc-search-tag="http: type EvhttpRequestOnCompleteCb" href="libevent/bindings/http.html#EvhttpRequestOnCompleteCb">http: type EvhttpRequestOnCompleteCb</a></li>
           </ul></dd>
 <dt><a name="evhttp_request_own" href="#evhttp_request_own"><span>evhttp_request_own:</span></a></dt><dd><ul class="simple">
 <li><a class="reference external"
@@ -2190,7 +2193,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-03 19:42:58 UTC</small>
       </div>
     </div>
   </div>

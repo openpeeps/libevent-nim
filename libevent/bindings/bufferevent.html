@@ -16,13 +16,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="../../dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="../../dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">libevent/bindings/bufferevent</h1>
       <div class="row">
@@ -434,7 +437,7 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="bufferevent">
-  <dt><pre><a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct bufferevent&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><a href="#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct bufferevent&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span>
               <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
@@ -443,7 +446,7 @@
   </dd>
 </div>
 <div id="bufferevent_data_cb">
-  <dt><pre><a href="bufferevent.html#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -451,7 +454,7 @@
   </dd>
 </div>
 <div id="bufferevent_event_cb">
-  <dt><pre><a href="bufferevent.html#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">what</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+  <dt><pre><a href="#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">what</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
@@ -460,9 +463,9 @@
   </dd>
 </div>
 <div id="bufferevent_filter_cb">
-  <dt><pre><a href="bufferevent.html#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">src</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">dst</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span>
-                              <span class="Identifier">dst_limit</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a><span class="Other">;</span>
-                              <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <a href="bufferevent.html#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">src</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span> <span class="Identifier">dst</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">;</span>
+                              <span class="Identifier">dst_limit</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">mode</span><span class="Other">:</span> <a href="#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a><span class="Other">;</span>
+                              <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <a href="#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -470,7 +473,7 @@
   </dd>
 </div>
 <div id="bufferevent_filter_result">
-  <dt><pre><a href="bufferevent.html#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">BEV_OK</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_NEED_MORE</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_ERROR</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
   <dd>
     
@@ -479,7 +482,7 @@
   </dd>
 </div>
 <div id="bufferevent_flush_mode">
-  <dt><pre><a href="bufferevent.html#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
+  <dt><pre><a href="#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a> <span class="Other">=</span> <span class="Keyword">enum</span>
   <span class="Identifier">BEV_NORMAL</span> <span class="Other">=</span> <span class="DecNumber">0</span><span class="Other">,</span> <span class="Identifier">BEV_FLUSH</span> <span class="Other">=</span> <span class="DecNumber">1</span><span class="Other">,</span> <span class="Identifier">BEV_FINISHED</span> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
   <dd>
     
@@ -488,7 +491,7 @@
   </dd>
 </div>
 <div id="bufferevent_rate_limit_group">
-  <dt><pre><a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct bufferevent_rate_limit_group&quot;</span><span class="Other">,</span>
+  <dt><pre><a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct bufferevent_rate_limit_group&quot;</span><span class="Other">,</span>
                                <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span>
                                <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
@@ -498,7 +501,7 @@
   </dd>
 </div>
 <div id="BuffereventFilterResult">
-  <dt><pre><a href="bufferevent.html#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> <span class="Other">=</span> <a href="bufferevent.html#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a></pre></dt>
+  <dt><pre><a href="#BuffereventFilterResult"><span class="Identifier">BuffereventFilterResult</span></a> <span class="Other">=</span> <a href="#bufferevent_filter_result"><span class="Identifier">bufferevent_filter_result</span></a></pre></dt>
   <dd>
     
     
@@ -506,7 +509,7 @@
   </dd>
 </div>
 <div id="BuffereventFlushMode">
-  <dt><pre><a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a> <span class="Other">=</span> <a href="bufferevent.html#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a></pre></dt>
+  <dt><pre><a href="#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a> <span class="Other">=</span> <a href="#bufferevent_flush_mode"><span class="Identifier">bufferevent_flush_mode</span></a></pre></dt>
   <dd>
     
     
@@ -514,7 +517,7 @@
   </dd>
 </div>
 <div id="ev_token_bucket_cfg">
-  <dt><pre><a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct ev_token_bucket_cfg&quot;</span><span class="Other">,</span>
+  <dt><pre><a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct ev_token_bucket_cfg&quot;</span><span class="Other">,</span>
                       <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
@@ -529,7 +532,7 @@
   <h1><a class="toc-backref" href="#10">Consts</a></h1>
   <dl class="item">
     <div id="BEV_EVENT_CONNECTED">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_CONNECTED"><span class="Identifier">BEV_EVENT_CONNECTED</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000080</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_CONNECTED"><span class="Identifier">BEV_EVENT_CONNECTED</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000080</span></pre></dt>
   <dd>
     
     
@@ -537,7 +540,7 @@
   </dd>
 </div>
 <div id="BEV_EVENT_EOF">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_EOF"><span class="Identifier">BEV_EVENT_EOF</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_EOF"><span class="Identifier">BEV_EVENT_EOF</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
   <dd>
     
     
@@ -545,7 +548,7 @@
   </dd>
 </div>
 <div id="BEV_EVENT_ERROR">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_ERROR"><span class="Identifier">BEV_EVENT_ERROR</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_ERROR"><span class="Identifier">BEV_EVENT_ERROR</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
   <dd>
     
     
@@ -553,7 +556,7 @@
   </dd>
 </div>
 <div id="BEV_EVENT_READING">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_READING"><span class="Identifier">BEV_EVENT_READING</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_READING"><span class="Identifier">BEV_EVENT_READING</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
   <dd>
     
     
@@ -561,7 +564,7 @@
   </dd>
 </div>
 <div id="BEV_EVENT_TIMEOUT">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_TIMEOUT"><span class="Identifier">BEV_EVENT_TIMEOUT</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000040</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_TIMEOUT"><span class="Identifier">BEV_EVENT_TIMEOUT</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000040</span></pre></dt>
   <dd>
     
     
@@ -569,7 +572,7 @@
   </dd>
 </div>
 <div id="BEV_EVENT_WRITING">
-  <dt><pre><a href="bufferevent.html#BEV_EVENT_WRITING"><span class="Identifier">BEV_EVENT_WRITING</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
+  <dt><pre><a href="#BEV_EVENT_WRITING"><span class="Identifier">BEV_EVENT_WRITING</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
   <dd>
     
     
@@ -577,7 +580,7 @@
   </dd>
 </div>
 <div id="BEV_OPT_CLOSE_ON_FREE">
-  <dt><pre><a href="bufferevent.html#BEV_OPT_CLOSE_ON_FREE"><span class="Identifier">BEV_OPT_CLOSE_ON_FREE</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+  <dt><pre><a href="#BEV_OPT_CLOSE_ON_FREE"><span class="Identifier">BEV_OPT_CLOSE_ON_FREE</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
   <dd>
     
     
@@ -585,7 +588,7 @@
   </dd>
 </div>
 <div id="BEV_OPT_DEFER_CALLBACKS">
-  <dt><pre><a href="bufferevent.html#BEV_OPT_DEFER_CALLBACKS"><span class="Identifier">BEV_OPT_DEFER_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
+  <dt><pre><a href="#BEV_OPT_DEFER_CALLBACKS"><span class="Identifier">BEV_OPT_DEFER_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
   <dd>
     
     
@@ -593,7 +596,7 @@
   </dd>
 </div>
 <div id="BEV_OPT_THREADSAFE">
-  <dt><pre><a href="bufferevent.html#BEV_OPT_THREADSAFE"><span class="Identifier">BEV_OPT_THREADSAFE</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dt><pre><a href="#BEV_OPT_THREADSAFE"><span class="Identifier">BEV_OPT_THREADSAFE</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
   <dd>
     
     
@@ -601,7 +604,7 @@
   </dd>
 </div>
 <div id="BEV_OPT_UNLOCK_CALLBACKS">
-  <dt><pre><a href="bufferevent.html#BEV_OPT_UNLOCK_CALLBACKS"><span class="Identifier">BEV_OPT_UNLOCK_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">8</span></pre></dt>
+  <dt><pre><a href="#BEV_OPT_UNLOCK_CALLBACKS"><span class="Identifier">BEV_OPT_UNLOCK_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">8</span></pre></dt>
   <dd>
     
     
@@ -609,7 +612,7 @@
   </dd>
 </div>
 <div id="BEV_TRIG_DEFER_CALLBACKS">
-  <dt><pre><a href="bufferevent.html#BEV_TRIG_DEFER_CALLBACKS"><span class="Identifier">BEV_TRIG_DEFER_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
+  <dt><pre><a href="#BEV_TRIG_DEFER_CALLBACKS"><span class="Identifier">BEV_TRIG_DEFER_CALLBACKS</span></a> <span class="Other">=</span> <span class="DecNumber">4</span></pre></dt>
   <dd>
     
     
@@ -617,7 +620,7 @@
   </dd>
 </div>
 <div id="BEV_TRIG_IGNORE_WATERMARKS">
-  <dt><pre><a href="bufferevent.html#BEV_TRIG_IGNORE_WATERMARKS"><span class="Identifier">BEV_TRIG_IGNORE_WATERMARKS</span></a> <span class="Other">=</span> <span class="DecNumber">65536</span></pre></dt>
+  <dt><pre><a href="#BEV_TRIG_IGNORE_WATERMARKS"><span class="Identifier">BEV_TRIG_IGNORE_WATERMARKS</span></a> <span class="Other">=</span> <span class="DecNumber">65536</span></pre></dt>
   <dd>
     
     
@@ -632,8 +635,8 @@
   <dl class="item">
     <div id="bufferevent_add_to_rate_limit_group-procs-all">
   <div id="bufferevent_add_to_rate_limit_group,ptr.bufferevent,ptr.bufferevent_rate_limit_group">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_add_to_rate_limit_group%2Cptr.bufferevent%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_add_to_rate_limit_group</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_add_to_rate_limit_group%2Cptr.bufferevent%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_add_to_rate_limit_group</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -645,7 +648,7 @@
 </div>
 <div id="bufferevent_base_set-procs-all">
   <div id="bufferevent_base_set,ptr.event_base,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_base_set%2Cptr.event_base%2Cptr.bufferevent"><span class="Identifier">bufferevent_base_set</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_base_set%2Cptr.event_base%2Cptr.bufferevent"><span class="Identifier">bufferevent_base_set</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -658,7 +661,7 @@
 </div>
 <div id="bufferevent_decref-procs-all">
   <div id="bufferevent_decref,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decref%2Cptr.bufferevent"><span class="Identifier">bufferevent_decref</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decref%2Cptr.bufferevent"><span class="Identifier">bufferevent_decref</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -670,7 +673,7 @@
 </div>
 <div id="bufferevent_decrement_read_limit-procs-all">
   <div id="bufferevent_decrement_read_limit,ptr.bufferevent,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decrement_read_limit%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_decrement_read_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decrement_read_limit%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_decrement_read_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -683,7 +686,7 @@
 </div>
 <div id="bufferevent_decrement_write_limit-procs-all">
   <div id="bufferevent_decrement_write_limit,ptr.bufferevent,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decrement_write_limit%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_decrement_write_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_decrement_write_limit%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_decrement_write_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -696,7 +699,7 @@
 </div>
 <div id="bufferevent_disable-procs-all">
   <div id="bufferevent_disable,ptr.bufferevent,cshort">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_disable%2Cptr.bufferevent%2Ccshort"><span class="Identifier">bufferevent_disable</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_disable%2Cptr.bufferevent%2Ccshort"><span class="Identifier">bufferevent_disable</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -708,7 +711,7 @@
 </div>
 <div id="bufferevent_enable-procs-all">
   <div id="bufferevent_enable,ptr.bufferevent,cshort">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_enable%2Cptr.bufferevent%2Ccshort"><span class="Identifier">bufferevent_enable</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_enable%2Cptr.bufferevent%2Ccshort"><span class="Identifier">bufferevent_enable</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">event</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -720,11 +723,11 @@
 </div>
 <div id="bufferevent_filter_new-procs-all">
   <div id="bufferevent_filter_new,ptr.bufferevent,bufferevent_filter_cb,bufferevent_filter_cb,cint,proc(pointer),pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_filter_new%2Cptr.bufferevent%2Cbufferevent_filter_cb%2Cbufferevent_filter_cb%2Ccint%2Cproc%28pointer%29%2Cpointer"><span class="Identifier">bufferevent_filter_new</span></a><span class="Other">(</span><span class="Identifier">underlying</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
-                            <span class="Identifier">input_filter</span><span class="Other">:</span> <a href="bufferevent.html#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a><span class="Other">;</span>
-                            <span class="Identifier">output_filter</span><span class="Other">:</span> <a href="bufferevent.html#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_filter_new%2Cptr.bufferevent%2Cbufferevent_filter_cb%2Cbufferevent_filter_cb%2Ccint%2Cproc%28pointer%29%2Cpointer"><span class="Identifier">bufferevent_filter_new</span></a><span class="Other">(</span><span class="Identifier">underlying</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+                            <span class="Identifier">input_filter</span><span class="Other">:</span> <a href="#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a><span class="Other">;</span>
+                            <span class="Identifier">output_filter</span><span class="Other">:</span> <a href="#bufferevent_filter_cb"><span class="Identifier">bufferevent_filter_cb</span></a><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
                             <span class="Identifier">free_context</span><span class="Other">:</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}<span class="Other">;</span>
-                            <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+                            <span class="Identifier">ctx</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -736,8 +739,8 @@
 </div>
 <div id="bufferevent_flush-procs-all">
   <div id="bufferevent_flush,ptr.bufferevent,cshort,bufferevent_flush_mode">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2Cbufferevent_flush_mode"><span class="Identifier">bufferevent_flush</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
-                       <span class="Identifier">mode</span><span class="Other">:</span> <a href="bufferevent.html#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_flush%2Cptr.bufferevent%2Ccshort%2Cbufferevent_flush_mode"><span class="Identifier">bufferevent_flush</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
+                       <span class="Identifier">mode</span><span class="Other">:</span> <a href="#BuffereventFlushMode"><span class="Identifier">BuffereventFlushMode</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -749,7 +752,7 @@
 </div>
 <div id="bufferevent_free-procs-all">
   <div id="bufferevent_free,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_free%2Cptr.bufferevent"><span class="Identifier">bufferevent_free</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_free%2Cptr.bufferevent"><span class="Identifier">bufferevent_free</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -761,7 +764,7 @@
 </div>
 <div id="bufferevent_get_base-procs-all">
   <div id="bufferevent_get_base,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_base%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_base</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_base%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_base</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -773,7 +776,7 @@
 </div>
 <div id="bufferevent_get_enabled-procs-all">
   <div id="bufferevent_get_enabled,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_enabled%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_enabled</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cshort</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_enabled%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_enabled</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cshort</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -785,7 +788,7 @@
 </div>
 <div id="bufferevent_get_input-procs-all">
   <div id="bufferevent_get_input,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_input%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_input</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_input%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_input</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -797,7 +800,7 @@
 </div>
 <div id="bufferevent_get_max_single_read-procs-all">
   <div id="bufferevent_get_max_single_read,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_single_read%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_single_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_single_read%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_single_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -809,7 +812,7 @@
 </div>
 <div id="bufferevent_get_max_single_write-procs-all">
   <div id="bufferevent_get_max_single_write,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_single_write%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_single_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_single_write%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_single_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -821,7 +824,7 @@
 </div>
 <div id="bufferevent_get_max_to_read-procs-all">
   <div id="bufferevent_get_max_to_read,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_to_read%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_to_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_to_read%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_to_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -833,7 +836,7 @@
 </div>
 <div id="bufferevent_get_max_to_write-procs-all">
   <div id="bufferevent_get_max_to_write,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_to_write%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_to_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_max_to_write%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_max_to_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -845,7 +848,7 @@
 </div>
 <div id="bufferevent_get_output-procs-all">
   <div id="bufferevent_get_output,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_output%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_output</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_output%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_output</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -857,7 +860,7 @@
 </div>
 <div id="bufferevent_get_priority-procs-all">
   <div id="bufferevent_get_priority,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_priority%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_priority</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_priority%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_priority</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -869,7 +872,7 @@
 </div>
 <div id="bufferevent_get_read_limit-procs-all">
   <div id="bufferevent_get_read_limit,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_read_limit%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_read_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_read_limit%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_read_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -881,7 +884,7 @@
 </div>
 <div id="bufferevent_get_token_bucket_cfg-procs-all">
   <div id="bufferevent_get_token_bucket_cfg,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_token_bucket_cfg%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_token_bucket_cfg</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_token_bucket_cfg%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_token_bucket_cfg</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -894,7 +897,7 @@
 </div>
 <div id="bufferevent_get_underlying-procs-all">
   <div id="bufferevent_get_underlying,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_underlying%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_underlying</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_underlying%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_underlying</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -907,7 +910,7 @@
 </div>
 <div id="bufferevent_get_write_limit-procs-all">
   <div id="bufferevent_get_write_limit,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_write_limit%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_write_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_get_write_limit%2Cptr.bufferevent"><span class="Identifier">bufferevent_get_write_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -919,10 +922,10 @@
 </div>
 <div id="bufferevent_getcb-procs-all">
   <div id="bufferevent_getcb,ptr.bufferevent,ptr.bufferevent_data_cb,ptr.bufferevent_data_cb,ptr.bufferevent_event_cb,ptr.pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getcb%2Cptr.bufferevent%2Cptr.bufferevent_data_cb%2Cptr.bufferevent_data_cb%2Cptr.bufferevent_event_cb%2Cptr.pointer"><span class="Identifier">bufferevent_getcb</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
-                       <span class="Identifier">readcb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
-                       <span class="Identifier">writecb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
-                       <span class="Identifier">eventcb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getcb%2Cptr.bufferevent%2Cptr.bufferevent_data_cb%2Cptr.bufferevent_data_cb%2Cptr.bufferevent_event_cb%2Cptr.pointer"><span class="Identifier">bufferevent_getcb</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+                       <span class="Identifier">readcb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
+                       <span class="Identifier">writecb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
+                       <span class="Identifier">eventcb_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a><span class="Other">;</span>
                        <span class="Identifier">cbarg_ptr</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -935,7 +938,7 @@
 </div>
 <div id="bufferevent_getfd-procs-all">
   <div id="bufferevent_getfd,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getfd%2Cptr.bufferevent"><span class="Identifier">bufferevent_getfd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getfd%2Cptr.bufferevent"><span class="Identifier">bufferevent_getfd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -947,7 +950,7 @@
 </div>
 <div id="bufferevent_getwatermark-procs-all">
   <div id="bufferevent_getwatermark,ptr.bufferevent,cshort,ptr.csize_t,ptr.csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getwatermark%2Cptr.bufferevent%2Ccshort%2Cptr.csize_t%2Cptr.csize_t"><span class="Identifier">bufferevent_getwatermark</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_getwatermark%2Cptr.bufferevent%2Ccshort%2Cptr.csize_t%2Cptr.csize_t"><span class="Identifier">bufferevent_getwatermark</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
                               <span class="Identifier">lowmark</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">highmark</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -961,7 +964,7 @@
 </div>
 <div id="bufferevent_incref-procs-all">
   <div id="bufferevent_incref,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_incref%2Cptr.bufferevent"><span class="Identifier">bufferevent_incref</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_incref%2Cptr.bufferevent"><span class="Identifier">bufferevent_incref</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -973,7 +976,7 @@
 </div>
 <div id="bufferevent_lock-procs-all">
   <div id="bufferevent_lock,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_lock%2Cptr.bufferevent"><span class="Identifier">bufferevent_lock</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_lock%2Cptr.bufferevent"><span class="Identifier">bufferevent_lock</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -985,7 +988,7 @@
 </div>
 <div id="bufferevent_pair_get_partner-procs-all">
   <div id="bufferevent_pair_get_partner,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_pair_get_partner%2Cptr.bufferevent"><span class="Identifier">bufferevent_pair_get_partner</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_pair_get_partner%2Cptr.bufferevent"><span class="Identifier">bufferevent_pair_get_partner</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -999,7 +1002,7 @@
 <div id="bufferevent_pair_new-procs-all">
   <div id="bufferevent_pair_new,ptr.event_base,cint,ptr.ptr.bufferevent">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_pair_new%2Cptr.event_base%2Ccint%2Cptr.ptr.bufferevent"><span class="Identifier">bufferevent_pair_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                          <span class="Identifier">pair</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+                          <span class="Identifier">pair</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1011,7 +1014,7 @@
 </div>
 <div id="bufferevent_priority_set-procs-all">
   <div id="bufferevent_priority_set,ptr.bufferevent,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_priority_set%2Cptr.bufferevent%2Ccint"><span class="Identifier">bufferevent_priority_set</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">pri</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_priority_set%2Cptr.bufferevent%2Ccint"><span class="Identifier">bufferevent_priority_set</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">pri</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1024,7 +1027,7 @@
 <div id="bufferevent_rate_limit_group_decrement_read-procs-all">
   <div id="bufferevent_rate_limit_group_decrement_read,ptr.bufferevent_rate_limit_group,csize_t">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_decrement_read%2Cptr.bufferevent_rate_limit_group%2Ccsize_t"><span class="Identifier">bufferevent_rate_limit_group_decrement_read</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1037,7 +1040,7 @@
 <div id="bufferevent_rate_limit_group_decrement_write-procs-all">
   <div id="bufferevent_rate_limit_group_decrement_write,ptr.bufferevent_rate_limit_group,csize_t">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_decrement_write%2Cptr.bufferevent_rate_limit_group%2Ccsize_t"><span class="Identifier">bufferevent_rate_limit_group_decrement_write</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">decr</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1049,7 +1052,7 @@
 </div>
 <div id="bufferevent_rate_limit_group_free-procs-all">
   <div id="bufferevent_rate_limit_group_free,ptr.bufferevent_rate_limit_group">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_free%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group_free</span></a><span class="Other">(</span><span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_free%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group_free</span></a><span class="Other">(</span><span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1063,7 +1066,7 @@
 <div id="bufferevent_rate_limit_group_get_read_limit-procs-all">
   <div id="bufferevent_rate_limit_group_get_read_limit,ptr.bufferevent_rate_limit_group">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_get_read_limit%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group_get_read_limit</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1076,7 +1079,7 @@
 <div id="bufferevent_rate_limit_group_get_totals-procs-all">
   <div id="bufferevent_rate_limit_group_get_totals,ptr.bufferevent_rate_limit_group,ptr.ev_uint64_t,ptr.ev_uint64_t">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_get_totals%2Cptr.bufferevent_rate_limit_group%2Cptr.ev_uint64_t%2Cptr.ev_uint64_t"><span class="Identifier">bufferevent_rate_limit_group_get_totals</span></a><span class="Other">(</span>
-    <span class="Identifier">grp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">total_read_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#ev_uint64_t"><span class="Identifier">ev_uint64_t</span></a><span class="Other">;</span>
+    <span class="Identifier">grp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">total_read_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#ev_uint64_t"><span class="Identifier">ev_uint64_t</span></a><span class="Other">;</span>
     <span class="Identifier">total_written_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#ev_uint64_t"><span class="Identifier">ev_uint64_t</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1090,7 +1093,7 @@
 <div id="bufferevent_rate_limit_group_get_write_limit-procs-all">
   <div id="bufferevent_rate_limit_group_get_write_limit,ptr.bufferevent_rate_limit_group">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_get_write_limit%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group_get_write_limit</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1103,7 +1106,7 @@
 <div id="bufferevent_rate_limit_group_new-procs-all">
   <div id="bufferevent_rate_limit_group_new,ptr.event_base,ptr.ev_token_bucket_cfg">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_new%2Cptr.event_base%2Cptr.ev_token_bucket_cfg"><span class="Identifier">bufferevent_rate_limit_group_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
-                                      <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a> {.
+                                      <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1117,7 +1120,7 @@
 <div id="bufferevent_rate_limit_group_reset_totals-procs-all">
   <div id="bufferevent_rate_limit_group_reset_totals,ptr.bufferevent_rate_limit_group">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_reset_totals%2Cptr.bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group_reset_totals</span></a><span class="Other">(</span>
-    <span class="Identifier">grp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+    <span class="Identifier">grp</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1130,7 +1133,7 @@
 <div id="bufferevent_rate_limit_group_set_cfg-procs-all">
   <div id="bufferevent_rate_limit_group_set_cfg,ptr.bufferevent_rate_limit_group,ptr.ev_token_bucket_cfg">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_set_cfg%2Cptr.bufferevent_rate_limit_group%2Cptr.ev_token_bucket_cfg"><span class="Identifier">bufferevent_rate_limit_group_set_cfg</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1144,7 +1147,7 @@
 <div id="bufferevent_rate_limit_group_set_min_share-procs-all">
   <div id="bufferevent_rate_limit_group_set_min_share,ptr.bufferevent_rate_limit_group,csize_t">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_rate_limit_group_set_min_share%2Cptr.bufferevent_rate_limit_group%2Ccsize_t"><span class="Identifier">bufferevent_rate_limit_group_set_min_share</span></a><span class="Other">(</span>
-    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">min_share</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+    <span class="Identifier">group</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent_rate_limit_group"><span class="Identifier">bufferevent_rate_limit_group</span></a><span class="Other">;</span> <span class="Identifier">min_share</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1156,7 +1159,7 @@
 </div>
 <div id="bufferevent_read-procs-all">
   <div id="bufferevent_read,ptr.bufferevent,pointer,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_read%2Cptr.bufferevent%2Cpointer%2Ccsize_t"><span class="Identifier">bufferevent_read</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_read%2Cptr.bufferevent%2Cpointer%2Ccsize_t"><span class="Identifier">bufferevent_read</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">csize_t</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1169,7 +1172,7 @@
 </div>
 <div id="bufferevent_read_buffer-procs-all">
   <div id="bufferevent_read_buffer,ptr.bufferevent,ptr.Evbuffer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_read_buffer%2Cptr.bufferevent%2Cptr.Evbuffer"><span class="Identifier">bufferevent_read_buffer</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_read_buffer%2Cptr.bufferevent%2Cptr.Evbuffer"><span class="Identifier">bufferevent_read_buffer</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1182,7 +1185,7 @@
 </div>
 <div id="bufferevent_remove_from_rate_limit_group-procs-all">
   <div id="bufferevent_remove_from_rate_limit_group,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_remove_from_rate_limit_group%2Cptr.bufferevent"><span class="Identifier">bufferevent_remove_from_rate_limit_group</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_remove_from_rate_limit_group%2Cptr.bufferevent"><span class="Identifier">bufferevent_remove_from_rate_limit_group</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1195,7 +1198,7 @@
 </div>
 <div id="bufferevent_replacefd-procs-all">
   <div id="bufferevent_replacefd,ptr.bufferevent,evutil_socket_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_replacefd%2Cptr.bufferevent%2Cevutil_socket_t"><span class="Identifier">bufferevent_replacefd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_replacefd%2Cptr.bufferevent%2Cevutil_socket_t"><span class="Identifier">bufferevent_replacefd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1208,7 +1211,7 @@
 </div>
 <div id="bufferevent_set_max_single_read-procs-all">
   <div id="bufferevent_set_max_single_read,ptr.bufferevent,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_max_single_read%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_set_max_single_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_max_single_read%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_set_max_single_read</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1221,7 +1224,7 @@
 </div>
 <div id="bufferevent_set_max_single_write-procs-all">
   <div id="bufferevent_set_max_single_write,ptr.bufferevent,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_max_single_write%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_set_max_single_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_max_single_write%2Cptr.bufferevent%2Ccsize_t"><span class="Identifier">bufferevent_set_max_single_write</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1234,8 +1237,8 @@
 </div>
 <div id="bufferevent_set_rate_limit-procs-all">
   <div id="bufferevent_set_rate_limit,ptr.bufferevent,ptr.ev_token_bucket_cfg">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_rate_limit%2Cptr.bufferevent%2Cptr.ev_token_bucket_cfg"><span class="Identifier">bufferevent_set_rate_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
-                                <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_rate_limit%2Cptr.bufferevent%2Cptr.ev_token_bucket_cfg"><span class="Identifier">bufferevent_set_rate_limit</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+                                <span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1247,7 +1250,7 @@
 </div>
 <div id="bufferevent_set_timeouts-procs-all">
   <div id="bufferevent_set_timeouts,ptr.bufferevent,pointer,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_timeouts%2Cptr.bufferevent%2Cpointer%2Cpointer"><span class="Identifier">bufferevent_set_timeouts</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">timeout_read</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_set_timeouts%2Cptr.bufferevent%2Cpointer%2Cpointer"><span class="Identifier">bufferevent_set_timeouts</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">timeout_read</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
                               <span class="Identifier">timeout_write</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1260,9 +1263,9 @@
 </div>
 <div id="bufferevent_setcb-procs-all">
   <div id="bufferevent_setcb,ptr.bufferevent,bufferevent_data_cb,bufferevent_data_cb,bufferevent_event_cb,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setcb%2Cptr.bufferevent%2Cbufferevent_data_cb%2Cbufferevent_data_cb%2Cbufferevent_event_cb%2Cpointer"><span class="Identifier">bufferevent_setcb</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">readcb</span><span class="Other">:</span> <a href="bufferevent.html#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
-                       <span class="Identifier">writecb</span><span class="Other">:</span> <a href="bufferevent.html#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
-                       <span class="Identifier">eventcb</span><span class="Other">:</span> <a href="bufferevent.html#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a><span class="Other">;</span> <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setcb%2Cptr.bufferevent%2Cbufferevent_data_cb%2Cbufferevent_data_cb%2Cbufferevent_event_cb%2Cpointer"><span class="Identifier">bufferevent_setcb</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">readcb</span><span class="Other">:</span> <a href="#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
+                       <span class="Identifier">writecb</span><span class="Other">:</span> <a href="#bufferevent_data_cb"><span class="Identifier">bufferevent_data_cb</span></a><span class="Other">;</span>
+                       <span class="Identifier">eventcb</span><span class="Other">:</span> <a href="#bufferevent_event_cb"><span class="Identifier">bufferevent_event_cb</span></a><span class="Other">;</span> <span class="Identifier">cbarg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1274,7 +1277,7 @@
 </div>
 <div id="bufferevent_setfd-procs-all">
   <div id="bufferevent_setfd,ptr.bufferevent,evutil_socket_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setfd%2Cptr.bufferevent%2Cevutil_socket_t"><span class="Identifier">bufferevent_setfd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setfd%2Cptr.bufferevent%2Cevutil_socket_t"><span class="Identifier">bufferevent_setfd</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1287,7 +1290,7 @@
 </div>
 <div id="bufferevent_setwatermark-procs-all">
   <div id="bufferevent_setwatermark,ptr.bufferevent,cshort,csize_t,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setwatermark%2Cptr.bufferevent%2Ccshort%2Ccsize_t%2Ccsize_t"><span class="Identifier">bufferevent_setwatermark</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_setwatermark%2Cptr.bufferevent%2Ccshort%2Ccsize_t%2Ccsize_t"><span class="Identifier">bufferevent_setwatermark</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
                               <span class="Identifier">lowmark</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span> <span class="Identifier">highmark</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1300,7 +1303,7 @@
 </div>
 <div id="bufferevent_socket_connect-procs-all">
   <div id="bufferevent_socket_connect,ptr.bufferevent,pointer,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect%2Cptr.bufferevent%2Cpointer%2Ccint"><span class="Identifier">bufferevent_socket_connect</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">addr</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect%2Cptr.bufferevent%2Cpointer%2Ccint"><span class="Identifier">bufferevent_socket_connect</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">addr</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span>
                                 <span class="Identifier">socklen</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1313,7 +1316,7 @@
 </div>
 <div id="bufferevent_socket_connect_hostname-procs-all">
   <div id="bufferevent_socket_connect_hostname,ptr.bufferevent,pointer,cint,cstring,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect_hostname%2Cptr.bufferevent%2Cpointer%2Ccint%2Ccstring%2Ccint"><span class="Identifier">bufferevent_socket_connect_hostname</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect_hostname%2Cptr.bufferevent%2Cpointer%2Ccint%2Ccstring%2Ccint"><span class="Identifier">bufferevent_socket_connect_hostname</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
     <span class="Identifier">evdns_base</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">family</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">hostname</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">port</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -1327,7 +1330,7 @@
 </div>
 <div id="bufferevent_socket_connect_hostname_hints-procs-all">
   <div id="bufferevent_socket_connect_hostname_hints,ptr.bufferevent,pointer,pointer,cstring,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect_hostname_hints%2Cptr.bufferevent%2Cpointer%2Cpointer%2Ccstring%2Ccint"><span class="Identifier">bufferevent_socket_connect_hostname_hints</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_connect_hostname_hints%2Cptr.bufferevent%2Cpointer%2Cpointer%2Ccstring%2Ccint"><span class="Identifier">bufferevent_socket_connect_hostname_hints</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
     <span class="Identifier">evdns_base</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">hints_in</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">hostname</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">;</span> <span class="Identifier">port</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -1341,7 +1344,7 @@
 </div>
 <div id="bufferevent_socket_get_dns_error-procs-all">
   <div id="bufferevent_socket_get_dns_error,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_get_dns_error%2Cptr.bufferevent"><span class="Identifier">bufferevent_socket_get_dns_error</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_get_dns_error%2Cptr.bufferevent"><span class="Identifier">bufferevent_socket_get_dns_error</span></a><span class="Other">(</span><span class="Identifier">bev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1354,7 +1357,7 @@
 <div id="bufferevent_socket_new-procs-all">
   <div id="bufferevent_socket_new,ptr.event_base,evutil_socket_t,cint">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_socket_new%2Cptr.event_base%2Cevutil_socket_t%2Ccint"><span class="Identifier">bufferevent_socket_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a><span class="Other">;</span>
-                            <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+                            <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1366,7 +1369,7 @@
 </div>
 <div id="bufferevent_trigger-procs-all">
   <div id="bufferevent_trigger,ptr.bufferevent,cshort,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_trigger%2Cptr.bufferevent%2Ccshort%2Ccint"><span class="Identifier">bufferevent_trigger</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_trigger%2Cptr.bufferevent%2Ccshort%2Ccint"><span class="Identifier">bufferevent_trigger</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">iotype</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1379,7 +1382,7 @@
 </div>
 <div id="bufferevent_trigger_event-procs-all">
   <div id="bufferevent_trigger_event,ptr.bufferevent,cshort,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_trigger_event%2Cptr.bufferevent%2Ccshort%2Ccint"><span class="Identifier">bufferevent_trigger_event</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">what</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_trigger_event%2Cptr.bufferevent%2Ccshort%2Ccint"><span class="Identifier">bufferevent_trigger_event</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">what</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span>
                                <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1392,7 +1395,7 @@
 </div>
 <div id="bufferevent_unlock-procs-all">
   <div id="bufferevent_unlock,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_unlock%2Cptr.bufferevent"><span class="Identifier">bufferevent_unlock</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_unlock%2Cptr.bufferevent"><span class="Identifier">bufferevent_unlock</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1404,7 +1407,7 @@
 </div>
 <div id="bufferevent_write-procs-all">
   <div id="bufferevent_write,ptr.bufferevent,pointer,csize_t">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_write%2Cptr.bufferevent%2Cpointer%2Ccsize_t"><span class="Identifier">bufferevent_write</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_write%2Cptr.bufferevent%2Cpointer%2Ccsize_t"><span class="Identifier">bufferevent_write</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">data</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">size</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1417,7 +1420,7 @@
 </div>
 <div id="bufferevent_write_buffer-procs-all">
   <div id="bufferevent_write_buffer,ptr.bufferevent,ptr.Evbuffer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_write_buffer%2Cptr.bufferevent%2Cptr.Evbuffer"><span class="Identifier">bufferevent_write_buffer</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_write_buffer%2Cptr.bufferevent%2Cptr.Evbuffer"><span class="Identifier">bufferevent_write_buffer</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">buf</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="buffer.html#Evbuffer"><span class="Identifier">Evbuffer</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1430,7 +1433,7 @@
 </div>
 <div id="ev_token_bucket_cfg_free-procs-all">
   <div id="ev_token_bucket_cfg_free,ptr.ev_token_bucket_cfg">
-  <dt><pre><span class="Keyword">proc</span> <a href="#ev_token_bucket_cfg_free%2Cptr.ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg_free</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#ev_token_bucket_cfg_free%2Cptr.ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg_free</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1443,7 +1446,7 @@
 <div id="ev_token_bucket_cfg_new-procs-all">
   <div id="ev_token_bucket_cfg_new,csize_t,csize_t,csize_t,csize_t,pointer">
   <dt><pre><span class="Keyword">proc</span> <a href="#ev_token_bucket_cfg_new%2Ccsize_t%2Ccsize_t%2Ccsize_t%2Ccsize_t%2Cpointer"><span class="Identifier">ev_token_bucket_cfg_new</span></a><span class="Other">(</span><span class="Identifier">read_rate</span><span class="Other">,</span> <span class="Identifier">read_burst</span><span class="Other">,</span> <span class="Identifier">write_rate</span><span class="Other">,</span> <span class="Identifier">write_burst</span><span class="Other">:</span> <span class="Identifier">csize_t</span><span class="Other">;</span>
-                             <span class="Identifier">tick_len</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.
+                             <span class="Identifier">tick_len</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#ev_token_bucket_cfg"><span class="Identifier">ev_token_bucket_cfg</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1464,7 +1467,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-03 19:42:58 UTC</small>
       </div>
     </div>
   </div>

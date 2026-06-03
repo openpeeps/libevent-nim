@@ -16,13 +16,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="../../dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="../../dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">libevent/bindings/event</h1>
       <div class="row">
@@ -444,7 +447,7 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="ev_uint64_t">
-  <dt><pre><a href="event.html#ev_uint64_t"><span class="Identifier">ev_uint64_t</span></a> <span class="Other">=</span> <span class="Identifier">uint64</span></pre></dt>
+  <dt><pre><a href="#ev_uint64_t"><span class="Identifier">ev_uint64_t</span></a> <span class="Other">=</span> <span class="Identifier">uint64</span></pre></dt>
   <dd>
     
     
@@ -452,7 +455,7 @@
   </dd>
 </div>
 <div id="event">
-  <dt><pre><a href="event.html#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
+  <dt><pre><a href="#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
     
@@ -460,7 +463,7 @@
   </dd>
 </div>
 <div id="event_base">
-  <dt><pre><a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_base&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><a href="#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_base&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
              <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
@@ -469,7 +472,7 @@
   </dd>
 </div>
 <div id="event_base_foreach_event_cb">
-  <dt><pre><a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
+  <dt><pre><a href="#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span>
                                     <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
@@ -478,7 +481,7 @@
   </dd>
 </div>
 <div id="event_callback_fn">
-  <dt><pre><a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cshort</span><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -486,7 +489,7 @@
   </dd>
 </div>
 <div id="event_config">
-  <dt><pre><a href="event.html#event_config"><span class="Identifier">event_config</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_config&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><a href="#event_config"><span class="Identifier">event_config</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct event_config&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
                <span class="Identifier">incompleteStruct</span>.} <span class="Other">=</span> <span class="Keyword">object</span></pre></dt>
   <dd>
     
@@ -495,7 +498,7 @@
   </dd>
 </div>
 <div id="event_fatal_cb">
-  <dt><pre><a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">err</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -503,7 +506,7 @@
   </dd>
 </div>
 <div id="event_finalize_callback_fn">
-  <dt><pre><a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -511,7 +514,7 @@
   </dd>
 </div>
 <div id="event_log_cb">
-  <dt><pre><a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">severity</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
+  <dt><pre><a href="#event_log_cb"><span class="Identifier">event_log_cb</span></a> <span class="Other">=</span> <span class="Keyword">proc</span> <span class="Other">(</span><span class="Identifier">severity</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">msg</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span> {.<span class="Identifier">cdecl</span>.}</pre></dt>
   <dd>
     
     
@@ -519,7 +522,7 @@
   </dd>
 </div>
 <div id="EventBaseForeachEventCb">
-  <dt><pre><a href="event.html#EventBaseForeachEventCb"><span class="Identifier">EventBaseForeachEventCb</span></a> <span class="Other">=</span> <a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a></pre></dt>
+  <dt><pre><a href="#EventBaseForeachEventCb"><span class="Identifier">EventBaseForeachEventCb</span></a> <span class="Other">=</span> <a href="#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a></pre></dt>
   <dd>
     
     
@@ -527,7 +530,7 @@
   </dd>
 </div>
 <div id="EventCallbackFn">
-  <dt><pre><a href="event.html#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a> <span class="Other">=</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a></pre></dt>
+  <dt><pre><a href="#EventCallbackFn"><span class="Identifier">EventCallbackFn</span></a> <span class="Other">=</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a></pre></dt>
   <dd>
     
     
@@ -535,7 +538,7 @@
   </dd>
 </div>
 <div id="EventFatalCb">
-  <dt><pre><a href="event.html#EventFatalCb"><span class="Identifier">EventFatalCb</span></a> <span class="Other">=</span> <a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a></pre></dt>
+  <dt><pre><a href="#EventFatalCb"><span class="Identifier">EventFatalCb</span></a> <span class="Other">=</span> <a href="#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a></pre></dt>
   <dd>
     
     
@@ -543,7 +546,7 @@
   </dd>
 </div>
 <div id="EventFinalizeCallbackFn">
-  <dt><pre><a href="event.html#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a> <span class="Other">=</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a></pre></dt>
+  <dt><pre><a href="#EventFinalizeCallbackFn"><span class="Identifier">EventFinalizeCallbackFn</span></a> <span class="Other">=</span> <a href="#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a></pre></dt>
   <dd>
     
     
@@ -551,7 +554,7 @@
   </dd>
 </div>
 <div id="EventLogCb">
-  <dt><pre><a href="event.html#EventLogCb"><span class="Identifier">EventLogCb</span></a> <span class="Other">=</span> <a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a></pre></dt>
+  <dt><pre><a href="#EventLogCb"><span class="Identifier">EventLogCb</span></a> <span class="Other">=</span> <a href="#event_log_cb"><span class="Identifier">event_log_cb</span></a></pre></dt>
   <dd>
     
     
@@ -559,7 +562,7 @@
   </dd>
 </div>
 <div id="evutil_socket_t">
-  <dt><pre><a href="event.html#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a> <span class="Other">=</span> <span class="Identifier">cint</span></pre></dt>
+  <dt><pre><a href="#evutil_socket_t"><span class="Identifier">evutil_socket_t</span></a> <span class="Other">=</span> <span class="Identifier">cint</span></pre></dt>
   <dd>
     
     
@@ -567,7 +570,7 @@
   </dd>
 </div>
 <div id="PEvent">
-  <dt><pre><a href="event.html#PEvent"><span class="Identifier">PEvent</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a></pre></dt>
+  <dt><pre><a href="#PEvent"><span class="Identifier">PEvent</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a></pre></dt>
   <dd>
     
     
@@ -575,7 +578,7 @@
   </dd>
 </div>
 <div id="PEventBase">
-  <dt><pre><a href="event.html#PEventBase"><span class="Identifier">PEventBase</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a></pre></dt>
+  <dt><pre><a href="#PEventBase"><span class="Identifier">PEventBase</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a></pre></dt>
   <dd>
     
     
@@ -583,7 +586,7 @@
   </dd>
 </div>
 <div id="PEventConfig">
-  <dt><pre><a href="event.html#PEventConfig"><span class="Identifier">PEventConfig</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a></pre></dt>
+  <dt><pre><a href="#PEventConfig"><span class="Identifier">PEventConfig</span></a> <span class="Other">=</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a></pre></dt>
   <dd>
     
     
@@ -591,7 +594,7 @@
   </dd>
 </div>
 <div id="Timeval">
-  <dt><pre><a href="event.html#Timeval"><span class="Identifier">Timeval</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct timeval&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;sys/time.h&gt;&quot;</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
+  <dt><pre><a href="#Timeval"><span class="Identifier">Timeval</span></a> {.<span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;struct timeval&quot;</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;sys/time.h&gt;&quot;</span>.} <span class="Other">=</span> <span class="Keyword">object</span>
   <span class="Identifier">tv_sec</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">clong</span>
   <span class="Identifier">tv_usec</span><span class="Operator">*</span><span class="Other">:</span> <span class="Identifier">clong</span></pre></dt>
   <dd>
@@ -607,7 +610,7 @@
   <h1><a class="toc-backref" href="#10">Consts</a></h1>
   <dl class="item">
     <div id="EV_CLOSED">
-  <dt><pre><a href="event.html#EV_CLOSED"><span class="Identifier">EV_CLOSED</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000080</span></pre></dt>
+  <dt><pre><a href="#EV_CLOSED"><span class="Identifier">EV_CLOSED</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000080</span></pre></dt>
   <dd>
     
     
@@ -615,7 +618,7 @@
   </dd>
 </div>
 <div id="EV_ET">
-  <dt><pre><a href="event.html#EV_ET"><span class="Identifier">EV_ET</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
+  <dt><pre><a href="#EV_ET"><span class="Identifier">EV_ET</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
   <dd>
     
     
@@ -623,7 +626,7 @@
   </dd>
 </div>
 <div id="EV_FEATURE_EARLY_CLOSE">
-  <dt><pre><a href="event.html#EV_FEATURE_EARLY_CLOSE"><span class="Identifier">EV_FEATURE_EARLY_CLOSE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
+  <dt><pre><a href="#EV_FEATURE_EARLY_CLOSE"><span class="Identifier">EV_FEATURE_EARLY_CLOSE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
   <dd>
     
     
@@ -631,7 +634,7 @@
   </dd>
 </div>
 <div id="EV_FEATURE_ET">
-  <dt><pre><a href="event.html#EV_FEATURE_ET"><span class="Identifier">EV_FEATURE_ET</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
+  <dt><pre><a href="#EV_FEATURE_ET"><span class="Identifier">EV_FEATURE_ET</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
   <dd>
     
     
@@ -639,7 +642,7 @@
   </dd>
 </div>
 <div id="EV_FEATURE_FDS">
-  <dt><pre><a href="event.html#EV_FEATURE_FDS"><span class="Identifier">EV_FEATURE_FDS</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
+  <dt><pre><a href="#EV_FEATURE_FDS"><span class="Identifier">EV_FEATURE_FDS</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
   <dd>
     
     
@@ -647,7 +650,7 @@
   </dd>
 </div>
 <div id="EV_FEATURE_O1">
-  <dt><pre><a href="event.html#EV_FEATURE_O1"><span class="Identifier">EV_FEATURE_O1</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
+  <dt><pre><a href="#EV_FEATURE_O1"><span class="Identifier">EV_FEATURE_O1</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
   <dd>
     
     
@@ -655,7 +658,7 @@
   </dd>
 </div>
 <div id="EV_FINALIZE">
-  <dt><pre><a href="event.html#EV_FINALIZE"><span class="Identifier">EV_FINALIZE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000040</span></pre></dt>
+  <dt><pre><a href="#EV_FINALIZE"><span class="Identifier">EV_FINALIZE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000040</span></pre></dt>
   <dd>
     
     
@@ -663,7 +666,7 @@
   </dd>
 </div>
 <div id="EV_PERSIST">
-  <dt><pre><a href="event.html#EV_PERSIST"><span class="Identifier">EV_PERSIST</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
+  <dt><pre><a href="#EV_PERSIST"><span class="Identifier">EV_PERSIST</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
   <dd>
     
     
@@ -671,7 +674,7 @@
   </dd>
 </div>
 <div id="EV_READ">
-  <dt><pre><a href="event.html#EV_READ"><span class="Identifier">EV_READ</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
+  <dt><pre><a href="#EV_READ"><span class="Identifier">EV_READ</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
   <dd>
     
     
@@ -679,7 +682,7 @@
   </dd>
 </div>
 <div id="EV_SIGNAL">
-  <dt><pre><a href="event.html#EV_SIGNAL"><span class="Identifier">EV_SIGNAL</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
+  <dt><pre><a href="#EV_SIGNAL"><span class="Identifier">EV_SIGNAL</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
   <dd>
     
     
@@ -687,7 +690,7 @@
   </dd>
 </div>
 <div id="EV_TIMEOUT">
-  <dt><pre><a href="event.html#EV_TIMEOUT"><span class="Identifier">EV_TIMEOUT</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
+  <dt><pre><a href="#EV_TIMEOUT"><span class="Identifier">EV_TIMEOUT</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
   <dd>
     
     
@@ -695,7 +698,7 @@
   </dd>
 </div>
 <div id="EV_WRITE">
-  <dt><pre><a href="event.html#EV_WRITE"><span class="Identifier">EV_WRITE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
+  <dt><pre><a href="#EV_WRITE"><span class="Identifier">EV_WRITE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
   <dd>
     
     
@@ -703,7 +706,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_COUNT_ACTIVE">
-  <dt><pre><a href="event.html#EVENT_BASE_COUNT_ACTIVE"><span class="Identifier">EVENT_BASE_COUNT_ACTIVE</span></a> <span class="Other">=</span> <span class="DecNumber">1'u32</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_COUNT_ACTIVE"><span class="Identifier">EVENT_BASE_COUNT_ACTIVE</span></a> <span class="Other">=</span> <span class="DecNumber">1'u32</span></pre></dt>
   <dd>
     
     
@@ -711,7 +714,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_COUNT_ADDED">
-  <dt><pre><a href="event.html#EVENT_BASE_COUNT_ADDED"><span class="Identifier">EVENT_BASE_COUNT_ADDED</span></a> <span class="Other">=</span> <span class="DecNumber">4'u32</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_COUNT_ADDED"><span class="Identifier">EVENT_BASE_COUNT_ADDED</span></a> <span class="Other">=</span> <span class="DecNumber">4'u32</span></pre></dt>
   <dd>
     
     
@@ -719,7 +722,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_COUNT_VIRTUAL">
-  <dt><pre><a href="event.html#EVENT_BASE_COUNT_VIRTUAL"><span class="Identifier">EVENT_BASE_COUNT_VIRTUAL</span></a> <span class="Other">=</span> <span class="DecNumber">2'u32</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_COUNT_VIRTUAL"><span class="Identifier">EVENT_BASE_COUNT_VIRTUAL</span></a> <span class="Other">=</span> <span class="DecNumber">2'u32</span></pre></dt>
   <dd>
     
     
@@ -727,7 +730,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST"><span class="Identifier">EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST"><span class="Identifier">EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000010</span></pre></dt>
   <dd>
     
     
@@ -735,7 +738,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_IGNORE_ENV">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_IGNORE_ENV"><span class="Identifier">EVENT_BASE_FLAG_IGNORE_ENV</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_IGNORE_ENV"><span class="Identifier">EVENT_BASE_FLAG_IGNORE_ENV</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
   <dd>
     
     
@@ -743,7 +746,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_NO_CACHE_TIME">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_NO_CACHE_TIME"><span class="Identifier">EVENT_BASE_FLAG_NO_CACHE_TIME</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_NO_CACHE_TIME"><span class="Identifier">EVENT_BASE_FLAG_NO_CACHE_TIME</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000008</span></pre></dt>
   <dd>
     
     
@@ -751,7 +754,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_NOLOCK">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_NOLOCK"><span class="Identifier">EVENT_BASE_FLAG_NOLOCK</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_NOLOCK"><span class="Identifier">EVENT_BASE_FLAG_NOLOCK</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
   <dd>
     
     
@@ -759,7 +762,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_PRECISE_TIMER">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_PRECISE_TIMER"><span class="Identifier">EVENT_BASE_FLAG_PRECISE_TIMER</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_PRECISE_TIMER"><span class="Identifier">EVENT_BASE_FLAG_PRECISE_TIMER</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000020</span></pre></dt>
   <dd>
     
     
@@ -767,7 +770,7 @@
   </dd>
 </div>
 <div id="EVENT_BASE_FLAG_STARTUP_IOCP">
-  <dt><pre><a href="event.html#EVENT_BASE_FLAG_STARTUP_IOCP"><span class="Identifier">EVENT_BASE_FLAG_STARTUP_IOCP</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
+  <dt><pre><a href="#EVENT_BASE_FLAG_STARTUP_IOCP"><span class="Identifier">EVENT_BASE_FLAG_STARTUP_IOCP</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
   <dd>
     
     
@@ -775,7 +778,7 @@
   </dd>
 </div>
 <div id="EVENT_LOG_DEBUG">
-  <dt><pre><a href="event.html#EVENT_LOG_DEBUG"><span class="Identifier">EVENT_LOG_DEBUG</span></a> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
+  <dt><pre><a href="#EVENT_LOG_DEBUG"><span class="Identifier">EVENT_LOG_DEBUG</span></a> <span class="Other">=</span> <span class="DecNumber">0</span></pre></dt>
   <dd>
     
     
@@ -783,7 +786,7 @@
   </dd>
 </div>
 <div id="EVENT_LOG_ERR">
-  <dt><pre><a href="event.html#EVENT_LOG_ERR"><span class="Identifier">EVENT_LOG_ERR</span></a> <span class="Other">=</span> <span class="DecNumber">3</span></pre></dt>
+  <dt><pre><a href="#EVENT_LOG_ERR"><span class="Identifier">EVENT_LOG_ERR</span></a> <span class="Other">=</span> <span class="DecNumber">3</span></pre></dt>
   <dd>
     
     
@@ -791,7 +794,7 @@
   </dd>
 </div>
 <div id="EVENT_LOG_MSG">
-  <dt><pre><a href="event.html#EVENT_LOG_MSG"><span class="Identifier">EVENT_LOG_MSG</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+  <dt><pre><a href="#EVENT_LOG_MSG"><span class="Identifier">EVENT_LOG_MSG</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
   <dd>
     
     
@@ -799,7 +802,7 @@
   </dd>
 </div>
 <div id="EVENT_LOG_WARN">
-  <dt><pre><a href="event.html#EVENT_LOG_WARN"><span class="Identifier">EVENT_LOG_WARN</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dt><pre><a href="#EVENT_LOG_WARN"><span class="Identifier">EVENT_LOG_WARN</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
   <dd>
     
     
@@ -807,7 +810,7 @@
   </dd>
 </div>
 <div id="EVLOOP_NO_EXIT_ON_EMPTY">
-  <dt><pre><a href="event.html#EVLOOP_NO_EXIT_ON_EMPTY"><span class="Identifier">EVLOOP_NO_EXIT_ON_EMPTY</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
+  <dt><pre><a href="#EVLOOP_NO_EXIT_ON_EMPTY"><span class="Identifier">EVLOOP_NO_EXIT_ON_EMPTY</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000004</span></pre></dt>
   <dd>
     
     
@@ -815,7 +818,7 @@
   </dd>
 </div>
 <div id="EVLOOP_NONBLOCK">
-  <dt><pre><a href="event.html#EVLOOP_NONBLOCK"><span class="Identifier">EVLOOP_NONBLOCK</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
+  <dt><pre><a href="#EVLOOP_NONBLOCK"><span class="Identifier">EVLOOP_NONBLOCK</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000002</span></pre></dt>
   <dd>
     
     
@@ -823,7 +826,7 @@
   </dd>
 </div>
 <div id="EVLOOP_ONCE">
-  <dt><pre><a href="event.html#EVLOOP_ONCE"><span class="Identifier">EVLOOP_ONCE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
+  <dt><pre><a href="#EVLOOP_ONCE"><span class="Identifier">EVLOOP_ONCE</span></a> <span class="Other">=</span> <span class="DecNumber">0x00000001</span></pre></dt>
   <dd>
     
     
@@ -838,7 +841,7 @@
   <dl class="item">
     <div id="event_active-procs-all">
   <div id="event_active,ptr.event,cint,cushort">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_active%2Cptr.event%2Ccint%2Ccushort"><span class="Identifier">event_active</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">res</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">ncalls</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_active%2Cptr.event%2Ccint%2Ccushort"><span class="Identifier">event_active</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">res</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">ncalls</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -850,7 +853,7 @@
 </div>
 <div id="event_add-procs-all">
   <div id="event_add,ptr.event,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_add%2Cptr.event%2Cpointer"><span class="Identifier">event_add</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_add%2Cptr.event%2Cpointer"><span class="Identifier">event_add</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -862,8 +865,8 @@
 </div>
 <div id="event_assign-procs-all">
   <div id="event_assign,ptr.event,ptr.event_base,cint,cushort,event_callback_fn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_assign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                  <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_assign%2Cptr.event%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_assign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
+                  <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -875,7 +878,7 @@
 </div>
 <div id="event_base_active_by_fd-procs-all">
   <div id="event_base_active_by_fd,ptr.event_base,cint,cushort">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_active_by_fd%2Cptr.event_base%2Ccint%2Ccushort"><span class="Identifier">event_base_active_by_fd</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">)</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_active_by_fd%2Cptr.event_base%2Ccint%2Ccushort"><span class="Identifier">event_base_active_by_fd</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">)</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -887,7 +890,7 @@
 </div>
 <div id="event_base_active_by_signal-procs-all">
   <div id="event_base_active_by_signal,ptr.event_base,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_active_by_signal%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_active_by_signal</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">sig</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_active_by_signal%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_active_by_signal</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">sig</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -899,7 +902,7 @@
 </div>
 <div id="event_base_dispatch-procs-all">
   <div id="event_base_dispatch,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_dispatch%2Cptr.event_base"><span class="Identifier">event_base_dispatch</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_dispatch%2Cptr.event_base"><span class="Identifier">event_base_dispatch</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -911,7 +914,7 @@
 </div>
 <div id="event_base_dump_events-procs-all">
   <div id="event_base_dump_events,ptr.event_base,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_dump_events%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_dump_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">output</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_dump_events%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_dump_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">output</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -923,8 +926,8 @@
 </div>
 <div id="event_base_foreach_event-procs-all">
   <div id="event_base_foreach_event,ptr.event_base,event_base_foreach_event_cb,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_foreach_event%2Cptr.event_base%2Cevent_base_foreach_event_cb%2Cpointer"><span class="Identifier">event_base_foreach_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
-                              <span class="Identifier">fn</span><span class="Other">:</span> <a href="event.html#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_foreach_event%2Cptr.event_base%2Cevent_base_foreach_event_cb%2Cpointer"><span class="Identifier">event_base_foreach_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
+                              <span class="Identifier">fn</span><span class="Other">:</span> <a href="#event_base_foreach_event_cb"><span class="Identifier">event_base_foreach_event_cb</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -936,7 +939,7 @@
 </div>
 <div id="event_base_free-procs-all">
   <div id="event_base_free,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_free%2Cptr.event_base"><span class="Identifier">event_base_free</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_free%2Cptr.event_base"><span class="Identifier">event_base_free</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -948,7 +951,7 @@
 </div>
 <div id="event_base_free_nofinalize-procs-all">
   <div id="event_base_free_nofinalize,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_free_nofinalize%2Cptr.event_base"><span class="Identifier">event_base_free_nofinalize</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_free_nofinalize%2Cptr.event_base"><span class="Identifier">event_base_free_nofinalize</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -960,7 +963,7 @@
 </div>
 <div id="event_base_get_features-procs-all">
   <div id="event_base_get_features,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_features%2Cptr.event_base"><span class="Identifier">event_base_get_features</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_features%2Cptr.event_base"><span class="Identifier">event_base_get_features</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -972,7 +975,7 @@
 </div>
 <div id="event_base_get_max_events-procs-all">
   <div id="event_base_get_max_events,ptr.event_base,cuint,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_max_events%2Cptr.event_base%2Ccuint%2Ccint"><span class="Identifier">event_base_get_max_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">clear</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_max_events%2Cptr.event_base%2Ccuint%2Ccint"><span class="Identifier">event_base_get_max_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">clear</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -984,7 +987,7 @@
 </div>
 <div id="event_base_get_method-procs-all">
   <div id="event_base_get_method,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_method%2Cptr.event_base"><span class="Identifier">event_base_get_method</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_method%2Cptr.event_base"><span class="Identifier">event_base_get_method</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cstring</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -996,7 +999,7 @@
 </div>
 <div id="event_base_get_npriorities-procs-all">
   <div id="event_base_get_npriorities,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_npriorities%2Cptr.event_base"><span class="Identifier">event_base_get_npriorities</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_npriorities%2Cptr.event_base"><span class="Identifier">event_base_get_npriorities</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1008,7 +1011,7 @@
 </div>
 <div id="event_base_get_num_events-procs-all">
   <div id="event_base_get_num_events,ptr.event_base,cuint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_num_events%2Cptr.event_base%2Ccuint"><span class="Identifier">event_base_get_num_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_num_events%2Cptr.event_base%2Ccuint"><span class="Identifier">event_base_get_num_events</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1020,7 +1023,7 @@
 </div>
 <div id="event_base_get_running_event-procs-all">
   <div id="event_base_get_running_event,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_running_event%2Cptr.event_base"><span class="Identifier">event_base_get_running_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_get_running_event%2Cptr.event_base"><span class="Identifier">event_base_get_running_event</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1032,7 +1035,7 @@
 </div>
 <div id="event_base_gettimeofday_cached-procs-all">
   <div id="event_base_gettimeofday_cached,ptr.event_base,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_gettimeofday_cached%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_gettimeofday_cached</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_gettimeofday_cached%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_gettimeofday_cached</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1044,7 +1047,7 @@
 </div>
 <div id="event_base_got_break-procs-all">
   <div id="event_base_got_break,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_got_break%2Cptr.event_base"><span class="Identifier">event_base_got_break</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_got_break%2Cptr.event_base"><span class="Identifier">event_base_got_break</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1056,7 +1059,7 @@
 </div>
 <div id="event_base_got_exit-procs-all">
   <div id="event_base_got_exit,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_got_exit%2Cptr.event_base"><span class="Identifier">event_base_got_exit</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_got_exit%2Cptr.event_base"><span class="Identifier">event_base_got_exit</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1068,7 +1071,7 @@
 </div>
 <div id="event_base_init_common_timeout-procs-all">
   <div id="event_base_init_common_timeout,ptr.event_base,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_init_common_timeout%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_init_common_timeout</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">duration</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_init_common_timeout%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_init_common_timeout</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">duration</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1080,7 +1083,7 @@
 </div>
 <div id="event_base_loop-procs-all">
   <div id="event_base_loop,ptr.event_base,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loop%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_loop</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loop%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_loop</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1092,7 +1095,7 @@
 </div>
 <div id="event_base_loopbreak-procs-all">
   <div id="event_base_loopbreak,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopbreak%2Cptr.event_base"><span class="Identifier">event_base_loopbreak</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopbreak%2Cptr.event_base"><span class="Identifier">event_base_loopbreak</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1104,7 +1107,7 @@
 </div>
 <div id="event_base_loopcontinue-procs-all">
   <div id="event_base_loopcontinue,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopcontinue%2Cptr.event_base"><span class="Identifier">event_base_loopcontinue</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopcontinue%2Cptr.event_base"><span class="Identifier">event_base_loopcontinue</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1116,7 +1119,7 @@
 </div>
 <div id="event_base_loopexit-procs-all">
   <div id="event_base_loopexit,ptr.event_base,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopexit%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_loopexit</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_loopexit%2Cptr.event_base%2Cpointer"><span class="Identifier">event_base_loopexit</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1128,7 +1131,7 @@
 </div>
 <div id="event_base_new-procs-all">
   <div id="event_base_new">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_new"><span class="Identifier">event_base_new</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_new"><span class="Identifier">event_base_new</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
                                         <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1140,7 +1143,7 @@
 </div>
 <div id="event_base_new_with_config-procs-all">
   <div id="event_base_new_with_config,ptr.event_config">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_new_with_config%2Cptr.event_config"><span class="Identifier">event_base_new_with_config</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_new_with_config%2Cptr.event_config"><span class="Identifier">event_base_new_with_config</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1152,8 +1155,8 @@
 </div>
 <div id="event_base_once-procs-all">
   <div id="event_base_once,ptr.event_base,cint,cushort,event_callback_fn,pointer,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer%2Cpointer"><span class="Identifier">event_base_once</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-                     <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_once%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer%2Cpointer"><span class="Identifier">event_base_once</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
+                     <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1165,7 +1168,7 @@
 </div>
 <div id="event_base_priority_init-procs-all">
   <div id="event_base_priority_init,ptr.event_base,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_priority_init%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_priority_init</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">npriorities</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_priority_init%2Cptr.event_base%2Ccint"><span class="Identifier">event_base_priority_init</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">npriorities</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1177,7 +1180,7 @@
 </div>
 <div id="event_base_set-procs-all">
   <div id="event_base_set,ptr.event_base,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_set%2Cptr.event_base%2Cptr.event"><span class="Identifier">event_base_set</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_set%2Cptr.event_base%2Cptr.event"><span class="Identifier">event_base_set</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1189,7 +1192,7 @@
 </div>
 <div id="event_base_update_cache_time-procs-all">
   <div id="event_base_update_cache_time,ptr.event_base">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_update_cache_time%2Cptr.event_base"><span class="Identifier">event_base_update_cache_time</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_base_update_cache_time%2Cptr.event_base"><span class="Identifier">event_base_update_cache_time</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1201,7 +1204,7 @@
 </div>
 <div id="event_config_avoid_method-procs-all">
   <div id="event_config_avoid_method,ptr.event_config,cstring">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_avoid_method%2Cptr.event_config%2Ccstring"><span class="Identifier">event_config_avoid_method</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">method</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_avoid_method%2Cptr.event_config%2Ccstring"><span class="Identifier">event_config_avoid_method</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">method</span><span class="Other">:</span> <span class="Identifier">cstring</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1213,7 +1216,7 @@
 </div>
 <div id="event_config_free-procs-all">
   <div id="event_config_free,ptr.event_config">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_free%2Cptr.event_config"><span class="Identifier">event_config_free</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_free%2Cptr.event_config"><span class="Identifier">event_config_free</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1225,7 +1228,7 @@
 </div>
 <div id="event_config_new-procs-all">
   <div id="event_config_new">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_new"><span class="Identifier">event_config_new</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_new"><span class="Identifier">event_config_new</span></a><span class="Other">(</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1237,7 +1240,7 @@
 </div>
 <div id="event_config_require_features-procs-all">
   <div id="event_config_require_features,ptr.event_config,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_require_features%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_require_features</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">feature</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_require_features%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_require_features</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">feature</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1249,7 +1252,7 @@
 </div>
 <div id="event_config_set_flag-procs-all">
   <div id="event_config_set_flag,ptr.event_config,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_flag%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_set_flag</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">flag</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_flag%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_set_flag</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">flag</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1261,7 +1264,7 @@
 </div>
 <div id="event_config_set_max_dispatch_interval-procs-all">
   <div id="event_config_set_max_dispatch_interval,ptr.event_config,pointer,cint,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_max_dispatch_interval%2Cptr.event_config%2Cpointer%2Ccint%2Ccint"><span class="Identifier">event_config_set_max_dispatch_interval</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_max_dispatch_interval%2Cptr.event_config%2Cpointer%2Ccint%2Ccint"><span class="Identifier">event_config_set_max_dispatch_interval</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span>
     <span class="Identifier">max_interval</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">;</span> <span class="Identifier">max_callbacks</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">min_priority</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -1274,7 +1277,7 @@
 </div>
 <div id="event_config_set_num_cpus_hint-procs-all">
   <div id="event_config_set_num_cpus_hint,ptr.event_config,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_num_cpus_hint%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_set_num_cpus_hint</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">cpus</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_config_set_num_cpus_hint%2Cptr.event_config%2Ccint"><span class="Identifier">event_config_set_num_cpus_hint</span></a><span class="Other">(</span><span class="Identifier">cfg</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_config"><span class="Identifier">event_config</span></a><span class="Other">;</span> <span class="Identifier">cpus</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1286,7 +1289,7 @@
 </div>
 <div id="event_debug_unassign-procs-all">
   <div id="event_debug_unassign,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_debug_unassign%2Cptr.event"><span class="Identifier">event_debug_unassign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_debug_unassign%2Cptr.event"><span class="Identifier">event_debug_unassign</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1298,7 +1301,7 @@
 </div>
 <div id="event_del-procs-all">
   <div id="event_del,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_del%2Cptr.event"><span class="Identifier">event_del</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_del%2Cptr.event"><span class="Identifier">event_del</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
                                       <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1310,7 +1313,7 @@
 </div>
 <div id="event_del_block-procs-all">
   <div id="event_del_block,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_del_block%2Cptr.event"><span class="Identifier">event_del_block</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_del_block%2Cptr.event"><span class="Identifier">event_del_block</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1322,7 +1325,7 @@
 </div>
 <div id="event_del_noblock-procs-all">
   <div id="event_del_noblock,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_del_noblock%2Cptr.event"><span class="Identifier">event_del_noblock</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_del_noblock%2Cptr.event"><span class="Identifier">event_del_noblock</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1358,7 +1361,7 @@
 </div>
 <div id="event_finalize-procs-all">
   <div id="event_finalize,cuint,ptr.event,event_finalize_callback_fn">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1370,7 +1373,7 @@
 </div>
 <div id="event_free-procs-all">
   <div id="event_free,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_free%2Cptr.event"><span class="Identifier">event_free</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_free%2Cptr.event"><span class="Identifier">event_free</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
                                  <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1382,8 +1385,8 @@
 </div>
 <div id="event_free_finalize-procs-all">
   <div id="event_free_finalize,cuint,ptr.event,event_finalize_callback_fn">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_free_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_free_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span>
-                         <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_free_finalize%2Ccuint%2Cptr.event%2Cevent_finalize_callback_fn"><span class="Identifier">event_free_finalize</span></a><span class="Other">(</span><span class="Identifier">flags</span><span class="Other">:</span> <span class="Identifier">cuint</span><span class="Other">;</span> <span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span>
+                         <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_finalize_callback_fn"><span class="Identifier">event_finalize_callback_fn</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1395,9 +1398,9 @@
 </div>
 <div id="event_get_assignment-procs-all">
   <div id="event_get_assignment,ptr.event,ptr.ptr.event_base,ptr.cint,ptr.cushort,ptr.event_callback_fn,ptr.pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.event_callback_fn%2Cptr.pointer"><span class="Identifier">event_get_assignment</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_assignment%2Cptr.event%2Cptr.ptr.event_base%2Cptr.cint%2Cptr.cushort%2Cptr.event_callback_fn%2Cptr.pointer"><span class="Identifier">event_get_assignment</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">base_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
                           <span class="Identifier">fd_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-                          <span class="Identifier">cb_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
+                          <span class="Identifier">cb_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg_out</span><span class="Other">:</span> <span class="Keyword">ptr</span> <span class="Identifier">pointer</span><span class="Other">)</span> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1409,7 +1412,7 @@
 </div>
 <div id="event_get_base-procs-all">
   <div id="event_get_base,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_base%2Cptr.event"><span class="Identifier">event_get_base</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_base%2Cptr.event"><span class="Identifier">event_get_base</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1421,7 +1424,7 @@
 </div>
 <div id="event_get_callback-procs-all">
   <div id="event_get_callback,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback%2Cptr.event"><span class="Identifier">event_get_callback</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback%2Cptr.event"><span class="Identifier">event_get_callback</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1433,7 +1436,7 @@
 </div>
 <div id="event_get_callback_arg-procs-all">
   <div id="event_get_callback_arg,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback_arg%2Cptr.event"><span class="Identifier">event_get_callback_arg</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_callback_arg%2Cptr.event"><span class="Identifier">event_get_callback_arg</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">pointer</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1445,7 +1448,7 @@
 </div>
 <div id="event_get_events-procs-all">
   <div id="event_get_events,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_events%2Cptr.event"><span class="Identifier">event_get_events</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cushort</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_events%2Cptr.event"><span class="Identifier">event_get_events</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cushort</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1457,7 +1460,7 @@
 </div>
 <div id="event_get_fd-procs-all">
   <div id="event_get_fd,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_fd%2Cptr.event"><span class="Identifier">event_get_fd</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_fd%2Cptr.event"><span class="Identifier">event_get_fd</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
     <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1469,7 +1472,7 @@
 </div>
 <div id="event_get_priority-procs-all">
   <div id="event_get_priority,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_priority%2Cptr.event"><span class="Identifier">event_get_priority</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_get_priority%2Cptr.event"><span class="Identifier">event_get_priority</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1517,7 +1520,7 @@
 </div>
 <div id="event_gettime_monotonic-procs-all">
   <div id="event_gettime_monotonic,ptr.event_base,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_gettime_monotonic%2Cptr.event_base%2Cpointer"><span class="Identifier">event_gettime_monotonic</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tp</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_gettime_monotonic%2Cptr.event_base%2Cpointer"><span class="Identifier">event_gettime_monotonic</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">tp</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1529,7 +1532,7 @@
 </div>
 <div id="event_initialized-procs-all">
   <div id="event_initialized,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_initialized%2Cptr.event"><span class="Identifier">event_initialized</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_initialized%2Cptr.event"><span class="Identifier">event_initialized</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1541,8 +1544,8 @@
 </div>
 <div id="event_new-procs-all">
   <div id="event_new,ptr.event_base,cint,cushort,event_callback_fn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
-               <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_new%2Cptr.event_base%2Ccint%2Ccushort%2Cevent_callback_fn%2Cpointer"><span class="Identifier">event_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span>
+               <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1554,7 +1557,7 @@
 </div>
 <div id="event_pending-procs-all">
   <div id="event_pending,ptr.event,cushort,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_pending%2Cptr.event%2Ccushort%2Cpointer"><span class="Identifier">event_pending</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_pending%2Cptr.event%2Ccushort%2Cpointer"><span class="Identifier">event_pending</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">events</span><span class="Other">:</span> <span class="Identifier">cushort</span><span class="Other">;</span> <span class="Identifier">tv</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1566,7 +1569,7 @@
 </div>
 <div id="event_priority_set-procs-all">
   <div id="event_priority_set,ptr.event,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_priority_set%2Cptr.event%2Ccint"><span class="Identifier">event_priority_set</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">priority</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_priority_set%2Cptr.event%2Ccint"><span class="Identifier">event_priority_set</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">priority</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1578,7 +1581,7 @@
 </div>
 <div id="event_remove_timer-procs-all">
   <div id="event_remove_timer,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_remove_timer%2Cptr.event"><span class="Identifier">event_remove_timer</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_remove_timer%2Cptr.event"><span class="Identifier">event_remove_timer</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1602,7 +1605,7 @@
 </div>
 <div id="event_set_fatal_callback-procs-all">
   <div id="event_set_fatal_callback,event_fatal_cb">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_fatal_callback%2Cevent_fatal_cb"><span class="Identifier">event_set_fatal_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_fatal_callback%2Cevent_fatal_cb"><span class="Identifier">event_set_fatal_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_fatal_cb"><span class="Identifier">event_fatal_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1614,7 +1617,7 @@
 </div>
 <div id="event_set_log_callback-procs-all">
   <div id="event_set_log_callback,event_log_cb">
-  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_log_callback%2Cevent_log_cb"><span class="Identifier">event_set_log_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_log_cb"><span class="Identifier">event_log_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#event_set_log_callback%2Cevent_log_cb"><span class="Identifier">event_set_log_callback</span></a><span class="Other">(</span><span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_log_cb"><span class="Identifier">event_log_cb</span></a><span class="Other">)</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1652,7 +1655,7 @@
 </div>
 <div id="evtimer_add-procs-all">
   <div id="evtimer_add,ptr.event,ptr.Timeval">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_add%2Cptr.event%2Cptr.Timeval"><span class="Identifier">evtimer_add</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#Timeval"><span class="Identifier">Timeval</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_add%2Cptr.event%2Cptr.Timeval"><span class="Identifier">evtimer_add</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">;</span> <span class="Identifier">timeout</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#Timeval"><span class="Identifier">Timeval</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1664,7 +1667,7 @@
 </div>
 <div id="evtimer_del-procs-all">
   <div id="evtimer_del,ptr.event">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_del%2Cptr.event"><span class="Identifier">evtimer_del</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_del%2Cptr.event"><span class="Identifier">evtimer_del</span></a><span class="Other">(</span><span class="Identifier">ev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">cint</span> {.<span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span>
                                         <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1676,7 +1679,7 @@
 </div>
 <div id="evtimer_new-procs-all">
   <div id="evtimer_new,ptr.event_base,event_callback_fn,pointer">
-  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_new%2Cptr.event_base%2Cevent_callback_fn%2Cpointer"><span class="Identifier">evtimer_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="event.html#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event"><span class="Identifier">event</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#evtimer_new%2Cptr.event_base%2Cevent_callback_fn%2Cpointer"><span class="Identifier">evtimer_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">cb</span><span class="Other">:</span> <a href="#event_callback_fn"><span class="Identifier">event_callback_fn</span></a><span class="Other">;</span> <span class="Identifier">arg</span><span class="Other">:</span> <span class="Identifier">pointer</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="#event"><span class="Identifier">event</span></a> {.
     <span class="Identifier">importc</span><span class="Other">,</span> <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/event.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
     
@@ -1708,7 +1711,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-03 19:42:58 UTC</small>
       </div>
     </div>
   </div>

@@ -16,13 +16,16 @@
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAA3XAAAN1wFCKJt4AAAAB3RJTUUH4QQQEwksSS9ZWwAAAk1JREFUWMPtll2ITVEUx39nn/O7Y5qR8f05wtCUUr6ZIS++8pEnkZInPImneaCQ5METNdOkeFBKUhMPRIkHKfEuUZSUlGlKPN2TrgfncpvmnntnmlEyq1Z7t89/rf9a6+y99oZxGZf/XeIq61EdtgKXgdXA0xrYAvBjOIF1AI9zvjcC74BSpndrJPkBWDScTF8Aa4E3wDlgHbASaANmVqlcCnwHvgDvgVfAJ+AikAAvgfVZwLnSVZHZaOuKoQi3ZOMi4NkYkpe1p4J7A8BpYAD49hfIy/oqG0+hLomiKP2L5L+1ubn5115S+3OAn4EnwBlgMzCjyt6ZAnQCJ4A7wOs88iRJHvw50HoujuPBoCKwHWiosy8MdfZnAdcHk8dxXFJ3VQbQlCTJvRBCGdRbD4M6uc5glpY3eAihpN5S5w12diSEcCCEcKUO4ljdr15T76ur1FDDLIQQ3qv71EdDOe3Kxj3leRXyk+pxdWnFWod6Wt2bY3de3aSuUHcPBVimHs7mK9WrmeOF6lR1o9qnzskh2ar2qm1qizpfXaPeVGdlmGN5pb09qMxz1Xb1kLqgzn1RyH7JUXW52lr5e/Kqi9qpto7V1atuUzfnARrV7jEib1T76gG2qxdGmXyiekkt1GswPTtek0aBfJp6YySGBfWg2tPQ0FAYgf1stUfdmdcjarbYJEniKIq6gY/Aw+zWHAC+p2labGpqiorFYgGYCEzN7oQdQClN07O1/EfDyGgC0ALMBdYAi4FyK+4H3gLPsxfR1zRNi+NP7nH5J+QntnXe5B5mpfQAAAAASUVORK5CYII=">
 
 <!-- CSS -->
-<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.8">
+<link rel="stylesheet" type="text/css" href="../../nimdoc.out.css?v=2.2.10">
 
 <!-- JS -->
-<script type="text/javascript" src="../../dochack.js?v=2.2.8"></script>
+<script type="text/javascript" src="../../dochack.js?v=2.2.10"></script>
 </head>
 <body>
   <div class="document" id="documentId">
+    <input type="checkbox" id="nav-toggle" hidden>
+    <label for="nav-toggle" id="nav-burger">&#9776;</label>
+    <label for="nav-toggle" id="nav-overlay"></label>
     <div class="container">
       <h1 class="title">libevent/bindings/bufferevent_ssl</h1>
       <div class="row">
@@ -202,7 +205,7 @@
   <h1><a class="toc-backref" href="#7">Types</a></h1>
   <dl class="item">
     <div id="mbedtls_dyncontext">
-  <dt><pre><a href="bufferevent_ssl.html#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
+  <dt><pre><a href="#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
   <dd>
     
     
@@ -210,7 +213,7 @@
   </dd>
 </div>
 <div id="mbedtls_ssl_config">
-  <dt><pre><a href="bufferevent_ssl.html#mbedtls_ssl_config"><span class="Identifier">mbedtls_ssl_config</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
+  <dt><pre><a href="#mbedtls_ssl_config"><span class="Identifier">mbedtls_ssl_config</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
   <dd>
     
     
@@ -218,7 +221,7 @@
   </dd>
 </div>
 <div id="mbedtls_ssl_context">
-  <dt><pre><a href="bufferevent_ssl.html#mbedtls_ssl_context"><span class="Identifier">mbedtls_ssl_context</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
+  <dt><pre><a href="#mbedtls_ssl_context"><span class="Identifier">mbedtls_ssl_context</span></a> <span class="Other">=</span> <span class="Identifier">pointer</span></pre></dt>
   <dd>
     
     
@@ -226,7 +229,7 @@
   </dd>
 </div>
 <div id="SSL">
-  <dt><pre><a href="bufferevent_ssl.html#SSL"><span class="Identifier">SSL</span></a> <span class="Other">=</span> <span class="Identifier">SslPtr</span></pre></dt>
+  <dt><pre><a href="#SSL"><span class="Identifier">SSL</span></a> <span class="Other">=</span> <span class="Identifier">SslPtr</span></pre></dt>
   <dd>
     
     
@@ -240,7 +243,7 @@
   <h1><a class="toc-backref" href="#10">Consts</a></h1>
   <dl class="item">
     <div id="BUFFEREVENT_SSL_ACCEPTING">
-  <dt><pre><a href="bufferevent_ssl.html#BUFFEREVENT_SSL_ACCEPTING"><span class="Identifier">BUFFEREVENT_SSL_ACCEPTING</span></a> <span class="Other">=</span> <span class="DecNumber">2'i32</span></pre></dt>
+  <dt><pre><a href="#BUFFEREVENT_SSL_ACCEPTING"><span class="Identifier">BUFFEREVENT_SSL_ACCEPTING</span></a> <span class="Other">=</span> <span class="DecNumber">2'i32</span></pre></dt>
   <dd>
     
     
@@ -248,7 +251,7 @@
   </dd>
 </div>
 <div id="BUFFEREVENT_SSL_BATCH_WRITE">
-  <dt><pre><a href="bufferevent_ssl.html#BUFFEREVENT_SSL_BATCH_WRITE"><span class="Identifier">BUFFEREVENT_SSL_BATCH_WRITE</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
+  <dt><pre><a href="#BUFFEREVENT_SSL_BATCH_WRITE"><span class="Identifier">BUFFEREVENT_SSL_BATCH_WRITE</span></a> <span class="Other">=</span> <span class="DecNumber">2</span></pre></dt>
   <dd>
     
     
@@ -256,7 +259,7 @@
   </dd>
 </div>
 <div id="BUFFEREVENT_SSL_CONNECTING">
-  <dt><pre><a href="bufferevent_ssl.html#BUFFEREVENT_SSL_CONNECTING"><span class="Identifier">BUFFEREVENT_SSL_CONNECTING</span></a> <span class="Other">=</span> <span class="DecNumber">1'i32</span></pre></dt>
+  <dt><pre><a href="#BUFFEREVENT_SSL_CONNECTING"><span class="Identifier">BUFFEREVENT_SSL_CONNECTING</span></a> <span class="Other">=</span> <span class="DecNumber">1'i32</span></pre></dt>
   <dd>
     
     
@@ -264,7 +267,7 @@
   </dd>
 </div>
 <div id="BUFFEREVENT_SSL_DIRTY_SHUTDOWN">
-  <dt><pre><a href="bufferevent_ssl.html#BUFFEREVENT_SSL_DIRTY_SHUTDOWN"><span class="Identifier">BUFFEREVENT_SSL_DIRTY_SHUTDOWN</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
+  <dt><pre><a href="#BUFFEREVENT_SSL_DIRTY_SHUTDOWN"><span class="Identifier">BUFFEREVENT_SSL_DIRTY_SHUTDOWN</span></a> <span class="Other">=</span> <span class="DecNumber">1</span></pre></dt>
   <dd>
     
     
@@ -272,7 +275,7 @@
   </dd>
 </div>
 <div id="BUFFEREVENT_SSL_OPEN">
-  <dt><pre><a href="bufferevent_ssl.html#BUFFEREVENT_SSL_OPEN"><span class="Identifier">BUFFEREVENT_SSL_OPEN</span></a> <span class="Other">=</span> <span class="DecNumber">0'i32</span></pre></dt>
+  <dt><pre><a href="#BUFFEREVENT_SSL_OPEN"><span class="Identifier">BUFFEREVENT_SSL_OPEN</span></a> <span class="Other">=</span> <span class="DecNumber">0'i32</span></pre></dt>
   <dd>
     
     
@@ -313,7 +316,7 @@
 </div>
 <div id="bufferevent_mbedtls_dyncontext_free-procs-all">
   <div id="bufferevent_mbedtls_dyncontext_free,mbedtls_dyncontext">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_dyncontext_free%2Cmbedtls_dyncontext"><span class="Identifier">bufferevent_mbedtls_dyncontext_free</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_dyncontext_free%2Cmbedtls_dyncontext"><span class="Identifier">bufferevent_mbedtls_dyncontext_free</span></a><span class="Other">(</span><span class="Identifier">ctx</span><span class="Other">:</span> <a href="#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">)</span> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_mbedtls_dyncontext_free&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -326,7 +329,7 @@
 </div>
 <div id="bufferevent_mbedtls_dyncontext_new-procs-all">
   <div id="bufferevent_mbedtls_dyncontext_new,mbedtls_ssl_config">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_dyncontext_new%2Cmbedtls_ssl_config"><span class="Identifier">bufferevent_mbedtls_dyncontext_new</span></a><span class="Other">(</span><span class="Identifier">conf</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_ssl_config"><span class="Identifier">mbedtls_ssl_config</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_dyncontext_new%2Cmbedtls_ssl_config"><span class="Identifier">bufferevent_mbedtls_dyncontext_new</span></a><span class="Other">(</span><span class="Identifier">conf</span><span class="Other">:</span> <a href="#mbedtls_ssl_config"><span class="Identifier">mbedtls_ssl_config</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_mbedtls_dyncontext_new&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -341,7 +344,7 @@
   <div id="bufferevent_mbedtls_filter_new,ptr.event_base,ptr.bufferevent,mbedtls_dyncontext,cint,cint">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_filter_new%2Cptr.event_base%2Cptr.bufferevent%2Cmbedtls_dyncontext%2Ccint%2Ccint"><span class="Identifier">bufferevent_mbedtls_filter_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
                                     <span class="Identifier">underlying</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span>
-                                    <span class="Identifier">ssl</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
+                                    <span class="Identifier">ssl</span><span class="Other">:</span> <a href="#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
                                     <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_mbedtls_filter_new&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -368,7 +371,7 @@
 </div>
 <div id="bufferevent_mbedtls_get_ssl-procs-all">
   <div id="bufferevent_mbedtls_get_ssl,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_get_ssl%2Cptr.bufferevent"><span class="Identifier">bufferevent_mbedtls_get_ssl</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_ssl_context"><span class="Identifier">mbedtls_ssl_context</span></a> {.
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_get_ssl%2Cptr.bufferevent"><span class="Identifier">bufferevent_mbedtls_get_ssl</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#mbedtls_ssl_context"><span class="Identifier">mbedtls_ssl_context</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_mbedtls_get_ssl&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -409,7 +412,7 @@
 <div id="bufferevent_mbedtls_socket_new-procs-all">
   <div id="bufferevent_mbedtls_socket_new,ptr.event_base,cint,mbedtls_dyncontext,cint,cint">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_mbedtls_socket_new%2Cptr.event_base%2Ccint%2Cmbedtls_dyncontext%2Ccint%2Ccint"><span class="Identifier">bufferevent_mbedtls_socket_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
-                                    <span class="Identifier">ssl</span><span class="Other">:</span> <a href="bufferevent_ssl.html#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
+                                    <span class="Identifier">ssl</span><span class="Other">:</span> <a href="#mbedtls_dyncontext"><span class="Identifier">mbedtls_dyncontext</span></a><span class="Other">;</span> <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span>
                                     <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_mbedtls_socket_new&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -424,7 +427,7 @@
 <div id="bufferevent_openssl_filter_new-procs-all">
   <div id="bufferevent_openssl_filter_new,ptr.event_base,ptr.bufferevent,SSL,cint,cint">
   <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_openssl_filter_new%2Cptr.event_base%2Cptr.bufferevent%2CSSL%2Ccint%2Ccint"><span class="Identifier">bufferevent_openssl_filter_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span>
-                                    <span class="Identifier">underlying</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">ssl</span><span class="Other">:</span> <a href="bufferevent_ssl.html#SSL"><span class="Identifier">SSL</span></a><span class="Other">;</span>
+                                    <span class="Identifier">underlying</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">;</span> <span class="Identifier">ssl</span><span class="Other">:</span> <a href="#SSL"><span class="Identifier">SSL</span></a><span class="Other">;</span>
                                     <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_openssl_filter_new&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -451,7 +454,7 @@
 </div>
 <div id="bufferevent_openssl_get_ssl-procs-all">
   <div id="bufferevent_openssl_get_ssl,ptr.bufferevent">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_openssl_get_ssl%2Cptr.bufferevent"><span class="Identifier">bufferevent_openssl_get_ssl</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="bufferevent_ssl.html#SSL"><span class="Identifier">SSL</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_openssl_get_ssl%2Cptr.bufferevent"><span class="Identifier">bufferevent_openssl_get_ssl</span></a><span class="Other">(</span><span class="Identifier">bufev</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a><span class="Other">)</span><span class="Other">:</span> <a href="#SSL"><span class="Identifier">SSL</span></a> {.<span class="Identifier">cdecl</span><span class="Other">,</span>
     <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_openssl_get_ssl&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
   <dd>
@@ -478,7 +481,7 @@
 </div>
 <div id="bufferevent_openssl_socket_new-procs-all">
   <div id="bufferevent_openssl_socket_new,ptr.event_base,cint,SSL,cint,cint">
-  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_openssl_socket_new%2Cptr.event_base%2Ccint%2CSSL%2Ccint%2Ccint"><span class="Identifier">bufferevent_openssl_socket_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">ssl</span><span class="Other">:</span> <a href="bufferevent_ssl.html#SSL"><span class="Identifier">SSL</span></a><span class="Other">;</span>
+  <dt><pre><span class="Keyword">proc</span> <a href="#bufferevent_openssl_socket_new%2Cptr.event_base%2Ccint%2CSSL%2Ccint%2Ccint"><span class="Identifier">bufferevent_openssl_socket_new</span></a><span class="Other">(</span><span class="Identifier">base</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="event.html#event_base"><span class="Identifier">event_base</span></a><span class="Other">;</span> <span class="Identifier">fd</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">ssl</span><span class="Other">:</span> <a href="#SSL"><span class="Identifier">SSL</span></a><span class="Other">;</span>
                                     <span class="Identifier">state</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">;</span> <span class="Identifier">options</span><span class="Other">:</span> <span class="Identifier">cint</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">ptr</span> <a href="bufferevent.html#bufferevent"><span class="Identifier">bufferevent</span></a> {.
     <span class="Identifier">cdecl</span><span class="Other">,</span> <span class="Identifier">importc</span><span class="Other">:</span> <span class="StringLit">&quot;bufferevent_openssl_socket_new&quot;</span><span class="Other">,</span>
     <span class="Identifier">header</span><span class="Other">:</span> <span class="StringLit">&quot;&lt;event2/bufferevent_ssl.h&gt;&quot;</span><span class="Other">,</span> <span><span class="Other pragmadots">...</span></span><span class="pragmawrap"><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">forbids</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span></span>.}</pre></dt>
@@ -552,7 +555,7 @@
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2026-02-26 15:18:22 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2026-06-03 19:42:58 UTC</small>
       </div>
     </div>
   </div>
