@@ -9,21 +9,21 @@
 import ./event
 
 type
-  Evbuffer* {.importc: "struct evbuffer", header: "<event2/event.h>", incompleteStruct.} = object
-  EvbufferPtr* {.importc: "struct evbuffer_ptr", header: "<event2/event.h>", incompleteStruct.} = object
+  Evbuffer* {.importc: "struct evbuffer", header: "<event2/buffer.h>", incompleteStruct.} = object
+  EvbufferPtr* {.importc: "struct evbuffer_ptr", header: "<event2/buffer.h>", incompleteStruct.} = object
     pos*: int64
     internal*: array[2, pointer] # Opaque, do not access directly
 
-  EvbufferIovec* {.importc: "struct evbuffer_iovec", header: "<event2/event.h>", incompleteStruct.} = object
+  EvbufferIovec* {.importc: "struct evbuffer_iovec", header: "<event2/buffer.h>", incompleteStruct.} = object
     iov_base*: pointer
     iov_len*: csize_t
 
-  EvbufferCbInfo* {.importc: "struct evbuffer_cb_info", header: "<event2/event.h>", incompleteStruct.} = object
+  EvbufferCbInfo* {.importc: "struct evbuffer_cb_info", header: "<event2/buffer.h>", incompleteStruct.} = object
     orig_size*: csize_t
     n_added*: csize_t
     n_deleted*: csize_t
 
-  EvbufferCbEntry* {.importc: "struct evbuffer_cb_entry", header: "<event2/event.h>", incompleteStruct.} = object
+  EvbufferCbEntry* {.importc: "struct evbuffer_cb_entry", header: "<event2/buffer.h>", incompleteStruct.} = object
 
   evbuffer_cb_func* = proc(buf: ptr Evbuffer, info: ptr EvbufferCbInfo, arg: pointer) {.cdecl.}
   evbuffer_ref_cleanup_cb* = proc(data: pointer, datalen: csize_t, extra: pointer) {.cdecl.}
