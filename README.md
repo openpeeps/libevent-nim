@@ -77,19 +77,9 @@ Statically linking is also supported, but requires you to have the static librar
   --passC:"-I /opt/local/include" # path to the header files
 ```
 
-### Cool projects using LibEvent
-Here are some cool Nim projects that use the LibEvent library:
-
-- [MeowMail](https://github.com/openpeeps/meowmail) - A SMTP server implementation in Nim using LibEvent.
-- [Supranim](https://github.com/supranim/supranim) - A high-performance web framework in Nim using LibEvent.
-- [RTMP Server/Client](https://github.com/openpeeps/rtmp) - A RTMP server & client implementation in Nim using LibEvent.
-- [Groovebox](https://github.com/openpeeps/groovebox) - Badass CLI app for streaming to Twitch, Youtube, any RTMP servers and 🧊 Icecast-compatible servers 
-
-
 ### ❤ Contributions & Support
 - 🐛 Found a bug? [Create a new Issue](https://github.com/openpeeps/libevent-nim/issues)
 - 👋 Wanna help? [Fork it!](https://github.com/openpeeps/libevent-nim/fork)
-- 😎 [Get €20 in cloud credits from Hetzner](https://hetzner.cloud/?ref=Hm0mYGM9NxZ4)
 
 ### 🎩 License
 MIT license. [Made by Humans from OpenPeeps](https://github.com/openpeeps).<br>
